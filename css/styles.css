@@ -85,6 +85,36 @@ html{
     -o-border-radius: 5px;
 }
 /* SECCION I N I C I O */
+.background{
+    animation: animar-texto 4s ease-in-out infinite;
+    font-size: 8rem;
+    text-align: center;
+    color: transparent;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-animation: animar-texto 10s ease-in-out infinite;
+
+    background-image: url(https://wallpapercave.com/wp/wp9115394.jpg);
+}
+
+@keyframes animar-texto {
+    0%{
+        background-position: left top;
+    }
+    25%{
+        background-position: right bottom;
+    }
+    50%{
+        background-position: left bottom;
+    }
+    75%{
+        background-position: right top;
+    }
+    100%{
+        background-position: left bottom;
+    }
+}
 .inicio{
     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),url(../img/fondo.jpg);
     background-size: cover;
@@ -309,27 +339,24 @@ html{
 }
 
 .container{
-    width: 100%;
     display: flex;
-}
-.card{
+    flex-wrap: wrap;         
+    gap: 10px;               
+    justify-content: center; 
+    padding: 20px;
     width: 100%;
-    margin: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    cursor: default;
-    transition: all 400ms ease;
-    -webkit-transition: all 400ms ease;
-    -moz-transition: all 400ms ease;
-    -ms-transition: all 400ms ease;
-    -o-transition: all 400ms ease;
 }
+
+.card{
+    width: 100%;  /* Tarjetas del mismo tamaño que el contenedor */
+    max-width: 200px;  /* Ancho máximo para las tarjetas */
+    padding: 5px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+}
+
 .card:hover{
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-1%);
