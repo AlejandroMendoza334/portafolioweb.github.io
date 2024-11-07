@@ -762,14 +762,14 @@ textarea {
 
     .inicio {
         height: auto;
-        padding: 40px 20px;
+        padding: 50px 20px;
     }
 
     .inicio .contenido-banner {
         max-width: 100%;
         margin: 0;
-        margin-left: 50px;
         margin-top: 50px;
+        margin-left: 0;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
