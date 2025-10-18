@@ -23,31 +23,71 @@ document.addEventListener('click', function (event) {
     }
 });
 
-// Funcionalidad del selector de idiomas
+// Funcionalidad del selector de idiomas - Dropdown
 document.addEventListener('DOMContentLoaded', function() {
-    const langButtons = document.querySelectorAll('.lang-btn');
+    const langToggle = document.getElementById('langToggle');
+    const langOptions = document.getElementById('langOptions');
+    const langDropdown = document.querySelector('.lang-dropdown');
+    const langOptionButtons = document.querySelectorAll('.lang-option');
     
-    langButtons.forEach(button => {
+    // Toggle dropdown
+    langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('open');
+    });
+    
+    // Cerrar dropdown al hacer click fuera
+    document.addEventListener('click', function(e) {
+        if (!langDropdown.contains(e.target)) {
+            langDropdown.classList.remove('open');
+        }
+    });
+    
+    // Manejar selección de idioma
+    langOptionButtons.forEach(button => {
         button.addEventListener('click', function() {
             const selectedLang = this.getAttribute('data-lang');
             
-            // Remover clase active de todos los botones
-            langButtons.forEach(btn => btn.classList.remove('active'));
+            // Remover clase active de todas las opciones
+            langOptionButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Agregar clase active al botón seleccionado
+            // Agregar clase active a la opción seleccionada
             this.classList.add('active');
+            
+            // Actualizar el toggle con la selección
+            const flag = this.querySelector('.flag-icon');
+            const text = this.querySelector('span');
+            const toggleFlag = langToggle.querySelector('.flag-icon');
+            const toggleText = langToggle.querySelector('span');
+            
+            toggleFlag.src = flag.src;
+            toggleFlag.alt = flag.alt;
+            toggleText.textContent = selectedLang.toUpperCase();
             
             // Cambiar idioma
             changeLanguage(selectedLang);
+            
+            // Cerrar dropdown
+            langDropdown.classList.remove('open');
         });
     });
     
     // Establecer idioma activo basado en localStorage
     const savedLang = localStorage.getItem('portfolio-lang') || 'es';
-    const activeButton = document.querySelector(`[data-lang="${savedLang}"]`);
-    if (activeButton) {
-        langButtons.forEach(btn => btn.classList.remove('active'));
-        activeButton.classList.add('active');
+    const activeOption = document.querySelector(`[data-lang="${savedLang}"]`);
+    if (activeOption) {
+        langOptionButtons.forEach(btn => btn.classList.remove('active'));
+        activeOption.classList.add('active');
+        
+        // Actualizar el toggle
+        const flag = activeOption.querySelector('.flag-icon');
+        const text = activeOption.querySelector('span');
+        const toggleFlag = langToggle.querySelector('.flag-icon');
+        const toggleText = langToggle.querySelector('span');
+        
+        toggleFlag.src = flag.src;
+        toggleFlag.alt = flag.alt;
+        toggleText.textContent = savedLang.toUpperCase();
     }
 });
 

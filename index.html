@@ -38,15 +38,22 @@
             
             <!-- Selector de idiomas -->
             <div class="language-selector">
-                <div class="lang-slider">
-                    <button class="lang-btn active" data-lang="es">
+                <div class="lang-dropdown">
+                    <button class="lang-toggle" id="langToggle">
                         <img src="img/mexico-flag.png" alt="Español" class="flag-icon">
                         <span>ES</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <button class="lang-btn" data-lang="en">
-                        <img src="img/usa-flag.png" alt="English" class="flag-icon">
-                        <span>EN</span>
-                    </button>
+                    <div class="lang-options" id="langOptions">
+                        <button class="lang-option active" data-lang="es">
+                            <img src="img/mexico-flag.png" alt="Español" class="flag-icon">
+                            <span>Español</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="img/usa-flag.png" alt="English" class="flag-icon">
+                            <span>English</span>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
