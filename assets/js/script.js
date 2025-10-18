@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Actualizar el toggle con la selección
             const flag = this.querySelector('.flag-icon');
             const toggleFlag = langToggle.querySelector('.flag-icon');
-            const toggleText = langToggle.querySelector('span');
+            const toggleText = document.getElementById('langText');
             
             toggleFlag.src = flag.src;
             toggleFlag.alt = flag.alt;
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar el toggle
         const flag = activeOption.querySelector('.flag-icon');
         const toggleFlag = langToggle.querySelector('.flag-icon');
-        const toggleText = langToggle.querySelector('span');
+        const toggleText = document.getElementById('langText');
         
         toggleFlag.src = flag.src;
         toggleFlag.alt = flag.alt;
