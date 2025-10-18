@@ -27,69 +27,33 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// DROPDOWN DE IDIOMAS - COMPLETAMENTE REHECHO
+// SELECTOR DE IDIOMAS - SIMPLE Y LIMPIO
 document.addEventListener("DOMContentLoaded", function () {
-  const langToggle = document.getElementById("langToggle");
-  const langDropdown = document.querySelector(".lang-dropdown");
-  const langOptions = document.getElementById("langOptions");
-  const langOptionButtons = document.querySelectorAll(".lang-option");
-  const langText = document.getElementById("langText");
-  const langFlag = document.getElementById("langFlag");
+  const btnES = document.getElementById("btnES");
+  const btnEN = document.getElementById("btnEN");
+  const langButtons = document.querySelectorAll(".lang-btn");
 
-  // Toggle dropdown
-  langToggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    langDropdown.classList.toggle("open");
-  });
-
-  // Cerrar dropdown al hacer click fuera
-  document.addEventListener("click", function (e) {
-    if (!langDropdown.contains(e.target)) {
-      langDropdown.classList.remove("open");
-    }
-  });
-
-  // Manejar selección de idioma
-  langOptionButtons.forEach((button) => {
+  // Manejar click en botones de idioma
+  langButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const selectedLang = this.getAttribute("data-lang");
 
-      // Remover clase active de todas las opciones
-      langOptionButtons.forEach((btn) => btn.classList.remove("active"));
+      // Remover clase active de todos los botones
+      langButtons.forEach((btn) => btn.classList.remove("active"));
 
-      // Agregar clase active a la opción seleccionada
+      // Agregar clase active al botón seleccionado
       this.classList.add("active");
-
-      // Actualizar el toggle con la selección
-      const flag = this.querySelector(".flag-icon");
-      const text = this.querySelector("span");
-
-      // Actualizar bandera y texto del toggle
-      langFlag.src = flag.src;
-      langFlag.alt = flag.alt;
-      langText.textContent = selectedLang.toUpperCase();
 
       // Cambiar idioma
       changeLanguage(selectedLang);
-
-      // Cerrar dropdown
-      langDropdown.classList.remove("open");
     });
   });
 
   // Establecer idioma activo basado en localStorage
   const savedLang = localStorage.getItem("portfolio-lang") || "es";
-  const activeOption = document.querySelector(`[data-lang="${savedLang}"]`);
-  if (activeOption) {
-    langOptionButtons.forEach((btn) => btn.classList.remove("active"));
-    activeOption.classList.add("active");
-
-    // Actualizar el toggle con el idioma guardado
-    const flag = activeOption.querySelector(".flag-icon");
-    const text = activeOption.querySelector("span");
-
-    langFlag.src = flag.src;
-    langFlag.alt = flag.alt;
-    langText.textContent = savedLang.toUpperCase();
+  const activeButton = document.querySelector(`[data-lang="${savedLang}"]`);
+  if (activeButton) {
+    langButtons.forEach((btn) => btn.classList.remove("active"));
+    activeButton.classList.add("active");
   }
 });
