@@ -123,11 +123,7 @@ body {
   box-shadow: 0 4px 20px rgba(28, 182, 152, 0.3);
 }
 
-.lang-toggle:hover {
-  transform: none;
-  box-shadow: 0 4px 20px rgba(28, 182, 152, 0.3);
-  background: linear-gradient(135deg, #1cb698, #00d4ff);
-}
+/* .lang-toggle:hover eliminado */
 
 .lang-toggle i {
   transition: none;
@@ -180,10 +176,7 @@ body {
   margin: 2px;
 }
 
-.lang-option:hover {
-  background: transparent;
-  transform: none;
-}
+/* .lang-option:hover eliminado */
 
 .lang-option.active {
   background: rgba(28, 182, 152, 0.3);
@@ -199,9 +192,7 @@ body {
   transition: none;
 }
 
-.lang-option:hover .flag-icon {
-  transform: none;
-}
+/* .lang-option:hover .flag-icon eliminado */
 
 /* SECCION INICIO */
 .background {
