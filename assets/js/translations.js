@@ -273,6 +273,50 @@ function updateContent(lang) {
     document.querySelector('.projects h2').textContent = t.projects.title;
     document.querySelector('.projects-subtitle').textContent = t.projects.subtitle;
     
+    // Actualizar títulos y descripciones de proyectos
+    const projectCards = document.querySelectorAll('.card');
+    projectCards.forEach(card => {
+        const title = card.querySelector('h3');
+        const description = card.querySelector('p');
+        
+        if (title && description) {
+            const titleText = title.textContent.trim();
+            
+            // Mapear títulos a traducciones
+            const titleMap = {
+                'MiniAuth API': t.projects.miniauth,
+                'E-commerce App': t.projects.ecommerce,
+                'BOVIFrame Mobile App': t.projects.boviframe,
+                'Movie API': t.projects.movieapi,
+                'Interactive Map': t.projects.interactiveMap,
+                'My Wallet App': t.projects.wallet,
+                'Gallery': t.projects.gallery,
+                'Tab Bar': t.projects.tabbar,
+                'Scrolling Menu': t.projects.scrollingMenu,
+                'Portfolio Design': t.projects.portfolioDesign,
+                'Image Slider': t.projects.imageSlider,
+                'Calculator': t.projects.calculator,
+                'Pistazie Web': t.projects.pistazie
+            };
+            
+            const translation = titleMap[titleText];
+            if (translation) {
+                title.textContent = translation.title;
+                description.textContent = translation.description;
+            }
+        }
+    });
+    
+    // Actualizar botones de proyectos
+    document.querySelectorAll('.project-link').forEach(link => {
+        const text = link.textContent.trim();
+        if (text.includes('View Demo')) {
+            link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewDemo}`;
+        } else if (text.includes('View Code')) {
+            link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewCode}`;
+        }
+    });
+    
     // Actualizar contact
     document.querySelector('.contact h2').textContent = t.contact.title;
     document.querySelector('label[for="name"]').textContent = t.contact.name;
