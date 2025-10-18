@@ -448,9 +448,10 @@ body {
 }
 
 .skill-category:hover {
-  transform: none;
-  box-shadow: 0 5px 15px rgba(28, 182, 152, 0.1);
-  border-color: rgba(28, 182, 152, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 182, 152, 0.15);
+  border-color: rgba(28, 182, 152, 0.3);
+  transition: all 0.3s ease;
 }
 
 .skill-category h3 {
@@ -479,9 +480,10 @@ body {
 }
 
 .skill-item:hover {
-  transform: none;
-  background: rgba(28, 182, 152, 0.1);
-  box-shadow: 0 3px 8px rgba(28, 182, 152, 0.1);
+  transform: translateY(-1px);
+  background: rgba(28, 182, 152, 0.15);
+  box-shadow: 0 5px 12px rgba(28, 182, 152, 0.2);
+  transition: all 0.3s ease;
 }
 
 .skill-item span {
@@ -548,9 +550,10 @@ body {
 }
 
 .card:hover {
-  transform: none;
-  box-shadow: 0 5px 15px rgba(28, 182, 152, 0.1);
-  border-color: rgba(28, 182, 152, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(28, 182, 152, 0.15);
+  border-color: rgba(28, 182, 152, 0.3);
+  transition: all 0.3s ease;
 }
 
 .card.featured {
@@ -571,7 +574,8 @@ body {
 }
 
 .card:hover img {
-  transform: none;
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 .contenido {
@@ -765,9 +769,10 @@ button span {
 }
 
 button:hover {
-  transform: none;
-  box-shadow: 0 4px 15px rgba(28, 182, 152, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 182, 152, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
 button:hover::before {
@@ -783,7 +788,7 @@ button svg {
 }
 
 button:hover svg {
-  animation: none;
+  animation: send-icon-float 2s ease-in-out infinite;
 }
 
 button:hover span {

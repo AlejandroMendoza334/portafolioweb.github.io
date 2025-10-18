@@ -31,20 +31,21 @@ document.addEventListener("click", function (event) {
 document.addEventListener("DOMContentLoaded", function () {
   const langToggle = document.getElementById("langToggle");
   const langDropdown = document.querySelector(".lang-dropdown");
-  const langOptions = document.getElementById("langOptions");
   const currentFlag = document.getElementById("currentFlag");
   const currentLang = document.getElementById("currentLang");
   const langOptionButtons = document.querySelectorAll(".lang-option");
 
   // Toggle dropdown
-  langToggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    langDropdown.classList.toggle("open");
-  });
+  if (langToggle) {
+    langToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      langDropdown.classList.toggle("open");
+    });
+  }
 
   // Cerrar dropdown al hacer click fuera
   document.addEventListener("click", function (e) {
-    if (!langDropdown.contains(e.target)) {
+    if (langDropdown && !langDropdown.contains(e.target)) {
       langDropdown.classList.remove("open");
     }
   });
@@ -56,22 +57,28 @@ document.addEventListener("DOMContentLoaded", function () {
       const flag = this.querySelector(".flag-icon");
 
       // Actualizar el toggle
-      currentFlag.src = flag.src;
-      currentFlag.alt = flag.alt;
-      currentLang.textContent = selectedLang.toUpperCase();
+      if (currentFlag && currentLang) {
+        currentFlag.src = flag.src;
+        currentFlag.alt = flag.alt;
+        currentLang.textContent = selectedLang.toUpperCase();
+      }
 
       // Cambiar idioma
-      changeLanguage(selectedLang);
+      if (typeof changeLanguage === 'function') {
+        changeLanguage(selectedLang);
+      }
 
       // Cerrar dropdown
-      langDropdown.classList.remove("open");
+      if (langDropdown) {
+        langDropdown.classList.remove("open");
+      }
     });
   });
 
   // Establecer idioma activo basado en localStorage
   const savedLang = localStorage.getItem("portfolio-lang") || "es";
   const activeOption = document.querySelector(`[data-lang="${savedLang}"]`);
-  if (activeOption) {
+  if (activeOption && currentFlag && currentLang) {
     const flag = activeOption.querySelector(".flag-icon");
     currentFlag.src = flag.src;
     currentFlag.alt = flag.alt;
