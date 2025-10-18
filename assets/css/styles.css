@@ -180,7 +180,7 @@ body {
 }
 
 .lang-option:hover {
-  background: rgba(28, 182, 152, 0.2);
+  background: transparent;
 }
 
 .lang-option.active {
