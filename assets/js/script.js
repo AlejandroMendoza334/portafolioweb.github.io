@@ -35,21 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentLang = document.getElementById("currentLang");
   const langOptionButtons = document.querySelectorAll(".lang-option");
 
-  console.log("Elementos encontrados:", {
-    langToggle: !!langToggle,
-    langDropdown: !!langDropdown,
-    currentFlag: !!currentFlag,
-    currentLang: !!currentLang,
-    langOptionButtons: langOptionButtons.length
-  });
-
-  // Toggle dropdown
+  // Toggle dropdown - simplificado
   if (langToggle) {
     langToggle.addEventListener("click", function (e) {
       e.stopPropagation();
+      e.preventDefault();
       if (langDropdown) {
         langDropdown.classList.toggle("open");
-        console.log("Dropdown toggled");
       }
     });
   }
@@ -61,21 +53,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Manejar selección de idioma
+  // Manejar selección de idioma - simplificado
   langOptionButtons.forEach((button) => {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      
       const selectedLang = this.getAttribute("data-lang");
       const flag = this.querySelector(".flag-icon");
-      const langText = this.querySelector("span").textContent;
 
-      console.log("Idioma seleccionado:", selectedLang, "Texto:", langText);
-
-      // Actualizar el toggle
+      // Actualizar el toggle inmediatamente
       if (currentFlag && currentLang) {
         currentFlag.src = flag.src;
         currentFlag.alt = flag.alt;
         currentLang.textContent = selectedLang.toUpperCase();
-        console.log("Toggle actualizado:", currentLang.textContent);
       }
 
       // Cambiar idioma
@@ -90,12 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Establecer idioma activo basado en localStorage
+  // Establecer idioma inicial
   const savedLang = localStorage.getItem("portfolio-lang") || "es";
-  console.log("Idioma guardado:", savedLang);
-  
-  if (currentFlag && currentLang) {
+  if (currentLang) {
     currentLang.textContent = savedLang.toUpperCase();
-    console.log("Idioma inicial establecido:", currentLang.textContent);
   }
 });
