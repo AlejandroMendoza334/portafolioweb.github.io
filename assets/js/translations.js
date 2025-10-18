@@ -270,8 +270,15 @@ function updateContent(lang) {
     document.querySelectorAll('.skill-category h3')[2].textContent = t.skills.mobile;
     
     // Actualizar projects
-    document.querySelector('.projects h2').textContent = t.projects.title;
-    document.querySelector('.projects-subtitle').textContent = t.projects.subtitle;
+    const projectsTitle = document.querySelector('.projects h2');
+    const projectsSubtitle = document.querySelector('.projects-subtitle');
+    
+    if (projectsTitle) {
+        projectsTitle.textContent = t.projects.title;
+    }
+    if (projectsSubtitle) {
+        projectsSubtitle.textContent = t.projects.subtitle;
+    }
     
     // Actualizar títulos y descripciones de proyectos
     const projectCards = document.querySelectorAll('.card');
