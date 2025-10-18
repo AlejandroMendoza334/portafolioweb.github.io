@@ -30,7 +30,7 @@ body {
 }
 
 .contenedor-header header {
-  max-width: 1000px;
+  max-width: 950px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -93,18 +93,22 @@ body {
   transform: scale(1.05);
 }
 
-/* Selector de idiomas - SIMPLE Y LIMPIO */
+/* Selector de idiomas - DROPDOWN */
 .language-selector {
   display: flex;
-  gap: 10px;
   margin-left: 20px;
+  position: relative;
 }
 
-.lang-btn {
-  background: rgba(28, 182, 152, 0.1);
-  border: 2px solid rgba(28, 182, 152, 0.3);
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-toggle {
+  background: linear-gradient(135deg, #1cb698, #00d4ff);
+  border: none;
   color: #ffffff;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.85rem;
@@ -112,14 +116,63 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  min-width: 60px;
+  min-width: 75px;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(28, 182, 152, 0.3);
 }
 
-.lang-btn.active {
+.lang-toggle:hover {
   background: linear-gradient(135deg, #1cb698, #00d4ff);
-  border-color: transparent;
+  transform: none;
   box-shadow: 0 4px 15px rgba(28, 182, 152, 0.3);
+}
+
+.lang-dropdown.open #chevron {
+  transform: rotate(180deg);
+}
+
+.lang-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(28, 182, 152, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  z-index: 1000;
+  margin-top: 5px;
+  min-width: 120px;
+}
+
+.lang-dropdown.open .lang-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+}
+
+.lang-option:hover {
+  background: transparent;
+  transform: none;
 }
 
 .flag-icon {
@@ -157,8 +210,8 @@ body {
 .inicio {
   background: linear-gradient(
       135deg,
-      rgba(10, 10, 10, 0.3),
-      rgba(20, 20, 20, 0.4)
+      rgba(10, 10, 10, 0.5),
+      rgba(20, 20, 20, 0.6)
     ),
     url(../img/fondo.jpg);
   background-size: cover;
@@ -232,7 +285,7 @@ body {
 /* SECCION SOBRE MI */
 .sobremi {
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  padding: 60px 20px;
+  padding: 50px 20px;
   position: relative;
 }
 
@@ -247,7 +300,7 @@ body {
 }
 
 .contenido-seccion {
-  max-width: 1000px;
+  max-width: 950px;
   margin: auto;
 }
 
@@ -351,7 +404,7 @@ body {
 /* SECCION SKILLS */
 .skills {
   background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-  padding: 60px 20px;
+  padding: 50px 20px;
   position: relative;
 }
 
@@ -377,7 +430,7 @@ body {
 }
 
 .skills-container {
-  max-width: 1000px;
+  max-width: 950px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -441,7 +494,7 @@ body {
 /* SECCION PROYECTOS */
 .projects {
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  padding: 60px 20px;
+  padding: 50px 20px;
   position: relative;
 }
 
@@ -578,7 +631,7 @@ body {
 /* SECCION CONTACTO */
 .contact {
   background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-  padding: 60px 20px;
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
   position: relative;
