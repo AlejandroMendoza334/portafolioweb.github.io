@@ -339,20 +339,20 @@ body {
 
 .sobremi .fila .col {
   background: rgba(28, 182, 152, 0.1);
-  padding: 50px 70px;
+  padding: 35px 50px;
   border-radius: 15px;
   border: 1px solid rgba(28, 182, 152, 0.3);
   backdrop-filter: blur(10px);
   width: 100%;
-  max-width: 650px;
+  max-width: 600px;
   margin: 0 auto;
   animation: slideInRight 0.8s ease-out;
 }
 
 .sobremi .fila .col h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: "Righteous", cursive;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   color: #1cb698;
   text-align: center;
 }
@@ -362,11 +362,11 @@ body {
 }
 
 .sobremi .fila .col ul li {
-  margin: 25px 0;
+  margin: 18px 0;
   display: flex;
   align-items: center;
-  gap: 25px;
-  padding: 10px 0;
+  gap: 20px;
+  padding: 8px 0;
 }
 
 .sobremi .fila .col ul li strong {
