@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Mendoza - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="icons8-portfolio-16.png">
+</head>
+
+<body class="hidden">
+    <!-- SECCION LOADER -->
+    <div class="centrado" id="onload">
+        <div class="lds-ripple" bis_skin_checked="1">
+            <div bis_skin_checked="1"></div>
+            <div bis_skin_checked="1"></div>
+        </div>
+    </div>
+
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Alejandro</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio">Home</a></li>
+                    <li><a href="#sobremi">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <!-- <img src="img/hero.png" alt=""> -->
+            </div>
+
+            <h1>Alejandro Mendoza</h1>
+            <h2 class="background">Full Stack Developer <i class="fa-solid fa-code"></i></h2>
+            <div class="redes">
+                <a href="https://www.instagram.com/dewcrossward/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/AlejandroMendoza334"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/alejandro-mendoza-b7430b276/"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.upwork.com/freelancers/~018279465bf7c6109b"><i class="fa-brands fa-square-upwork"></i></a>
+            </div>
+        </div>
+
+        <div class="animated-lights"></div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section class="sobremi" id="sobremi">
+        <div class="contenido-seccion">
+            <h2>About Me</h2>
+            <p><span>Alejandro</span> is a passionate junior developer with a strong drive for continuous learning and
+                creating innovative solutions. With a foundation in both frontend and backend technologies, I'm 
+                committed to building a solid career in the tech field. I'm currently seeking remote opportunities
+                that will allow me to grow professionally, collaborate with dynamic teams, and contribute to impactful
+                software projects. I'm proactive, self-taught, and ready to take on challenges with
+                enthusiasm and dedication.</p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Professional Info</h3>
+                    <ul>
+                        <li>
+                            <strong>Email</strong>
+                            alejandromendoza6575757@gmail.com
+                        </li>
+                        <li>
+                            <strong>Location</strong>
+                            Venezuela
+                        </li> 
+                        <li>
+                            <strong>Languages</strong>
+                            Spanish Native, English Intermediate
+                        </li>
+                        <li>
+                            <strong>Role</strong>
+                            <span>FREELANCE DEVELOPER</span>
+                        </li>
+                        <li>
+                            <strong>Experience</strong>
+                            Self-taught Developer
+                        </li>
+                    </ul>
+                </div>
+
+            <a href="curriculum.pdf" download="curriculum">Download CV <i
+                    class="fa-solid fa-download"></i><span class="overlay"></span>
+            </a>
+        </div>
+    </section>
+    
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <h2>Technical Skills <i class="fa-solid fa-code"></i></h2>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="html5.png" alt="HTML5" height="40px">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons8-css-color-120.png" alt="CSS3" height="40px">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="javascript.png" alt="JavaScript" height="40px">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="react (2).png" alt="React" height="40px">
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="boostrap.png" alt="Bootstrap" height="40px">
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./tailwind-css.png" alt="Tailwind CSS" height="40px">
+                        <span>Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="node.png" alt="Node.js" height="40px">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="python.png" alt="Python" height="40px">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="php.png" alt="PHP" height="40px">
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="laravel.png" alt="Laravel" height="40px">
+                        <span>Laravel</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="express.png" alt="Express.js" height="40px">
+                        <span>Express.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="mongodb.png" alt="MongoDB" height="40px">
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Mobile Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="flutter.png" alt="Flutter" height="40px">
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="dart.png" alt="Dart" height="40px">
+                        <span>Dart</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="androidstudio.png" alt="Android Studio" height="40px">
+                        <span>Android Studio</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="firebase.png" alt="Firebase" height="40px">
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PROYECTOS  -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <h2>Featured Projects <i class="fa-solid fa-code"></i></h2>
+            <p class="projects-subtitle">A showcase of my recent work and technical skills</p>
+            
+            <div class="projects-grid">
+                <!-- Proyecto destacado 1 -->
+                <div class="card featured">
+                    <figure>
+                        <img src="miniauth.png" alt="MiniAuth API">
+                    </figure>
+                    <div class="contenido">
+                        <h3>MiniAuth API</h3>
+                        <p>A complete authentication system with JWT tokens, user registration, and secure login functionality.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <a href="https://github.com/AlejandroMendoza334/mini-auth-api" class="project-link">
+                            <i class="fa-brands fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto destacado 2 -->
+                <div class="card featured">
+                    <figure>
+                        <img src="./e-commerce.png" alt="E-commerce App">
+                    </figure>
+                    <div class="contenido">
+                        <h3>E-commerce App</h3>
+                        <p>A modern React-based e-commerce application with shopping cart functionality and responsive design.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                        <a href="https://e-commerse48239.netlify.app/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto destacado 3 -->
+                <div class="card featured">
+                    <figure>
+                        <img src="./boviframe.jpg" alt="BOVIFrame App">
+                    </figure>
+                    <div class="contenido">
+                        <h3>BOVIFrame Mobile App</h3>
+                        <p>A cross-platform mobile application built with Flutter, featuring modern UI and Firebase integration.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <i class="fa-brands fa-google-play"></i> Coming Soon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Otros proyectos -->
+                <div class="card">
+                    <figure>
+                        <img src="Apimovie.png" alt="Movie API">
+                    </figure>
+                    <div class="contenido">
+                        <h3>Movie API</h3>
+                        <p>Interactive movie database with search functionality and API integration.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/apimovie.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="mapa interactivo.png" alt="Interactive Map">
+                    </figure>
+                    <div class="contenido">
+                        <h3>Interactive Map</h3>
+                        <p>Dynamic map application with interactive features and location services.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/mapinteractive.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="./walletapp.png" alt="Wallet App">
+                    </figure>
+                    <div class="contenido">
+                        <h3>My Wallet App</h3>
+                        <p>Personal finance management application with expense tracking and budget planning.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                        </div>
+                        <a href="https://wonderful-biscuit-92eec4.netlify.app/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section class="contact" id="contact">
+        <form action="https://formspree.io/f/meoqogbo" method="POST">
+            <h2>Contact Me</h2>
+            <div class="input">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
+
+                    <div class="form-txt">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                    
+    <button>
+    <div class="svg-wrapper-1">
+        <div class="svg-wrapper">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+        >
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+            fill="currentColor"
+            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+            ></path>
+        </svg>
+        </div>
+    </div>
+    <span>Send</span>
+    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</body>
+
+</html>
