@@ -55,7 +55,7 @@ const translations = {
             },
             boviframe: {
                 title: "BOVIFrame App Móvil",
-                description: "Una aplicación móvil multiplataforma construida con Flutter, con interfaz moderna e integración con Firebase."
+                description: "Una aplicación móvil especializada en evaluaciones zootécnicas para ganado bovino. Desarrollada con Flutter, incluye herramientas para análisis de peso, condición corporal, registro de vacunas, seguimiento reproductivo y generación de reportes veterinarios con integración Firebase."
             },
             movieapi: {
                 title: "Movie API",
@@ -171,7 +171,7 @@ const translations = {
             },
             boviframe: {
                 title: "BOVIFrame Mobile App",
-                description: "A cross-platform mobile application built with Flutter, featuring modern UI and Firebase integration."
+                description: "A specialized mobile application for zootechnical evaluations of cattle. Built with Flutter, it includes tools for weight analysis, body condition scoring, vaccination records, reproductive tracking, and veterinary report generation with Firebase integration."
             },
             movieapi: {
                 title: "Movie API",
