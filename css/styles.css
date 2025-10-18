@@ -307,71 +307,6 @@ body {
   box-shadow: 0 10px 30px rgba(28, 182, 152, 0.4);
 }
 
-/* Botón Download CV completamente nuevo */
-.download-cv-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1rem;
-  transition: all 0.4s ease;
-  margin: 30px auto;
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.download-cv-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-.download-cv-btn .btn-content {
-  position: relative;
-  z-index: 2;
-    display: flex;
-    align-items: center;
-  gap: 10px;
-}
-
-.download-cv-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.download-cv-btn:hover::before {
-  opacity: 1;
-}
-
-.download-cv-btn:active {
-  transform: translateY(-2px);
-}
-
-.download-cv-btn i {
-  font-size: 1.1rem;
-  transition: transform 0.3s ease;
-}
-
-.download-cv-btn:hover i {
-  transform: rotate(360deg);
-}
 
 /* SECCION SKILLS */
 .skills {
@@ -754,20 +689,11 @@ button svg {
 }
 
 button:hover svg {
-  animation: float 1.5s ease-in-out infinite;
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
 
 button:hover span {
-  animation: float 1.5s ease-in-out infinite 0.2s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  transform: translateX(15em);
 }
 
 /* Responsive Design */
