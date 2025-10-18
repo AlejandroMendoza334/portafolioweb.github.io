@@ -29,61 +29,73 @@ document.addEventListener("click", function (event) {
 
 // SELECTOR DE IDIOMAS - DROPDOWN
 document.addEventListener("DOMContentLoaded", function () {
-  // Esperar un poco para asegurar que todos los elementos estén cargados
-  setTimeout(function() {
-    const langToggle = document.getElementById("langToggle");
-    const langDropdown = document.querySelector(".lang-dropdown");
-    const currentFlag = document.getElementById("currentFlag");
-    const currentLang = document.getElementById("currentLang");
-    const langOptionButtons = document.querySelectorAll(".lang-option");
+  const langToggle = document.getElementById("langToggle");
+  const langDropdown = document.querySelector(".lang-dropdown");
+  const currentFlag = document.getElementById("currentFlag");
+  const currentLang = document.getElementById("currentLang");
+  const langOptionButtons = document.querySelectorAll(".lang-option");
 
-    // Toggle dropdown
-    if (langToggle) {
-      langToggle.addEventListener("click", function (e) {
-        e.stopPropagation();
-        if (langDropdown) {
-          langDropdown.classList.toggle("open");
-        }
-      });
+  console.log("Elementos encontrados:", {
+    langToggle: !!langToggle,
+    langDropdown: !!langDropdown,
+    currentFlag: !!currentFlag,
+    currentLang: !!currentLang,
+    langOptionButtons: langOptionButtons.length
+  });
+
+  // Toggle dropdown
+  if (langToggle) {
+    langToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (langDropdown) {
+        langDropdown.classList.toggle("open");
+        console.log("Dropdown toggled");
+      }
+    });
+  }
+
+  // Cerrar dropdown al hacer click fuera
+  document.addEventListener("click", function (e) {
+    if (langDropdown && !langDropdown.contains(e.target)) {
+      langDropdown.classList.remove("open");
     }
+  });
 
-    // Cerrar dropdown al hacer click fuera
-    document.addEventListener("click", function (e) {
-      if (langDropdown && !langDropdown.contains(e.target)) {
+  // Manejar selección de idioma
+  langOptionButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const selectedLang = this.getAttribute("data-lang");
+      const flag = this.querySelector(".flag-icon");
+      const langText = this.querySelector("span").textContent;
+
+      console.log("Idioma seleccionado:", selectedLang, "Texto:", langText);
+
+      // Actualizar el toggle
+      if (currentFlag && currentLang) {
+        currentFlag.src = flag.src;
+        currentFlag.alt = flag.alt;
+        currentLang.textContent = selectedLang.toUpperCase();
+        console.log("Toggle actualizado:", currentLang.textContent);
+      }
+
+      // Cambiar idioma
+      if (typeof changeLanguage === "function") {
+        changeLanguage(selectedLang);
+      }
+
+      // Cerrar dropdown
+      if (langDropdown) {
         langDropdown.classList.remove("open");
       }
     });
+  });
 
-    // Manejar selección de idioma
-    langOptionButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const selectedLang = this.getAttribute("data-lang");
-        const flag = this.querySelector(".flag-icon");
-
-        // Actualizar el toggle
-        if (currentFlag && currentLang) {
-          currentFlag.src = flag.src;
-          currentFlag.alt = flag.alt;
-          currentLang.textContent = selectedLang.toUpperCase();
-        }
-
-        // Cambiar idioma
-        if (typeof changeLanguage === "function") {
-          changeLanguage(selectedLang);
-        }
-
-        // Cerrar dropdown
-        if (langDropdown) {
-          langDropdown.classList.remove("open");
-        }
-      });
-    });
-
-    // Establecer idioma activo basado en localStorage
-    const savedLang = localStorage.getItem("portfolio-lang") || "es";
-    
-    if (currentFlag && currentLang) {
-      currentLang.textContent = savedLang.toUpperCase();
-    }
-  }, 100);
+  // Establecer idioma activo basado en localStorage
+  const savedLang = localStorage.getItem("portfolio-lang") || "es";
+  console.log("Idioma guardado:", savedLang);
+  
+  if (currentFlag && currentLang) {
+    currentLang.textContent = savedLang.toUpperCase();
+    console.log("Idioma inicial establecido:", currentLang.textContent);
+  }
 });
