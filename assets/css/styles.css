@@ -93,6 +93,44 @@ body {
   transform: scale(1.05);
 }
 
+/* Selector de idiomas */
+.language-selector {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.lang-btn {
+  background: rgba(28, 182, 152, 0.1);
+  border: 1px solid rgba(28, 182, 152, 0.3);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lang-btn:hover {
+  background: rgba(28, 182, 152, 0.2);
+  border-color: rgba(28, 182, 152, 0.5);
+  transform: translateY(-2px);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, #1cb698, #00d4ff);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(28, 182, 152, 0.3);
+}
+
+.lang-btn i {
+  font-size: 0.8rem;
+}
+
 /* SECCION INICIO */
 .background {
     animation: animar-texto 4s ease-in-out infinite;
@@ -736,9 +774,19 @@ button:hover span {
     left: 0;
   }
 
-    .nav-responsive {
-        display: block;
+  .nav-responsive {
+    display: block;
     z-index: 101;
+  }
+
+  .language-selector {
+    margin-left: 10px;
+    gap: 5px;
+  }
+
+  .lang-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
 
   .contenido-banner h1 {

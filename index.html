@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" href="icons8-portfolio-16.png">
 </head>
 
@@ -35,6 +35,16 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            
+            <!-- Selector de idiomas -->
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="es">
+                    <i class="fas fa-flag"></i> ES
+                </button>
+                <button class="lang-btn" data-lang="en">
+                    <i class="fas fa-flag"></i> EN
+                </button>
+            </div>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -114,79 +124,79 @@
                 <h3>Frontend Development</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <img src="html5.png" alt="HTML5" height="40px">
+                        <img src="assets/images/tech/html5.png" alt="HTML5" height="40px">
                         <span>HTML5</span>
                     </div>
                     <div class="skill-item">
-                        <img src="icons8-css-color-120.png" alt="CSS3" height="40px">
+                        <img src="assets/images/tech/icons8-css-color-120.png" alt="CSS3" height="40px">
                         <span>CSS3</span>
                     </div>
                     <div class="skill-item">
-                        <img src="javascript.png" alt="JavaScript" height="40px">
+                        <img src="assets/images/tech/javascript.png" alt="JavaScript" height="40px">
                         <span>JavaScript</span>
                     </div>
                     <div class="skill-item">
-                        <img src="react (2).png" alt="React" height="40px">
+                        <img src="assets/images/tech/react (2).png" alt="React" height="40px">
                         <span>React</span>
                     </div>
                     <div class="skill-item">
-                        <img src="boostrap.png" alt="Bootstrap" height="40px">
+                        <img src="assets/images/tech/boostrap.png" alt="Bootstrap" height="40px">
                         <span>Bootstrap</span>
                     </div>
                     <div class="skill-item">
-                        <img src="./tailwind-css.png" alt="Tailwind CSS" height="40px">
+                        <img src="assets/images/tech/tailwind-css.png" alt="Tailwind CSS" height="40px">
                         <span>Tailwind CSS</span>
                     </div>
-                </div>
             </div>
+        </div>
 
             <div class="skill-category">
                 <h3>Backend Development</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <img src="node.png" alt="Node.js" height="40px">
+                        <img src="assets/images/tech/node.png" alt="Node.js" height="40px">
                         <span>Node.js</span>
                     </div>
                     <div class="skill-item">
-                        <img src="python.png" alt="Python" height="40px">
+                        <img src="assets/images/tech/python.png" alt="Python" height="40px">
                         <span>Python</span>
                     </div>
                     <div class="skill-item">
-                        <img src="php.png" alt="PHP" height="40px">
+                        <img src="assets/images/tech/php.png" alt="PHP" height="40px">
                         <span>PHP</span>
                     </div>
                     <div class="skill-item">
-                        <img src="laravel.png" alt="Laravel" height="40px">
+                        <img src="assets/images/tech/laravel.png" alt="Laravel" height="40px">
                         <span>Laravel</span>
                     </div>
                     <div class="skill-item">
-                        <img src="express.png" alt="Express.js" height="40px">
+                        <img src="assets/images/tech/express.png" alt="Express.js" height="40px">
                         <span>Express.js</span>
                     </div>
                     <div class="skill-item">
-                        <img src="mongodb.png" alt="MongoDB" height="40px">
+                        <img src="assets/images/tech/mongodb.png" alt="MongoDB" height="40px">
                         <span>MongoDB</span>
                     </div>
-                </div>
             </div>
+        </div>
 
             <div class="skill-category">
                 <h3>Mobile Development</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <img src="flutter.png" alt="Flutter" height="40px">
+                        <img src="assets/images/tech/flutter.png" alt="Flutter" height="40px">
                         <span>Flutter</span>
                     </div>
                     <div class="skill-item">
-                        <img src="dart.png" alt="Dart" height="40px">
+                        <img src="assets/images/tech/dart.png" alt="Dart" height="40px">
                         <span>Dart</span>
                     </div>
                     <div class="skill-item">
-                        <img src="androidstudio.png" alt="Android Studio" height="40px">
+                        <img src="assets/images/tech/androidstudio.png" alt="Android Studio" height="40px">
                         <span>Android Studio</span>
                     </div>
                     <div class="skill-item">
-                        <img src="firebase.png" alt="Firebase" height="40px">
+                        <img src="assets/images/tech/firebase.png" alt="Firebase" height="40px">
                         <span>Firebase</span>
                     </div>
                 </div>
@@ -199,14 +209,14 @@
         <div class="projects-container">
             <h2>Featured Projects <i class="fa-solid fa-code"></i></h2>
             <p class="projects-subtitle">A showcase of my recent work and technical skills</p>
-            
+
             <div class="projects-grid">
                 <!-- Proyecto destacado 1 -->
                 <div class="card featured">
                     <figure>
-                        <img src="miniauth.png" alt="MiniAuth API">
+                        <img src="assets/images/projects/miniauth.png" alt="MiniAuth API">
                     </figure>
-                    <div class="contenido">
+                <div class="contenido">
                         <h3>MiniAuth API</h3>
                         <p>A complete authentication system with JWT tokens, user registration, and secure login functionality.</p>
                         <div class="tech-stack">
@@ -224,9 +234,9 @@
                 <!-- Proyecto destacado 2 -->
                 <div class="card featured">
                     <figure>
-                        <img src="./e-commerce.png" alt="E-commerce App">
+                        <img src="assets/images/projects/e-commerce.png" alt="E-commerce App">
                     </figure>
-                    <div class="contenido">
+                <div class="contenido">
                         <h3>E-commerce App</h3>
                         <p>A modern React-based e-commerce application with shopping cart functionality and responsive design.</p>
                         <div class="tech-stack">
@@ -243,9 +253,9 @@
                 <!-- Proyecto destacado 3 -->
                 <div class="card featured">
                     <figure>
-                        <img src="./boviframe.jpg" alt="BOVIFrame App">
+                        <img src="assets/images/projects/boviframe.jpg" alt="BOVIFrame App">
                     </figure>
-                    <div class="contenido">
+                <div class="contenido">
                         <h3>BOVIFrame Mobile App</h3>
                         <p>A cross-platform mobile application built with Flutter, featuring modern UI and Firebase integration.</p>
                         <div class="tech-stack">
@@ -260,11 +270,11 @@
                 </div>
 
                 <!-- Otros proyectos -->
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="Apimovie.png" alt="Movie API">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Movie API</h3>
                         <p>Interactive movie database with search functionality and API integration.</p>
                         <div class="tech-stack">
@@ -279,11 +289,11 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="mapa interactivo.png" alt="Interactive Map">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Interactive Map</h3>
                         <p>Dynamic map application with interactive features and location services.</p>
                         <div class="tech-stack">
@@ -297,11 +307,11 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="./walletapp.png" alt="Wallet App">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>My Wallet App</h3>
                         <p>Personal finance management application with expense tracking and budget planning.</p>
                         <div class="tech-stack">
@@ -315,11 +325,11 @@
                 </div>
 
                 <!-- Proyectos adicionales -->
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="galeria.png" alt="Gallery">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Gallery</h3>
                         <p>Interactive photo gallery with modern design and smooth animations.</p>
                         <div class="tech-stack">
@@ -331,13 +341,13 @@
                             <i class="fa-solid fa-external-link-alt"></i> View Demo
                         </a>
                     </div>
-                </div>
+            </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="tab bar.png" alt="Tab Bar">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Tab Bar</h3>
                         <p>Modern tab navigation component with smooth transitions and responsive design.</p>
                         <div class="tech-stack">
@@ -351,11 +361,11 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="scrolling menu.png" alt="Scrolling Menu">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Scrolling Menu</h3>
                         <p>Dynamic scrolling navigation menu with smooth animations and modern UI.</p>
                         <div class="tech-stack">
@@ -367,13 +377,13 @@
                             <i class="fa-solid fa-external-link-alt"></i> View Demo
                         </a>
                     </div>
-                </div>
+            </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="portfolio design.png" alt="Portfolio Design">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Portfolio Design</h3>
                         <p>Creative portfolio template with modern design and responsive layout.</p>
                         <div class="tech-stack">
@@ -387,11 +397,11 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="slider.png" alt="Slider">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Image Slider</h3>
                         <p>Interactive image slider with smooth transitions and touch support.</p>
                         <div class="tech-stack">
@@ -405,11 +415,11 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="calculadora.png" alt="Calculator">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Calculator</h3>
                         <p>Modern calculator application with clean interface and full functionality.</p>
                         <div class="tech-stack">
@@ -423,11 +433,11 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <figure>
+            <div class="card">
+                <figure>
                         <img src="pistazie web.png" alt="Pistazie Web">
-                    </figure>
-                    <div class="contenido">
+                </figure>
+                <div class="contenido">
                         <h3>Pistazie Web</h3>
                         <p>Business website with modern design and responsive layout for local business.</p>
                         <div class="tech-stack">
@@ -441,7 +451,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+                </div>
     </section>
 
     <!-- SECCION CONTACTO -->
@@ -492,7 +502,8 @@
     </section>
 
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/translations.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </body>
 
