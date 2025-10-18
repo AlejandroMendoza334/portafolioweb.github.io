@@ -26,7 +26,7 @@ body {
   top: 0;
   left: 0;
   z-index: 99;
-  border-bottom: 1px solid rgba(28, 182, 152, 0.2);
+  border-bottom: 1px solid rgba(28, 182, 152, 0.1);
 }
 
 .contenedor-header header {
@@ -781,6 +781,7 @@ button .svg-wrapper,
 button span {
   position: relative;
   z-index: 2;
+  transition: all 0.5s ease;
 }
 
 button:hover {
@@ -806,7 +807,8 @@ button:hover svg {
 }
 
 button:hover span {
-  transform: translateX(15em);
+  transform: translateX(-100vw);
+  opacity: 0;
 }
 
 @keyframes send-icon-float {
