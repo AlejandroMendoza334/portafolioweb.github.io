@@ -27,11 +27,14 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// Funcionalidad del selector de idiomas - Dropdown SIMPLE
+// DROPDOWN DE IDIOMAS - COMPLETAMENTE REHECHO
 document.addEventListener("DOMContentLoaded", function () {
   const langToggle = document.getElementById("langToggle");
   const langDropdown = document.querySelector(".lang-dropdown");
+  const langOptions = document.getElementById("langOptions");
   const langOptionButtons = document.querySelectorAll(".lang-option");
+  const langText = document.getElementById("langText");
+  const langFlag = document.getElementById("langFlag");
 
   // Toggle dropdown
   langToggle.addEventListener("click", function (e) {
@@ -59,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Actualizar el toggle con la selección
       const flag = this.querySelector(".flag-icon");
-      const toggleFlag = langToggle.querySelector(".flag-icon");
-      const toggleText = document.getElementById("langText");
+      const text = this.querySelector("span");
 
-      toggleFlag.src = flag.src;
-      toggleFlag.alt = flag.alt;
-      toggleText.textContent = selectedLang.toUpperCase();
+      // Actualizar bandera y texto del toggle
+      langFlag.src = flag.src;
+      langFlag.alt = flag.alt;
+      langText.textContent = selectedLang.toUpperCase();
 
       // Cambiar idioma
       changeLanguage(selectedLang);
@@ -81,13 +84,12 @@ document.addEventListener("DOMContentLoaded", function () {
     langOptionButtons.forEach((btn) => btn.classList.remove("active"));
     activeOption.classList.add("active");
 
-    // Actualizar el toggle
+    // Actualizar el toggle con el idioma guardado
     const flag = activeOption.querySelector(".flag-icon");
-    const toggleFlag = langToggle.querySelector(".flag-icon");
-    const toggleText = document.getElementById("langText");
+    const text = activeOption.querySelector("span");
 
-    toggleFlag.src = flag.src;
-    toggleFlag.alt = flag.alt;
-    toggleText.textContent = savedLang.toUpperCase();
+    langFlag.src = flag.src;
+    langFlag.alt = flag.alt;
+    langText.textContent = savedLang.toUpperCase();
   }
 });
