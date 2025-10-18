@@ -35,11 +35,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentLang = document.getElementById("currentLang");
   const langOptionButtons = document.querySelectorAll(".lang-option");
 
+  console.log("Elementos encontrados:", {
+    langToggle: !!langToggle,
+    langDropdown: !!langDropdown,
+    currentFlag: !!currentFlag,
+    currentLang: !!currentLang,
+    langOptionButtons: langOptionButtons.length
+  });
+
   // Toggle dropdown
   if (langToggle) {
     langToggle.addEventListener("click", function (e) {
       e.stopPropagation();
-      langDropdown.classList.toggle("open");
+      if (langDropdown) {
+        langDropdown.classList.toggle("open");
+      }
     });
   }
 
@@ -56,15 +66,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectedLang = this.getAttribute("data-lang");
       const flag = this.querySelector(".flag-icon");
 
+      console.log("Idioma seleccionado:", selectedLang);
+
       // Actualizar el toggle
       if (currentFlag && currentLang) {
         currentFlag.src = flag.src;
         currentFlag.alt = flag.alt;
         currentLang.textContent = selectedLang.toUpperCase();
+        console.log("Toggle actualizado:", currentLang.textContent);
       }
 
       // Cambiar idioma
-      if (typeof changeLanguage === 'function') {
+      if (typeof changeLanguage === "function") {
         changeLanguage(selectedLang);
       }
 
@@ -77,11 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Establecer idioma activo basado en localStorage
   const savedLang = localStorage.getItem("portfolio-lang") || "es";
-  const activeOption = document.querySelector(`[data-lang="${savedLang}"]`);
-  if (activeOption && currentFlag && currentLang) {
-    const flag = activeOption.querySelector(".flag-icon");
-    currentFlag.src = flag.src;
-    currentFlag.alt = flag.alt;
+  console.log("Idioma guardado:", savedLang);
+  
+  if (currentFlag && currentLang) {
     currentLang.textContent = savedLang.toUpperCase();
+    console.log("Idioma inicial establecido:", currentLang.textContent);
   }
 });
