@@ -27,7 +27,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// Funcionalidad del selector de idiomas - Dropdown
+// Funcionalidad del selector de idiomas - Dropdown SIMPLE
 document.addEventListener("DOMContentLoaded", function () {
   const langToggle = document.getElementById("langToggle");
   const langDropdown = document.querySelector(".lang-dropdown");
