@@ -27,63 +27,67 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// SELECTOR DE IDIOMAS - DROPDOWN
+// SELECTOR DE IDIOMAS - Slider
 document.addEventListener("DOMContentLoaded", function () {
   const langToggle = document.getElementById("langToggle");
-  const langDropdown = document.querySelector(".lang-dropdown");
-  const currentFlag = document.getElementById("currentFlag");
-  const currentLang = document.getElementById("currentLang");
-  const langOptionButtons = document.querySelectorAll(".lang-option");
+  const currentLangText = document.getElementById("currentLangText");
 
-  // Toggle dropdown - simplificado
-  if (langToggle) {
-    langToggle.addEventListener("click", function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      if (langDropdown) {
-        langDropdown.classList.toggle("open");
-      }
-    });
+  // Establecer estado inicial
+  const savedLang = localStorage.getItem("portfolio-lang") || "es";
+  if (savedLang === "en") {
+    langToggle.checked = true;
+    currentLangText.textContent = "EN";
+  } else {
+    langToggle.checked = false;
+    currentLangText.textContent = "ES";
   }
 
-  // Cerrar dropdown al hacer click fuera
-  document.addEventListener("click", function (e) {
-    if (langDropdown && !langDropdown.contains(e.target)) {
-      langDropdown.classList.remove("open");
+  // Manejar cambio de idioma
+  langToggle.addEventListener("change", function () {
+    const selectedLang = this.checked ? "en" : "es";
+    currentLangText.textContent = selectedLang.toUpperCase();
+
+    // Cambiar idioma
+    if (typeof changeLanguage === "function") {
+      changeLanguage(selectedLang);
     }
   });
+});
 
-  // Manejar selección de idioma - simplificado
-  langOptionButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      e.stopPropagation();
+// BOTÓN DE ENVÍO SIMPLE
+document.addEventListener("DOMContentLoaded", function () {
+  const sendBtn = document.getElementById("sendBtn");
+  const form = document.querySelector("form");
+
+  if (sendBtn && form) {
+    // Manejar envío del formulario
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      
-      const selectedLang = this.getAttribute("data-lang");
-      const flag = this.querySelector(".flag-icon");
 
-      // Actualizar el toggle inmediatamente
-      if (currentFlag && currentLang) {
-        currentFlag.src = flag.src;
-        currentFlag.alt = flag.alt;
-        currentLang.textContent = selectedLang.toUpperCase();
-      }
+      // Cambiar texto del botón
+      const btnText = sendBtn.querySelector("span");
+      const currentLang = localStorage.getItem("portfolio-lang") || "es";
+      const sendingText = currentLang === "es" ? "Enviando..." : "Sending...";
+      const sentText = currentLang === "es" ? "¡Enviado!" : "Sent!";
+      const sendText = currentLang === "es" ? "Enviar" : "Send";
 
-      // Cambiar idioma
-      if (typeof changeLanguage === "function") {
-        changeLanguage(selectedLang);
-      }
+      btnText.textContent = sendingText;
+      sendBtn.disabled = true;
 
-      // Cerrar dropdown
-      if (langDropdown) {
-        langDropdown.classList.remove("open");
-      }
+      // Simular envío (reemplazar con tu lógica real)
+      setTimeout(() => {
+        btnText.textContent = sentText;
+        sendBtn.style.background = "linear-gradient(135deg, #4ecdc4, #44a08d)";
+
+        // Resetear después de 2 segundos
+        setTimeout(() => {
+          btnText.textContent = sendText;
+          sendBtn.style.background =
+            "linear-gradient(135deg, #1cb698, #00d4ff)";
+          sendBtn.disabled = false;
+          form.reset();
+        }, 2000);
+      }, 2000);
     });
-  });
-
-  // Establecer idioma inicial
-  const savedLang = localStorage.getItem("portfolio-lang") || "es";
-  if (currentLang) {
-    currentLang.textContent = savedLang.toUpperCase();
   }
 });

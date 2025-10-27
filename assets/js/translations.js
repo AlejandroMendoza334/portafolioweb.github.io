@@ -267,7 +267,9 @@ function changeLanguage(lang) {
   if (currentLang === lang) return;
 
   localStorage.setItem("portfolio-lang", lang);
+  console.log("Changing language to:", lang);
   updateContent(lang);
+  forceUpdateAllContent(lang);
 }
 
 // Función para actualizar el contenido
@@ -275,55 +277,181 @@ function updateContent(lang) {
   const t = translations[lang];
 
   // Actualizar navegación
-  document.querySelectorAll("nav ul li a").forEach((link, index) => {
-    const navItems = ["home", "about", "skills", "projects", "contact"];
+  const navLinks = document.querySelectorAll("nav ul li a");
+  const navItems = ["home", "about", "skills", "projects", "contact"];
+
+  navLinks.forEach((link, index) => {
     if (navItems[index]) {
       link.textContent = t.nav[navItems[index]];
     }
   });
 
   // Actualizar hero
-  document.querySelector(".contenido-banner h1").textContent = t.hero.name;
-  document.querySelector(".contenido-banner h2").textContent = t.hero.title;
+  const heroName = document.querySelector(".contenido-banner h1");
+  const heroTitle = document.querySelector(".contenido-banner h2");
+
+  if (heroName) heroName.textContent = t.hero.name;
+  if (heroTitle) {
+    // Mantener el ícono si existe
+    const icon = heroTitle.querySelector("i");
+    if (icon) {
+      heroTitle.innerHTML = t.hero.title + " " + icon.outerHTML;
+    } else {
+      heroTitle.textContent = t.hero.title;
+    }
+  }
 
   // Actualizar about
-  document.querySelector(".sobremi h2").textContent = t.about.title;
-  document.querySelector(".sobremi .contenido-seccion p").innerHTML =
-    t.about.description;
-  document.querySelector(".sobremi .fila .col h3").textContent =
-    t.about.professionalInfo;
+  const aboutTitle = document.querySelector(".sobremi h2");
+  const aboutDesc = document.querySelector(".sobremi .contenido-seccion p");
+  const aboutInfo = document.querySelector(".sobremi .fila .col h3");
+
+  if (aboutTitle) aboutTitle.textContent = t.about.title;
+  if (aboutDesc) aboutDesc.innerHTML = t.about.description;
+  if (aboutInfo) aboutInfo.textContent = t.about.professionalInfo;
+
+  // Actualizar información profesional específica
+  const professionalInfo = document.querySelector(".sobremi .fila .col ul");
+  if (professionalInfo) {
+    const listItems = professionalInfo.querySelectorAll("li");
+    listItems.forEach((item, index) => {
+      const strong = item.querySelector("strong");
+      if (strong) {
+        const labelMap = {
+          0: t.about.email,
+          1: t.about.location,
+          2: t.about.languages,
+          3: t.about.role,
+          4: t.about.experience,
+        };
+        if (labelMap[index]) {
+          strong.textContent = labelMap[index];
+        }
+      }
+
+      // Actualizar valores específicos
+      if (index === 1) {
+        const text = item.textContent.trim();
+        if (text.includes("San Diego, Carabobo, Venezuela")) {
+          item.innerHTML = `<strong>${t.about.location}</strong> ${t.about.locationValue}`;
+        }
+      } else if (index === 2) {
+        const text = item.textContent.trim();
+        if (text.includes("Spanish Native, English Intermediate")) {
+          item.innerHTML = `<strong>${t.about.languages}</strong> ${t.about.languagesValue}`;
+        }
+      } else if (index === 3) {
+        const span = item.querySelector("span");
+        if (span) {
+          span.textContent = t.about.roleValue;
+        }
+      } else if (index === 4) {
+        const text = item.textContent.trim();
+        if (text.includes("Self-taught Developer")) {
+          item.innerHTML = `<strong>${t.about.experience}</strong> ${t.about.experienceValue}`;
+        }
+      }
+    });
+  }
+
+  // Actualizar información profesional con detección más robusta
+  const professionalInfo2 = document.querySelector(".sobremi .fila .col");
+  if (professionalInfo2) {
+    const listItems2 = professionalInfo2.querySelectorAll("li");
+    listItems2.forEach((item, index) => {
+      const strong = item.querySelector("strong");
+      if (strong) {
+        const currentText = strong.textContent.trim();
+
+        // Mapear texto actual a traducción
+        const textMap = {
+          Email: t.about.email,
+          Location: t.about.location,
+          Languages: t.about.languages,
+          Role: t.about.role,
+          Experience: t.about.experience,
+          Correo: t.about.email,
+          Ubicación: t.about.location,
+          Idiomas: t.about.languages,
+          Rol: t.about.role,
+          Experiencia: t.about.experience,
+        };
+
+        if (textMap[currentText]) {
+          strong.textContent = textMap[currentText];
+        }
+      }
+
+      // Actualizar valores específicos con detección más robusta
+      const itemText = item.textContent.trim();
+
+      if (itemText.includes("alejandromendoza6575757@gmail.com")) {
+        item.innerHTML = `<strong>${t.about.email}</strong> alejandromendoza6575757@gmail.com`;
+      } else if (itemText.includes("San Diego, Carabobo, Venezuela")) {
+        item.innerHTML = `<strong>${t.about.location}</strong> ${t.about.locationValue}`;
+      } else if (
+        itemText.includes("Spanish Native, English Intermediate") ||
+        itemText.includes("Español Nativo, Inglés Intermedio")
+      ) {
+        item.innerHTML = `<strong>${t.about.languages}</strong> ${t.about.languagesValue}`;
+      } else if (
+        itemText.includes("FREELANCE DEVELOPER") ||
+        itemText.includes("DESARROLLADOR FREELANCE")
+      ) {
+        const span = item.querySelector("span");
+        if (span) {
+          span.textContent = t.about.roleValue;
+        }
+      } else if (
+        itemText.includes("Self-taught Developer") ||
+        itemText.includes("Desarrollador Autodidacta")
+      ) {
+        item.innerHTML = `<strong>${t.about.experience}</strong> ${t.about.experienceValue}`;
+      }
+    });
+  }
 
   // Actualizar skills
-  document.querySelector(".skills h2").textContent = t.skills.title;
-  document.querySelectorAll(".skill-category h3")[0].textContent =
-    t.skills.frontend;
-  document.querySelectorAll(".skill-category h3")[1].textContent =
-    t.skills.backend;
-  document.querySelectorAll(".skill-category h3")[2].textContent =
-    t.skills.mobile;
+  const skillsTitle = document.querySelector(".skills h2");
+  const skillCategories = document.querySelectorAll(".skill-category h3");
 
-  // Actualizar projects
-  const projectsTitle = document.querySelector(".projects h2");
+  if (skillsTitle) skillsTitle.textContent = t.skills.title;
+  if (skillCategories[0]) skillCategories[0].textContent = t.skills.frontend;
+  if (skillCategories[1]) skillCategories[1].textContent = t.skills.backend;
+  if (skillCategories[2]) skillCategories[2].textContent = t.skills.mobile;
+
+  // Actualizar projects - FORZAR ACTUALIZACIÓN
+  const projectsTitle = document.querySelector(".projects-container h2");
   const projectsSubtitle = document.querySelector(".projects-subtitle");
 
   if (projectsTitle) {
     projectsTitle.textContent = t.projects.title;
+    console.log("Projects title updated to:", t.projects.title);
+  } else {
+    console.log("Projects title NOT FOUND");
   }
   if (projectsSubtitle) {
     projectsSubtitle.textContent = t.projects.subtitle;
+    console.log("Projects subtitle updated to:", t.projects.subtitle);
+  } else {
+    console.log("Projects subtitle NOT FOUND");
   }
 
-  // Actualizar títulos y descripciones de proyectos
+  // Actualizar títulos y descripciones de proyectos - FORZAR ACTUALIZACIÓN
   const projectCards = document.querySelectorAll(".card");
-  projectCards.forEach((card) => {
+  console.log("Found", projectCards.length, "project cards");
+
+  projectCards.forEach((card, index) => {
     const title = card.querySelector("h3");
     const description = card.querySelector("p");
 
     if (title && description) {
       const titleText = title.textContent.trim();
+      console.log(`Card ${index}: "${titleText}"`);
 
-      // Mapear títulos a traducciones
+      // Mapear títulos a traducciones (incluyendo traducciones inversas)
       const titleMap = {
+        // Títulos en inglés
         "MiniAuth API": t.projects.miniauth,
         "E-commerce App": t.projects.ecommerce,
         "BOVIFrame Mobile App": t.projects.boviframe,
@@ -337,49 +465,339 @@ function updateContent(lang) {
         "Image Slider": t.projects.imageSlider,
         Calculator: t.projects.calculator,
         "Pistazie Web": t.projects.pistazie,
+        // Títulos ya traducidos al español
+        "App E-commerce": t.projects.ecommerce,
+        "BOVIFrame App Móvil": t.projects.boviframe,
+        "Mapa Interactivo": t.projects.interactiveMap,
+        Galería: t.projects.gallery,
+        "Menú Deslizante": t.projects.scrollingMenu,
+        "Diseño de Portfolio": t.projects.portfolioDesign,
+        "Slider de Imágenes": t.projects.imageSlider,
+        Calculadora: t.projects.calculator,
       };
 
       const translation = titleMap[titleText];
       if (translation) {
         title.textContent = translation.title;
         description.textContent = translation.description;
+        console.log(`Updated card ${index}: "${translation.title}"`);
+      } else {
+        console.log(`No translation found for: "${titleText}"`);
       }
     }
   });
 
-  // Actualizar botones de proyectos
-  document.querySelectorAll(".project-link").forEach((link) => {
+  // Actualizar botones de proyectos con detección más robusta - FORZAR ACTUALIZACIÓN
+  const projectLinks = document.querySelectorAll(".project-link");
+  console.log("Found", projectLinks.length, "project links");
+
+  projectLinks.forEach((link, index) => {
     const text = link.textContent.trim();
-    if (text.includes("View Demo")) {
+    const icon = link.querySelector("i");
+    const iconClass = icon ? icon.className : "";
+
+    console.log(`Link ${index}: "${text}"`);
+
+    if (text.includes("View Demo") || text.includes("Ver Demo")) {
       link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewDemo}`;
-    } else if (text.includes("View Code")) {
-      link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewCode}`;
+      console.log(`Updated link ${index} to: ${t.projects.viewDemo}`);
+    } else if (text.includes("View Code") || text.includes("Ver Código")) {
+      link.innerHTML = `<i class="fa-brands fa-github"></i> ${t.projects.viewCode}`;
+      console.log(`Updated link ${index} to: ${t.projects.viewCode}`);
+    } else if (text.includes("Live Demo") || text.includes("Demo en Vivo")) {
+      link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.liveDemo}`;
+      console.log(`Updated link ${index} to: ${t.projects.liveDemo}`);
+    } else if (text.includes("Coming Soon") || text.includes("Próximamente")) {
+      link.innerHTML = `<i class="fa-brands fa-google-play"></i> ${t.projects.comingSoon}`;
+      console.log(`Updated link ${index} to: ${t.projects.comingSoon}`);
     }
   });
 
   // Actualizar contact
-  document.querySelector(".contact h2").textContent = t.contact.title;
-  document.querySelector('label[for="name"]').textContent = t.contact.name;
-  document.querySelector('label[for="phone"]').textContent = t.contact.phone;
-  document.querySelector('label[for="email"]').textContent = t.contact.email;
-  document.querySelector('label[for="message"]').textContent =
-    t.contact.message;
-  document.querySelector("button span").textContent = t.contact.send;
-  document.querySelectorAll(".form-txt a")[0].textContent =
-    t.contact.privacyPolicy;
-  document.querySelectorAll(".form-txt a")[1].textContent =
-    t.contact.termsConditions;
+  const contactTitle = document.querySelector(".contact h2");
+  if (contactTitle) contactTitle.textContent = t.contact.title;
+
+  const nameLabel = document.querySelector('label[for="name"]');
+  if (nameLabel) nameLabel.textContent = t.contact.name;
+
+  const phoneLabel = document.querySelector('label[for="phone"]');
+  if (phoneLabel) phoneLabel.textContent = t.contact.phone;
+
+  const emailLabel = document.querySelector('label[for="email"]');
+  if (emailLabel) emailLabel.textContent = t.contact.email;
+
+  const messageLabel = document.querySelector('label[for="message"]');
+  if (messageLabel) messageLabel.textContent = t.contact.message;
+
+  const sendButton = document.querySelector("button span");
+  if (sendButton) sendButton.textContent = t.contact.send;
+
+  const formLinks = document.querySelectorAll(".form-txt a");
+  if (formLinks.length >= 2) {
+    formLinks[0].textContent = t.contact.privacyPolicy;
+    formLinks[1].textContent = t.contact.termsConditions;
+  }
 
   // Actualizar placeholders
-  document.querySelector('input[name="name"]').placeholder = t.contact.name;
-  document.querySelector('input[name="phone"]').placeholder = t.contact.phone;
-  document.querySelector('input[name="email"]').placeholder = t.contact.email;
-  document.querySelector('textarea[name="message"]').placeholder =
-    t.contact.message;
+  const nameInput = document.querySelector('input[name="name"]');
+  if (nameInput) nameInput.placeholder = t.contact.name;
+
+  const phoneInput = document.querySelector('input[name="phone"]');
+  if (phoneInput) phoneInput.placeholder = t.contact.phone;
+
+  const emailInput = document.querySelector('input[name="email"]');
+  if (emailInput) emailInput.placeholder = t.contact.email;
+
+  const messageTextarea = document.querySelector('textarea[name="message"]');
+  if (messageTextarea) messageTextarea.placeholder = t.contact.message;
+}
+
+// Función para forzar actualización completa
+function forceUpdateAllContent(lang) {
+  const t = translations[lang];
+
+  // Forzar actualización de todos los elementos
+  setTimeout(() => {
+    // Actualizar navegación
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const navItems = ["home", "about", "skills", "projects", "contact"];
+    navLinks.forEach((link, index) => {
+      if (navItems[index]) {
+        link.textContent = t.nav[navItems[index]];
+      }
+    });
+
+    // Actualizar hero
+    const heroName = document.querySelector(".contenido-banner h1");
+    const heroTitle = document.querySelector(".contenido-banner h2");
+
+    if (heroName) heroName.textContent = t.hero.name;
+    if (heroTitle) {
+      // Mantener el ícono si existe
+      const icon = heroTitle.querySelector("i");
+      if (icon) {
+        heroTitle.innerHTML = t.hero.title + " " + icon.outerHTML;
+      } else {
+        heroTitle.textContent = t.hero.title;
+      }
+    }
+
+    // Actualizar about
+    const aboutTitle = document.querySelector(".sobremi h2");
+    const aboutDesc = document.querySelector(".sobremi .contenido-seccion p");
+    const aboutInfo = document.querySelector(".sobremi .fila .col h3");
+
+    if (aboutTitle) aboutTitle.textContent = t.about.title;
+    if (aboutDesc) aboutDesc.innerHTML = t.about.description;
+    if (aboutInfo) aboutInfo.textContent = t.about.professionalInfo;
+
+    // Actualizar información profesional con múltiples intentos
+    const professionalInfo = document.querySelector(".sobremi .fila .col ul");
+    if (professionalInfo) {
+      const listItems = professionalInfo.querySelectorAll("li");
+      listItems.forEach((item, index) => {
+        const strong = item.querySelector("strong");
+        if (strong) {
+          const labelMap = {
+            0: t.about.email,
+            1: t.about.location,
+            2: t.about.languages,
+            3: t.about.role,
+            4: t.about.experience,
+          };
+          if (labelMap[index]) {
+            strong.textContent = labelMap[index];
+          }
+        }
+
+        // Actualizar valores específicos
+        const itemText = item.textContent.trim();
+        if (itemText.includes("alejandromendoza6575757@gmail.com")) {
+          item.innerHTML = `<strong>${t.about.email}</strong> alejandromendoza6575757@gmail.com`;
+        } else if (itemText.includes("San Diego, Carabobo, Venezuela")) {
+          item.innerHTML = `<strong>${t.about.location}</strong> ${t.about.locationValue}`;
+        } else if (
+          itemText.includes("Spanish Native, English Intermediate") ||
+          itemText.includes("Español Nativo, Inglés Intermedio")
+        ) {
+          item.innerHTML = `<strong>${t.about.languages}</strong> ${t.about.languagesValue}`;
+        } else if (
+          itemText.includes("FREELANCE DEVELOPER") ||
+          itemText.includes("DESARROLLADOR FREELANCE")
+        ) {
+          const span = item.querySelector("span");
+          if (span) span.textContent = t.about.roleValue;
+        } else if (
+          itemText.includes("Self-taught Developer") ||
+          itemText.includes("Desarrollador Autodidacta")
+        ) {
+          item.innerHTML = `<strong>${t.about.experience}</strong> ${t.about.experienceValue}`;
+        }
+      });
+    }
+
+    // Actualizar skills
+    const skillsTitle = document.querySelector(".skills h2");
+    const skillCategories = document.querySelectorAll(".skill-category h3");
+
+    if (skillsTitle) skillsTitle.textContent = t.skills.title;
+    if (skillCategories[0]) skillCategories[0].textContent = t.skills.frontend;
+    if (skillCategories[1]) skillCategories[1].textContent = t.skills.backend;
+    if (skillCategories[2]) skillCategories[2].textContent = t.skills.mobile;
+
+    // Actualizar projects
+    const projectsTitle = document.querySelector(".projects-container h2");
+    const projectsSubtitle = document.querySelector(".projects-subtitle");
+
+    if (projectsTitle) {
+      projectsTitle.textContent = t.projects.title;
+      console.log(
+        "Force update - Projects title updated to:",
+        t.projects.title
+      );
+    } else {
+      console.log("Force update - Projects title NOT FOUND");
+    }
+    if (projectsSubtitle) {
+      projectsSubtitle.textContent = t.projects.subtitle;
+      console.log(
+        "Force update - Projects subtitle updated to:",
+        t.projects.subtitle
+      );
+    } else {
+      console.log("Force update - Projects subtitle NOT FOUND");
+    }
+
+    // Actualizar títulos y descripciones de proyectos
+    const projectCards = document.querySelectorAll(".card");
+    console.log("Force update - Found", projectCards.length, "project cards");
+
+    projectCards.forEach((card, index) => {
+      const title = card.querySelector("h3");
+      const description = card.querySelector("p");
+
+      if (title && description) {
+        const titleText = title.textContent.trim();
+        console.log(`Force update - Card ${index}: "${titleText}"`);
+
+        const titleMap = {
+          // Títulos en inglés
+          "MiniAuth API": t.projects.miniauth,
+          "E-commerce App": t.projects.ecommerce,
+          "BOVIFrame Mobile App": t.projects.boviframe,
+          "Movie API": t.projects.movieapi,
+          "Interactive Map": t.projects.interactiveMap,
+          "My Wallet App": t.projects.wallet,
+          Gallery: t.projects.gallery,
+          "Tab Bar": t.projects.tabbar,
+          "Scrolling Menu": t.projects.scrollingMenu,
+          "Portfolio Design": t.projects.portfolioDesign,
+          "Image Slider": t.projects.imageSlider,
+          Calculator: t.projects.calculator,
+          "Pistazie Web": t.projects.pistazie,
+          // Títulos ya traducidos al español
+          "App E-commerce": t.projects.ecommerce,
+          "BOVIFrame App Móvil": t.projects.boviframe,
+          "Mapa Interactivo": t.projects.interactiveMap,
+          Galería: t.projects.gallery,
+          "Menú Deslizante": t.projects.scrollingMenu,
+          "Diseño de Portfolio": t.projects.portfolioDesign,
+          "Slider de Imágenes": t.projects.imageSlider,
+          Calculadora: t.projects.calculator,
+        };
+
+        const translation = titleMap[titleText];
+        if (translation) {
+          title.textContent = translation.title;
+          description.textContent = translation.description;
+          console.log(
+            `Force update - Updated card ${index}: "${translation.title}"`
+          );
+        } else {
+          console.log(
+            `Force update - No translation found for: "${titleText}"`
+          );
+        }
+      }
+    });
+
+    // Actualizar botones de proyectos
+    const projectLinks = document.querySelectorAll(".project-link");
+    console.log("Force update - Found", projectLinks.length, "project links");
+
+    projectLinks.forEach((link, index) => {
+      const text = link.textContent.trim();
+      console.log(`Force update - Link ${index}: "${text}"`);
+
+      if (text.includes("View Demo") || text.includes("Ver Demo")) {
+        link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewDemo}`;
+        console.log(
+          `Force update - Updated link ${index} to: ${t.projects.viewDemo}`
+        );
+      } else if (text.includes("View Code") || text.includes("Ver Código")) {
+        link.innerHTML = `<i class="fa-brands fa-github"></i> ${t.projects.viewCode}`;
+        console.log(
+          `Force update - Updated link ${index} to: ${t.projects.viewCode}`
+        );
+      } else if (text.includes("Live Demo") || text.includes("Demo en Vivo")) {
+        link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.liveDemo}`;
+        console.log(
+          `Force update - Updated link ${index} to: ${t.projects.liveDemo}`
+        );
+      } else if (
+        text.includes("Coming Soon") ||
+        text.includes("Próximamente")
+      ) {
+        link.innerHTML = `<i class="fa-brands fa-google-play"></i> ${t.projects.comingSoon}`;
+        console.log(
+          `Force update - Updated link ${index} to: ${t.projects.comingSoon}`
+        );
+      }
+    });
+
+    // Actualizar contact
+    const contactTitle = document.querySelector(".contact h2");
+    const nameLabel = document.querySelector('label[for="name"]');
+    const phoneLabel = document.querySelector('label[for="phone"]');
+    const emailLabel = document.querySelector('label[for="email"]');
+    const messageLabel = document.querySelector('label[for="message"]');
+    const sendButton = document.querySelector("button span");
+    const formLinks = document.querySelectorAll(".form-txt a");
+
+    if (contactTitle) contactTitle.textContent = t.contact.title;
+    if (nameLabel) nameLabel.textContent = t.contact.name;
+    if (phoneLabel) phoneLabel.textContent = t.contact.phone;
+    if (emailLabel) emailLabel.textContent = t.contact.email;
+    if (messageLabel) messageLabel.textContent = t.contact.message;
+    if (sendButton) sendButton.textContent = t.contact.send;
+    if (formLinks.length >= 2) {
+      formLinks[0].textContent = t.contact.privacyPolicy;
+      formLinks[1].textContent = t.contact.termsConditions;
+    }
+
+    // Actualizar placeholders
+    const nameInput = document.querySelector('input[name="name"]');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const messageTextarea = document.querySelector('textarea[name="message"]');
+
+    if (nameInput) nameInput.placeholder = t.contact.name;
+    if (phoneInput) phoneInput.placeholder = t.contact.phone;
+    if (emailInput) emailInput.placeholder = t.contact.email;
+    if (messageTextarea) messageTextarea.placeholder = t.contact.message;
+  }, 100);
 }
 
 // Inicializar idioma al cargar la página
 document.addEventListener("DOMContentLoaded", function () {
   const savedLang = localStorage.getItem("portfolio-lang") || "es";
+  console.log("Initializing with language:", savedLang);
   updateContent(savedLang);
+  forceUpdateAllContent(savedLang);
+
+  // Forzar actualización adicional después de un delay
+  setTimeout(() => {
+    console.log("Force updating content after delay");
+    forceUpdateAllContent(savedLang);
+  }, 500);
 });

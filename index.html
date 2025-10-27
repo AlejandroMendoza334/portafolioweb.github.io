@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" href="icons8-portfolio-16.png">
 </head>
@@ -36,25 +37,14 @@
                 </ul>
             </nav>
             
-            <!-- Selector de idiomas -->
-            <div class="language-selector">
-                <div class="lang-dropdown">
-                    <button class="lang-toggle" id="langToggle">
-                        <img src="img/mexico-flag.png" alt="Español" class="flag-icon" id="currentFlag">
-                        <span id="currentLang">ES</span>
-                        <i class="fas fa-chevron-down" id="chevron"></i>
-                    </button>
-                    <div class="lang-options" id="langOptions">
-                        <button class="lang-option" data-lang="es">
-                            <img src="img/mexico-flag.png" alt="ES" class="flag-icon">
-                            <span>Español</span>
-                        </button>
-                        <button class="lang-option" data-lang="en">
-                            <img src="img/usa-flag.png" alt="EN" class="flag-icon">
-                            <span>English</span>
-                        </button>
-                    </div>
-                </div>
+            <!-- Selector de idiomas slider -->
+            <div class="lang-slider">
+                <label class="switch">
+                    <input type="checkbox" id="langToggle">
+                    <span class="slider">
+                        <span class="lang-text" id="currentLangText">ES</span>
+                    </span>
+                </label>
             </div>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
@@ -171,14 +161,6 @@
                     <div class="skill-item">
                         <img src="assets/images/tech/python.png" alt="Python" height="32px">
                         <span>Python</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/php.png" alt="PHP" height="32px">
-                        <span>PHP</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/laravel.png" alt="Laravel" height="32px">
-                        <span>Laravel</span>
                     </div>
                     <div class="skill-item">
                         <img src="assets/images/tech/express.png" alt="Express.js" height="32px">
@@ -484,23 +466,8 @@
                     <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
 
                     
-    <button>
-    <div class="svg-wrapper-1">
-        <div class="svg-wrapper">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-        >
-            <path fill="none" d="M0 0h24v24H0z"></path>
-            <path
-            fill="currentColor"
-            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-            ></path>
-        </svg>
-        </div>
-    </div>
+    <button class="send-btn" id="sendBtn">
+        <i class="fas fa-paper-plane"></i>
     <span>Send</span>
     </button>
                 </div>
@@ -509,9 +476,11 @@
     </section>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/translations.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </body>
 
+</html>
 </html>
