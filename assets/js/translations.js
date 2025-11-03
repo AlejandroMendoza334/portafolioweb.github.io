@@ -24,10 +24,12 @@ const translations = {
         "<span>Alejandro</span> es un desarrollador junior apasionado con un fuerte impulso por el aprendizaje continuo y la creación de soluciones innovadoras. Con una base sólida en tecnologías tanto de frontend como de backend, estoy comprometido a construir una carrera sólida en el campo tecnológico. Actualmente busco oportunidades remotas que me permitan crecer profesionalmente, colaborar con equipos dinámicos y contribuir a proyectos de software impactantes. Soy proactivo, autodidacta y estoy listo para asumir desafíos con entusiasmo y dedicación.",
       professionalInfo: "Información Profesional",
       email: "Correo",
+      tools: "Herramientas",
       location: "Ubicación",
       languages: "Idiomas",
       role: "Rol",
       experience: "Experiencia",
+      toolsValue: "Cursor, ChatGPT",
       locationValue: "San Diego, Carabobo, Venezuela",
       languagesValue: "Español Nativo, Inglés Intermedio",
       roleValue: "DESARROLLADOR FREELANCE",
@@ -154,10 +156,12 @@ const translations = {
         "<span>Alejandro</span> is a passionate junior developer with a strong drive for continuous learning and creating innovative solutions. With a foundation in both frontend and backend technologies, I'm committed to building a solid career in the tech field. I'm currently seeking remote opportunities that will allow me to grow professionally, collaborate with dynamic teams, and contribute to impactful software projects. I'm proactive, self-taught, and ready to take on challenges with enthusiasm and dedication.",
       professionalInfo: "Professional Info",
       email: "Email",
+      tools: "Tools",
       location: "Location",
       languages: "Languages",
       role: "Role",
       experience: "Experience",
+      toolsValue: "Cursor, ChatGPT",
       locationValue: "San Diego, Carabobo, Venezuela",
       languagesValue: "Spanish Native, English Intermediate",
       roleValue: "FREELANCE DEVELOPER",
@@ -303,11 +307,11 @@ function updateContent(lang) {
 
   // Actualizar about
   const aboutTitle = document.querySelector(".sobremi h2");
-  const aboutDesc = document.querySelector(".sobremi .contenido-seccion p");
+  const aboutParagraphs = document.querySelectorAll(".sobremi .contenido-seccion p");
   const aboutInfo = document.querySelector(".sobremi .fila .col h3");
 
   if (aboutTitle) aboutTitle.textContent = t.about.title;
-  if (aboutDesc) aboutDesc.innerHTML = t.about.description;
+  if (aboutParagraphs.length >= 1) aboutParagraphs[0].innerHTML = t.about.description;
   if (aboutInfo) aboutInfo.textContent = t.about.professionalInfo;
 
   // Actualizar información profesional específica
@@ -319,10 +323,11 @@ function updateContent(lang) {
       if (strong) {
         const labelMap = {
           0: t.about.email,
-          1: t.about.location,
-          2: t.about.languages,
-          3: t.about.role,
-          4: t.about.experience,
+          1: t.about.tools,
+          2: t.about.location,
+          3: t.about.languages,
+          4: t.about.role,
+          5: t.about.experience,
         };
         if (labelMap[index]) {
           strong.textContent = labelMap[index];
@@ -332,20 +337,25 @@ function updateContent(lang) {
       // Actualizar valores específicos
       if (index === 1) {
         const text = item.textContent.trim();
+        if (text.includes("Cursor, ChatGPT")) {
+          item.innerHTML = `<strong>${t.about.tools}</strong> ${t.about.toolsValue}`;
+        }
+      } else if (index === 2) {
+        const text = item.textContent.trim();
         if (text.includes("San Diego, Carabobo, Venezuela")) {
           item.innerHTML = `<strong>${t.about.location}</strong> ${t.about.locationValue}`;
         }
-      } else if (index === 2) {
+      } else if (index === 3) {
         const text = item.textContent.trim();
         if (text.includes("Spanish Native, English Intermediate")) {
           item.innerHTML = `<strong>${t.about.languages}</strong> ${t.about.languagesValue}`;
         }
-      } else if (index === 3) {
+      } else if (index === 4) {
         const span = item.querySelector("span");
         if (span) {
           span.textContent = t.about.roleValue;
         }
-      } else if (index === 4) {
+      } else if (index === 5) {
         const text = item.textContent.trim();
         if (text.includes("Self-taught Developer")) {
           item.innerHTML = `<strong>${t.about.experience}</strong> ${t.about.experienceValue}`;
@@ -366,11 +376,13 @@ function updateContent(lang) {
         // Mapear texto actual a traducción
         const textMap = {
           Email: t.about.email,
+          Tools: t.about.tools,
           Location: t.about.location,
           Languages: t.about.languages,
           Role: t.about.role,
           Experience: t.about.experience,
           Correo: t.about.email,
+          Herramientas: t.about.tools,
           Ubicación: t.about.location,
           Idiomas: t.about.languages,
           Rol: t.about.role,
@@ -387,6 +399,8 @@ function updateContent(lang) {
 
       if (itemText.includes("alejandromendoza6575757@gmail.com")) {
         item.innerHTML = `<strong>${t.about.email}</strong> alejandromendoza6575757@gmail.com`;
+      } else if (itemText.includes("Cursor, ChatGPT")) {
+        item.innerHTML = `<strong>${t.about.tools}</strong> ${t.about.toolsValue}`;
       } else if (itemText.includes("San Diego, Carabobo, Venezuela")) {
         item.innerHTML = `<strong>${t.about.location}</strong> ${t.about.locationValue}`;
       } else if (
@@ -584,11 +598,14 @@ function forceUpdateAllContent(lang) {
 
     // Actualizar about
     const aboutTitle = document.querySelector(".sobremi h2");
-    const aboutDesc = document.querySelector(".sobremi .contenido-seccion p");
+    const aboutParagraphs = document.querySelectorAll(".sobremi .contenido-seccion p");
     const aboutInfo = document.querySelector(".sobremi .fila .col h3");
 
     if (aboutTitle) aboutTitle.textContent = t.about.title;
-    if (aboutDesc) aboutDesc.innerHTML = t.about.description;
+    if (aboutParagraphs.length >= 1) aboutParagraphs[0].innerHTML = t.about.description;
+    if (aboutParagraphs.length >= 2) aboutParagraphs[1].innerHTML = t.about.description2;
+    if (aboutParagraphs.length >= 3) aboutParagraphs[2].innerHTML = t.about.description3;
+    if (aboutParagraphs.length >= 4) aboutParagraphs[3].innerHTML = t.about.description4;
     if (aboutInfo) aboutInfo.textContent = t.about.professionalInfo;
 
     // Actualizar información profesional con múltiples intentos
@@ -600,10 +617,11 @@ function forceUpdateAllContent(lang) {
         if (strong) {
           const labelMap = {
             0: t.about.email,
-            1: t.about.location,
-            2: t.about.languages,
-            3: t.about.role,
-            4: t.about.experience,
+            1: t.about.tools,
+            2: t.about.location,
+            3: t.about.languages,
+            4: t.about.role,
+            5: t.about.experience,
           };
           if (labelMap[index]) {
             strong.textContent = labelMap[index];
@@ -614,6 +632,8 @@ function forceUpdateAllContent(lang) {
         const itemText = item.textContent.trim();
         if (itemText.includes("alejandromendoza6575757@gmail.com")) {
           item.innerHTML = `<strong>${t.about.email}</strong> alejandromendoza6575757@gmail.com`;
+        } else if (itemText.includes("Cursor, ChatGPT")) {
+          item.innerHTML = `<strong>${t.about.tools}</strong> ${t.about.toolsValue}`;
         } else if (itemText.includes("San Diego, Carabobo, Venezuela")) {
           item.innerHTML = `<strong>${t.about.location}</strong> ${t.about.locationValue}`;
         } else if (
