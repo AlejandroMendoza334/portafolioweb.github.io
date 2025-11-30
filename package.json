@@ -1,0 +1,12 @@
+{
+  "name": "curriculum-generator",
+  "version": "1.0.0",
+  "description": "Script para generar curriculum en PDF",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "generate-pdf": "node generate-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.11.0"
+  }
+}
