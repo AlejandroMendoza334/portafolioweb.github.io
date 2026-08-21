@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alejandro Mendoza - Currículum</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Calibri", "Arial", sans-serif;
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #000;
+        max-width: 8.5in;
+        margin: 0 auto;
+        padding: 0.5in;
+      }
+
+      h1 {
+        font-size: 18pt;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+
+      .contact-info {
+        text-align: center;
+        font-size: 10pt;
+        margin-bottom: 16px;
+        color: #333;
+      }
+
+      .contact-info a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      h2 {
+        font-size: 12pt;
+        font-weight: bold;
+        margin-top: 14px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        border-bottom: 1.5px solid #000;
+        padding-bottom: 2px;
+      }
+
+      .section-content {
+        margin-bottom: 12px;
+      }
+
+      .skill-category {
+        margin-bottom: 8px;
+      }
+
+      .skill-category strong {
+        font-weight: bold;
+      }
+
+      .experience-item,
+      .project-item {
+        margin-bottom: 12px;
+      }
+
+      .experience-header,
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 4px;
+      }
+
+      .job-title,
+      .project-title {
+        font-weight: bold;
+        font-size: 11pt;
+      }
+
+      .date {
+        font-size: 10pt;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .job-title-company {
+        flex: 1;
+      }
+
+      .bullet-point {
+        margin-left: 20px;
+        margin-bottom: 4px;
+        text-align: justify;
+        padding-right: 0.2in;
+      }
+
+      .bullet-point:before {
+        content: "• ";
+        margin-right: 4px;
+      }
+
+      .education-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 6px;
+      }
+
+      .education-degree {
+        font-weight: bold;
+      }
+
+      .education-date {
+        font-size: 10pt;
+        white-space: nowrap;
+      }
+
+      .project-link {
+        font-size: 10pt;
+        color: #333;
+        font-style: italic;
+      }
+
+      @media print {
+        body {
+          padding: 0.4in;
+        }
+
+        .page-break {
+          page-break-before: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Alejandro Mendoza</h1>
+    <div class="contact-info">
+      alejandromendoza6575757@gmail.com |
+      <a href="https://github.com/AlejandroMendoza334"
+        >github.com/AlejandroMendoza334</a
+      >
+      |
+      <a href="https://www.linkedin.com/in/alejandro-mendoza-b7430b276/"
+        >linkedin.com/in/alejandro-mendoza-b7430b276</a
+      >
+    </div>
+
+    <h2>Habilidades</h2>
+    <div class="section-content">
+      <div class="skill-category">
+        <strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Bootstrap,
+        Tailwind CSS
+      </div>
+      <div class="skill-category">
+        <strong>Backend:</strong> Node.js, Python, Express.js, FastAPI, MongoDB
+      </div>
+      <div class="skill-category">
+        <strong>Móvil:</strong> Flutter, Dart, Android Studio, Firebase
+      </div>
+      <div class="skill-category">
+        <strong>Herramientas:</strong> Git, Cursor, Firebase (Auth, Firestore,
+        Storage, Realtime DB)
+      </div>
+    </div>
+
+    <h2>Experiencia</h2>
+    <div class="section-content">
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="job-title job-title-company">
+            Desarrollador Full Stack, Sistema de Trading Automatizado – Proyecto Personal
+          </div>
+          <div class="date">Agosto 2025 – Presente</div>
+        </div>
+        <div class="bullet-point">
+          Desarrollo de plataforma automatizada de trading de criptomonedas con
+          panel web en tiempo real, implementando múltiples estrategias de
+          trading (RSI Momentum, Keltner Pullback, Multitimeframe) usando
+          Python, FastAPI e integración con API de Binance
+        </div>
+        <div class="bullet-point">
+          Construcción de sistema integral de análisis de sentimiento del
+          mercado integrando múltiples fuentes de datos (Reddit, Twitter,
+          noticias, influencers) con análisis de sentimiento VADER, Pandas y
+          NumPy para procesamiento de datos e insights
+        </div>
+        <div class="bullet-point">
+          Implementación de arquitectura backend segura con PostgreSQL y
+          SQLAlchemy, con cifrado AES-128 para datos sensibles, hash de
+          contraseñas PBKDF2 y consultas SQL optimizadas con índices para alto
+          rendimiento
+        </div>
+        <div class="bullet-point">
+          Desarrollo de panel frontend en tiempo real usando React 18,
+          TailwindCSS, Chart.js y Framer Motion, mostrando operaciones en vivo,
+          estadísticas y gráficos interactivos con conexiones WebSocket
+        </div>
+        <div class="bullet-point">
+          Creación de sistema de backtesting con análisis de datos históricos,
+          cálculo de métricas de rendimiento y rotación inteligente de bots
+          basada en volatilidad y condiciones del mercado
+        </div>
+        <div class="bullet-point">
+          Despliegue de aplicación lista para producción usando Docker y VPS
+          con Uvicorn, implementando sistemas completos de logging, monitoreo
+          y cálculos automatizados de interés compuesto
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="job-title job-title-company">
+            Desarrollador de Aplicaciones Móviles, Proyecto BOVIFrame – Remoto
+          </div>
+          <div class="date">Mayo 2025 – Finalizado</div>
+        </div>
+        <div class="bullet-point">
+          Desarrollo de aplicación móvil para evaluación ganadera usando
+          sistema EPMURAS con Flutter y Dart, implementando integración
+          completa con Firebase (Autenticación, Firestore, Storage, Realtime
+          Database) para gestión de datos y sesiones de usuario
+        </div>
+        <div class="bullet-point">
+          Implementación de funcionalidad de manejo de imágenes y PDF,
+          visualización de gráficos personalizados y almacenamiento local de
+          sesiones para habilitar acceso offline a datos y experiencia de
+          usuario fluida
+        </div>
+        <div class="bullet-point">
+          Construcción de sistema de generación de reportes para evaluaciones
+          individuales y grupales de animales, con menús de navegación
+          personalizados y principios de diseño UI moderno
+        </div>
+        <div class="bullet-point">
+          Diseño y desarrollo de interfaces responsivas con sistemas de
+          navegación personalizados, asegurando experiencia de usuario óptima
+          en diferentes tamaños de dispositivos
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="job-title job-title-company">
+            Desarrollador Full Stack Freelance – Remoto
+          </div>
+          <div class="date">2023 – Presente</div>
+        </div>
+        <div class="bullet-point">
+          Creación de APIs RESTful usando Node.js y Express.js con MongoDB,
+          implementando autenticación JWT y sistemas seguros de gestión de
+          usuarios
+        </div>
+        <div class="bullet-point">
+          Desarrollo de aplicaciones web responsivas usando React,
+          implementando componentes UI modernos con Bootstrap y Tailwind CSS
+          para experiencia de usuario óptima
+        </div>
+        <div class="bullet-point">
+          Construcción de aplicaciones frontend interactivas con JavaScript,
+          integrando APIs de terceros e implementando renderizado dinámico de
+          contenido
+        </div>
+      </div>
+    </div>
+
+    <h2>Proyectos</h2>
+    <div class="section-content">
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">
+            Sistema de Trading Automatizado | Python, FastAPI, React, PostgreSQL
+          </div>
+          <div class="project-link">En Desarrollo</div>
+        </div>
+        <div class="bullet-point">
+          Plataforma para trading automatizado de criptomonedas con panel en
+          tiempo real, múltiples estrategias de trading, análisis de
+          sentimiento del mercado y backtesting. Incluye cifrado de datos
+          sensibles, gestión de usuarios y rotación inteligente de bots basada
+          en condiciones del mercado
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">
+            Aplicación Móvil BOVIFrame
+          </div>
+          <div class="project-link">Próximamente</div>
+        </div>
+        <div class="bullet-point">
+          Aplicación móvil para evaluación ganadera con gestión integral de
+          animales, seguimiento de vacunación, monitoreo reproductivo y
+          generación de reportes veterinarios
+        </div>
+        <div class="bullet-point">
+          Construida con Flutter y Firebase, con capacidades offline,
+          procesamiento de imágenes y sincronización de datos
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">MiniAuth API</div>
+          <div class="project-link">
+            <a href="https://github.com/AlejandroMendoza334/mini-auth-api"
+              >github.com/AlejandroMendoza334/mini-auth-api</a
+            >
+          </div>
+        </div>
+        <div class="bullet-point">
+          Sistema completo de autenticación con tokens JWT, registro de
+          usuarios y funcionalidad de inicio de sesión segura usando Node.js,
+          Express.js y MongoDB
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">Aplicación E-commerce</div>
+          <div class="project-link">
+            <a href="https://e-commerse48239.netlify.app/"
+              >e-commerse48239.netlify.app</a
+            >
+          </div>
+        </div>
+        <div class="bullet-point">
+          Aplicación moderna de e-commerce basada en React con funcionalidad de
+          carrito de compras, gestión de productos y diseño responsivo usando
+          TypeScript
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">
+            Aplicación Movie API
+          </div>
+          <div class="project-link">
+            <a href="https://alejandromendoza334.github.io/apimovie.github.io/"
+              >alejandromendoza334.github.io/apimovie.github.io</a
+            >
+          </div>
+        </div>
+        <div class="bullet-point">
+          Base de datos interactiva de películas con funcionalidad de
+          búsqueda, integración de API y renderizado dinámico de contenido
+          usando HTML, CSS y JavaScript
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">
+            Aplicación de Mapa Interactivo
+          </div>
+          <div class="project-link">
+            <a
+              href="https://alejandromendoza334.github.io/mapinteractive.github.io/"
+              >alejandromendoza334.github.io/mapinteractive.github.io</a
+            >
+          </div>
+        </div>
+        <div class="bullet-point">
+          Aplicación de mapa interactivo con dibujo de polígonos, dibujo de
+          líneas, gestión de información de lotes y funciones de bloqueo de
+          mapa usando HTML, CSS y JavaScript
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title job-title-company">Aplicación My Wallet</div>
+          <div class="project-link">
+            <a href="https://wonderful-biscuit-92eec4.netlify.app/"
+              >wonderful-biscuit-92eec4.netlify.app</a
+            >
+          </div>
+        </div>
+        <div class="bullet-point">
+          Aplicación de gestión de finanzas personales con seguimiento de
+          gastos y planificación de presupuesto construida con Flutter y Dart
+        </div>
+      </div>
+    </div>
+
+    <h2>Educación</h2>
+    <div class="section-content">
+      <div class="education-item" style="margin-bottom: 10px">
+        <div class="education-degree">
+          IUTEPAL — Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo — En curso
+        </div>
+        <div class="education-date">13 de enero de 2026 – Presente</div>
+      </div>
+
+      <div class="education-item">
+        <div class="education-degree">
+          Desarrollo Móvil - Completado
+        </div>
+        <div class="education-date">Agosto 2025 – Septiembre 2025</div>
+      </div>
+      <div class="bullet-point">
+        Fundamentos de programación, herramientas y entorno de desarrollo,
+        sintaxis y estructuras de control, clases y objetos, tipado estático,
+        programación asíncrona, gestión de paquetes, Git/GitHub
+      </div>
+      <div class="bullet-point">
+        Aplicaciones móviles con framework Flutter, estructura de widgets,
+        diseño UI, navegación y rutas, interacción con servicios web, acceso a
+        datos y servicios, integración backend con Firebase, almacenamiento
+        local SQLite, generación de archivos APK e IPA, publicación y
+        distribución de aplicaciones
+      </div>
+
+      <div class="education-item" style="margin-top: 10px">
+        <div class="education-degree">Programación Web - Completado</div>
+        <div class="education-date">Enero 2022</div>
+      </div>
+      <div class="bullet-point">
+        HTML, CSS, JavaScript, Bootstrap, WordPress, Angular
+      </div>
+
+      <div class="education-item" style="margin-top: 10px">
+        <div class="education-degree">Lógica y Programación - Completado</div>
+        <div class="education-date">Enero 2023</div>
+      </div>
+      <div class="bullet-point">
+        Python, JavaScript (Node.js), Dart, Go, Phaser
+      </div>
+
+      <div class="education-item" style="margin-top: 10px">
+        <div class="education-degree">Mantenimiento de Computadoras - Completado</div>
+        <div class="education-date">Abril 2023</div>
+      </div>
+
+      <div class="education-item" style="margin-top: 10px">
+        <div class="education-degree">
+          Curso de Ciencias de la Computación, UJAP - Completado
+        </div>
+        <div class="education-date">Octubre 2023</div>
+      </div>
+    </div>
+  </body>
+</html>

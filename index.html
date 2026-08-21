@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Mendoza - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="icons8-portfolio-16.png">
+</head>
+
+<body class="hidden">
+    <!-- SECCION LOADER -->
+    <div class="centrado" id="onload">
+        <div class="lds-ripple" bis_skin_checked="1">
+            <div bis_skin_checked="1"></div>
+            <div bis_skin_checked="1"></div>
+        </div>
+    </div>
+
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Alejandro</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio">Home</a></li>
+                    <li><a href="#sobremi">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Selector de idiomas slider -->
+            <div class="lang-slider">
+                <label class="switch">
+                    <input type="checkbox" id="langToggle">
+                    <span class="slider">
+                        <span class="lang-text" id="currentLangText">ES</span>
+                    </span>
+                </label>
+            </div>
+            <div class="nav-responsive">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <!-- <img src="img/hero.png" alt=""> -->
+            </div>
+
+            <h1>Alejandro Mendoza</h1>
+            <h2 class="background">Full Stack Developer <i class="fa-solid fa-code"></i></h2>
+            <div class="redes">
+                <a href="https://www.instagram.com/dewcrossward/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/AlejandroMendoza334" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/alejandro-mendoza-b7430b276/" aria-label="LinkedIn"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.upwork.com/freelancers/~018279465bf7c6109b" aria-label="Upwork"><i class="fa-brands fa-square-upwork"></i></a>
+            </div>
+        </div>
+
+        <div class="animated-lights"></div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section class="sobremi" id="sobremi">
+        <div class="contenido-seccion">
+            <h2>About Me</h2>
+            <p><span>Alejandro</span> is a passionate junior developer with a strong drive for continuous learning and
+                creating innovative solutions. With a foundation in both frontend and backend technologies, I'm 
+                committed to building a solid career in the tech field. I'm currently seeking remote opportunities
+                that will allow me to grow professionally, collaborate with dynamic teams, and contribute to impactful
+                software projects. I'm proactive, self-taught, and ready to take on challenges with
+                enthusiasm and dedication.</p>
+
+            <div class="fila">
+                <!-- información personal a la derecha -->
+                <div class="col">
+                    <h3>Professional Info</h3>
+                    <ul>
+                        <li>
+                            <strong>Email</strong>
+                            alejandromendoza6575757@gmail.com
+                        </li>
+                        <li>
+                            <strong>Tools</strong>
+                            Cursor, ChatGPT
+                        </li>
+                        <li>
+                            <strong>Location</strong>
+                            San Diego, Carabobo, Venezuela
+                        </li> 
+                        <li>
+                            <strong>Languages</strong>
+                            Spanish Native, English Intermediate
+                        </li>
+                        <li>
+                            <strong>Role</strong>
+                            <span>FREELANCE DEVELOPER</span>
+                        </li>
+                        <li>
+                            <strong>Experience</strong>
+                            Self-taught Developer
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <h2>Technical Skills <i class="fa-solid fa-code"></i></h2>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/images/tech/html5.png" alt="HTML5" height="32px">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/icons8-css-color-120.png" alt="CSS3" height="32px">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/javascript.png" alt="JavaScript" height="32px">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/react (2).png" alt="React" height="32px">
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/boostrap.png" alt="Bootstrap" height="32px">
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/tailwind-css.png" alt="Tailwind CSS" height="32px">
+                        <span>Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/images/tech/node.png" alt="Node.js" height="32px">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/python.png" alt="Python" height="32px">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/express.png" alt="Express.js" height="32px">
+                        <span>Express.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/python.png" alt="FastAPI" height="32px">
+                        <span>FastAPI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Mobile Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/images/tech/flutter.png" alt="Flutter" height="32px">
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/dart.png" alt="Dart" height="32px">
+                        <span>Dart</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/androidstudio.png" alt="Android Studio" height="32px">
+                        <span>Android Studio</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/images/tech/firebase.png" alt="Firebase" height="32px">
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PROYECTOS  -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <h2>Featured Projects <i class="fa-solid fa-code"></i></h2>
+            <p class="projects-subtitle">A showcase of my recent work and technical skills</p>
+
+            <div class="projects-grid">
+                <!-- Proyecto destacado 1 -->
+                <div class="card featured">
+                <figure>
+                        <img src="assets/images/projects/miniauth.png" alt="MiniAuth API">
+                </figure>
+                <div class="contenido">
+                        <h3>MiniAuth API</h3>
+                        <p>A complete authentication system with JWT tokens, user registration, and secure login functionality.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <a href="https://github.com/AlejandroMendoza334/mini-auth-api" class="project-link">
+                            <i class="fa-brands fa-github"></i> View Code
+                        </a>
+                </div>
+            </div>
+
+                <!-- Proyecto destacado 2 -->
+                <div class="card featured">
+                <figure>
+                        <img src="assets/images/projects/e-commerce.png" alt="E-commerce App">
+                </figure>
+                <div class="contenido">
+                        <h3>E-commerce App</h3>
+                        <p>A modern React-based e-commerce application with shopping cart functionality and responsive design.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                        <a href="https://e-commerse48239.netlify.app/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> Live Demo
+                        </a>
+                </div>
+            </div>
+
+                <!-- Proyecto destacado 3 -->
+                <div class="card featured">
+                <figure>
+                        <img src="assets/images/projects/boviframe.jpg" alt="BOVIFrame App">
+                </figure>
+                <div class="contenido">
+                        <h3>BOVIFrame Mobile App</h3>
+                        <p>A mobile application specialized in zootechnical evaluations for cattle. Developed with Flutter, it includes tools for weight analysis, body condition, vaccination records, reproductive tracking, and veterinary report generation with Firebase integration.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <i class="fa-brands fa-google-play"></i> Coming Soon
+                        </a>
+                </div>
+            </div>
+
+                <!-- Otros proyectos -->
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/apithemovie.png" alt="Movie API">
+                </figure>
+                <div class="contenido">
+                        <h3>Movie API</h3>
+                        <p>Interactive movie database with search functionality and API integration.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/apimovie.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/mapa interactivo.png" alt="Interactive Map">
+                </figure>
+                <div class="contenido">
+                        <h3>Interactive Map</h3>
+                        <p>Dynamic map application with interactive features and location services.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/mapinteractive.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/walletapp.png" alt="Wallet App">
+                </figure>
+                <div class="contenido">
+                        <h3>My Wallet App</h3>
+                        <p>Personal finance management application with expense tracking and budget planning.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                        </div>
+                        <a href="https://wonderful-biscuit-92eec4.netlify.app/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+                <!-- Proyectos adicionales -->
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/galeria.png" alt="Gallery">
+                </figure>
+                <div class="contenido">
+                        <h3>Gallery</h3>
+                        <p>Interactive photo gallery with modern design and smooth animations.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/galeria12.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/tab bar.png" alt="Tab Bar">
+                </figure>
+                <div class="contenido">
+                        <h3>Tab Bar</h3>
+                        <p>Modern tab navigation component with smooth transitions and responsive design.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/tab-bar.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/scrolling menu.png" alt="Scrolling Menu">
+                </figure>
+                <div class="contenido">
+                        <h3>Scrolling Menu</h3>
+                        <p>Dynamic scrolling navigation menu with smooth animations and modern UI.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/scrolling-menu.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/portfolio design.png" alt="Portfolio Design">
+                </figure>
+                <div class="contenido">
+                        <h3>Portfolio Design</h3>
+                        <p>Creative portfolio template with modern design and responsive layout.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/portafoliosproject.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/slider.png" alt="Slider">
+                </figure>
+                <div class="contenido">
+                        <h3>Image Slider</h3>
+                        <p>Interactive image slider with smooth transitions and touch support.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/slider.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/calculadora.png" alt="Calculator">
+                </figure>
+                <div class="contenido">
+                        <h3>Calculator</h3>
+                        <p>Modern calculator application with clean interface and full functionality.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/calculadora.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <figure>
+                        <img src="assets/images/projects/pistazie web.png" alt="Pistazie Web">
+                </figure>
+                <div class="contenido">
+                        <h3>Pistazie Web</h3>
+                        <p>Business website with modern design and responsive layout for local business.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://alejandromendoza334.github.io/pistazie.github.io/" class="project-link">
+                            <i class="fa-solid fa-external-link-alt"></i> View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+                </div>
+    </section>
+
+    <!-- SECCION EDUCATION -->
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <div class="section-content">
+            <div class="education-item">
+                <div class="education-degree">IUTEPAL — Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo — In Progress</div>
+                <div class="education-date">January 13, 2026 – Present</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section class="contact" id="contact">
+        <form action="https://formspree.io/f/meoqogbo" method="POST">
+            <h2>Contact Me</h2>
+            <div class="input">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
+
+                    
+    <button type="submit" class="send-btn" id="sendBtn">
+        <i class="fas fa-paper-plane"></i>
+    <span>Send</span>
+    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/translations.js"></script>
+</body>
+
+</html>
