@@ -2,28 +2,20 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 
-async function generatePDF() {
-    const htmlFile = path.join(__dirname, 'curriculum.html');
-    const pdfFile = path.join(__dirname, 'curriculum.pdf');
-    
-    // Leer el contenido HTML
+async function generatePDFFromFile(htmlFile, pdfFile) {
     const htmlContent = fs.readFileSync(htmlFile, 'utf8');
-    
-    console.log('Generando PDF...');
-    
+
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: 'new',
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
-    
+
     const page = await browser.newPage();
-    
-    // Establecer el contenido HTML
+
     await page.setContent(htmlContent, {
         waitUntil: 'networkidle0'
     });
-    
-    // Generar PDF
+
     await page.pdf({
         path: pdfFile,
         format: 'Letter',
@@ -35,13 +27,24 @@ async function generatePDF() {
         },
         printBackground: true
     });
-    
+
     await browser.close();
-    
+
     console.log(`PDF generado exitosamente: ${pdfFile}`);
 }
 
-generatePDF().catch(console.error);
+async function generatePDFs() {
+    console.log('Generando PDFs...');
 
+    await generatePDFFromFile(
+        path.join(__dirname, 'curriculum.html'),
+        path.join(__dirname, 'curriculum.pdf')
+    );
 
+    await generatePDFFromFile(
+        path.join(__dirname, 'curriculum-es.html'),
+        path.join(__dirname, 'curriculum-es.pdf')
+    );
+}
 
+generatePDFs().catch(console.error);

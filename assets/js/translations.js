@@ -119,6 +119,13 @@ const translations = {
       comingSoon: "Próximamente",
     },
 
+    // Sección Education
+    education: {
+      title: "Educación",
+      entry: "IUTEPAL — Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo — En curso",
+      date: "13 de enero de 2026 – Presente",
+    },
+
     // Sección Contact
     contact: {
       title: "Contáctame",
@@ -249,6 +256,13 @@ const translations = {
       liveDemo: "Live Demo",
       viewDemo: "View Demo",
       comingSoon: "Coming Soon",
+    },
+
+    // Education Section
+    education: {
+      title: "Education",
+      entry: "IUTEPAL — Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo — In Progress",
+      date: "January 13, 2026 – Present",
     },
 
     // Contact Section
@@ -527,6 +541,15 @@ function updateContent(lang) {
     }
   });
 
+  // Actualizar education
+  const educationTitle = document.querySelector(".education h2");
+  const educationDegree = document.querySelector(".education .education-degree");
+  const educationDate = document.querySelector(".education .education-date");
+
+  if (educationTitle) educationTitle.textContent = t.education.title;
+  if (educationDegree) educationDegree.textContent = t.education.entry;
+  if (educationDate) educationDate.textContent = t.education.date;
+
   // Actualizar contact
   const contactTitle = document.querySelector(".contact h2");
   if (contactTitle) contactTitle.textContent = t.contact.title;
@@ -774,6 +797,15 @@ function forceUpdateAllContent(lang) {
         );
       }
     });
+
+    // Actualizar education
+    const educationTitle = document.querySelector(".education h2");
+    const educationDegree = document.querySelector(".education .education-degree");
+    const educationDate = document.querySelector(".education .education-date");
+
+    if (educationTitle) educationTitle.textContent = t.education.title;
+    if (educationDegree) educationDegree.textContent = t.education.entry;
+    if (educationDate) educationDate.textContent = t.education.date;
 
     // Actualizar contact
     const contactTitle = document.querySelector(".contact h2");
