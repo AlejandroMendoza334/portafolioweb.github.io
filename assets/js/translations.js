@@ -49,6 +49,11 @@ const translations = {
     projects: {
       title: "Proyectos Destacados",
       subtitle: "Una muestra de mi trabajo reciente y habilidades técnicas",
+      socialBattery: {
+        title: "Rastreador de Batería Social",
+        description:
+          "Aplicación Flutter para registrar tu energía social, visualizar su nivel actual y acceder rápidamente a acciones de reinicio y apoyo.",
+      },
       miniauth: {
         title: "MiniAuth API",
         description:
@@ -189,6 +194,11 @@ const translations = {
     projects: {
       title: "Featured Projects",
       subtitle: "A showcase of my recent work and technical skills",
+      socialBattery: {
+        title: "Social Battery Tracker",
+        description:
+          "A Flutter app that tracks social energy, visualizes its current level, and offers quick reset and support actions.",
+      },
       miniauth: {
         title: "MiniAuth API",
         description:
@@ -482,6 +492,7 @@ function updateContent(lang) {
       // Mapear títulos a traducciones (incluyendo traducciones inversas)
       const titleMap = {
         // Títulos en inglés
+        "Social Battery Tracker": t.projects.socialBattery,
         "MiniAuth API": t.projects.miniauth,
         "E-commerce App": t.projects.ecommerce,
         "BOVIFrame Mobile App": t.projects.boviframe,
@@ -496,6 +507,7 @@ function updateContent(lang) {
         Calculator: t.projects.calculator,
         "Pistazie Web": t.projects.pistazie,
         // Títulos ya traducidos al español
+        "Rastreador de Batería Social": t.projects.socialBattery,
         "App E-commerce": t.projects.ecommerce,
         "BOVIFrame App Móvil": t.projects.boviframe,
         "Mapa Interactivo": t.projects.interactiveMap,
@@ -727,6 +739,7 @@ function forceUpdateAllContent(lang) {
 
         const titleMap = {
           // Títulos en inglés
+          "Social Battery Tracker": t.projects.socialBattery,
           "MiniAuth API": t.projects.miniauth,
           "E-commerce App": t.projects.ecommerce,
           "BOVIFrame Mobile App": t.projects.boviframe,
@@ -741,6 +754,7 @@ function forceUpdateAllContent(lang) {
           Calculator: t.projects.calculator,
           "Pistazie Web": t.projects.pistazie,
           // Títulos ya traducidos al español
+          "Rastreador de Batería Social": t.projects.socialBattery,
           "App E-commerce": t.projects.ecommerce,
           "BOVIFrame App Móvil": t.projects.boviframe,
           "Mapa Interactivo": t.projects.interactiveMap,
