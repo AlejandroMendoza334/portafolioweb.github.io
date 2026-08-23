@@ -120,6 +120,7 @@ const translations = {
           "Sitio web empresarial con diseño moderno y layout responsivo para negocio local.",
       },
       viewCode: "Ver Código",
+      downloadApk: "Descargar APK",
       liveDemo: "Demo en Vivo",
       viewDemo: "Ver Demo",
       comingSoon: "Próximamente",
@@ -265,6 +266,7 @@ const translations = {
           "Business website with modern design and responsive layout for local business.",
       },
       viewCode: "View Code",
+      downloadApk: "Download APK",
       liveDemo: "Live Demo",
       viewDemo: "View Demo",
       comingSoon: "Coming Soon",
@@ -543,6 +545,9 @@ function updateContent(lang) {
     if (text.includes("View Demo") || text.includes("Ver Demo")) {
       link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewDemo}`;
       console.log(`Updated link ${index} to: ${t.projects.viewDemo}`);
+    } else if (text.includes("Download APK") || text.includes("Descargar APK")) {
+      link.innerHTML = `<i class="fa-solid fa-download"></i> ${t.projects.downloadApk}`;
+      console.log(`Updated link ${index} to: ${t.projects.downloadApk}`);
     } else if (text.includes("View Code") || text.includes("Ver Código")) {
       link.innerHTML = `<i class="fa-brands fa-github"></i> ${t.projects.viewCode}`;
       console.log(`Updated link ${index} to: ${t.projects.viewCode}`);
@@ -792,6 +797,11 @@ function forceUpdateAllContent(lang) {
         link.innerHTML = `<i class="fa-solid fa-external-link-alt"></i> ${t.projects.viewDemo}`;
         console.log(
           `Force update - Updated link ${index} to: ${t.projects.viewDemo}`
+        );
+      } else if (text.includes("Download APK") || text.includes("Descargar APK")) {
+        link.innerHTML = `<i class="fa-solid fa-download"></i> ${t.projects.downloadApk}`;
+        console.log(
+          `Force update - Updated link ${index} to: ${t.projects.downloadApk}`
         );
       } else if (text.includes("View Code") || text.includes("Ver Código")) {
         link.innerHTML = `<i class="fa-brands fa-github"></i> ${t.projects.viewCode}`;
