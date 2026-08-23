@@ -878,7 +878,10 @@ input:checked + .slider:before {
   height: 200px;
 }
 
-.project-placeholder {
+figure.project-placeholder {
+  height: 200px;
+  margin: 0;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
