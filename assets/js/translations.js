@@ -119,6 +119,11 @@ const translations = {
         description:
           "Sitio web empresarial con diseño moderno y layout responsivo para negocio local.",
       },
+      nexora: {
+        title: "Nexora",
+        description:
+          "Tienda de videojuegos digitales donde los usuarios pueden explorar un catálogo de títulos y comprar juegos en línea. Next. Play. Beyond.",
+      },
       viewCode: "Ver Código",
       downloadApk: "Descargar APK",
       liveDemo: "Demo en Vivo",
@@ -264,6 +269,11 @@ const translations = {
         title: "Pistazie Web",
         description:
           "Business website with modern design and responsive layout for local business.",
+      },
+      nexora: {
+        title: "Nexora",
+        description:
+          "Digital video game store where users can browse a catalog of titles and purchase games online. Next. Play. Beyond.",
       },
       viewCode: "View Code",
       downloadApk: "Download APK",
@@ -508,6 +518,7 @@ function updateContent(lang) {
         "Image Slider": t.projects.imageSlider,
         Calculator: t.projects.calculator,
         "Pistazie Web": t.projects.pistazie,
+        Nexora: t.projects.nexora,
         // Títulos ya traducidos al español
         "Rastreador de Batería Social": t.projects.socialBattery,
         "App E-commerce": t.projects.ecommerce,
@@ -758,6 +769,7 @@ function forceUpdateAllContent(lang) {
           "Image Slider": t.projects.imageSlider,
           Calculator: t.projects.calculator,
           "Pistazie Web": t.projects.pistazie,
+        Nexora: t.projects.nexora,
           // Títulos ya traducidos al español
           "Rastreador de Batería Social": t.projects.socialBattery,
           "App E-commerce": t.projects.ecommerce,
