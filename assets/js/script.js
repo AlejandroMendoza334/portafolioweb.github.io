@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "das-kaffee",    name: "DAS Kaffee",            type: { es: "Café y restaurante",    en: "Coffee & restaurant" },   url: "https://das-kaffee.vercel.app" },
     { slug: "spy-gym",       name: "Spy Gym",               type: { es: "Gimnasio",              en: "Gym" },                   url: "https://spy-gym.vercel.app" },
     { slug: "la-nota",       name: "La Nota Fitness",       type: { es: "Gimnasio y clases",     en: "Gym & classes" },         url: "https://lanotafitness.vercel.app" },
+    { slug: "nexora",        name: "Nexora",                type: { es: "Tienda de videojuegos", en: "Video game store" },      url: "https://nexora-one-rho.vercel.app" },
   ];
 
   const T = {
