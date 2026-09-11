@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "itaewon-korea", name: "Itaewon Korea",         type: { es: "Comida coreana",        en: "Korean food" },           url: "https://itaewon-korea.vercel.app" },
     { slug: "das-kaffee",    name: "DAS Kaffee",            type: { es: "Café y restaurante",    en: "Coffee & restaurant" },   url: "https://das-kaffee.vercel.app" },
     { slug: "spy-gym",       name: "Spy Gym",               type: { es: "Gimnasio",              en: "Gym" },                   url: "https://spy-gym.vercel.app" },
+    { slug: "la-nota",       name: "La Nota Fitness",       type: { es: "Gimnasio y clases",     en: "Gym & classes" },         url: "https://lanotafitness.vercel.app" },
   ];
 
   const T = {
