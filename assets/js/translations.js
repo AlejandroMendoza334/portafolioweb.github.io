@@ -7,6 +7,7 @@ const translations = {
       about: "Acerca de",
       skills: "Habilidades",
       projects: "Proyectos",
+      landings: "Landing Pages",
       education: "Educación",
       contact: "Contacto",
     },
@@ -158,6 +159,7 @@ const translations = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      landings: "Landing Pages",
       education: "Education",
       contact: "Contact",
     },
@@ -320,7 +322,7 @@ function updateContent(lang) {
 
   // Actualizar navegación
   const navLinks = document.querySelectorAll("nav ul li a");
-  const navItems = ["home", "about", "skills", "projects", "education", "contact"];
+  const navItems = ["home", "about", "skills", "projects", "landings", "education", "contact"];
 
   navLinks.forEach((link, index) => {
     if (navItems[index]) {
@@ -627,7 +629,7 @@ function forceUpdateAllContent(lang) {
   setTimeout(() => {
     // Actualizar navegación
     const navLinks = document.querySelectorAll("nav ul li a");
-    const navItems = ["home", "about", "skills", "projects", "education", "contact"];
+    const navItems = ["home", "about", "skills", "projects", "landings", "education", "contact"];
     navLinks.forEach((link, index) => {
       if (navItems[index]) {
         link.textContent = t.nav[navItems[index]];

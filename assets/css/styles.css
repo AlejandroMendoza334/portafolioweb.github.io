@@ -1001,6 +1001,226 @@ img {
   box-shadow: 0 5px 15px rgba(28, 182, 152, 0.3);
 }
 
+/* SECCION LANDING PAGES */
+.landings {
+  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+  padding: 50px 20px;
+  position: relative;
+}
+
+.landings::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1cb698, transparent);
+}
+
+.landings h2 {
+  font-size: 3rem;
+  font-family: "Righteous", cursive;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #1cb698, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.landings h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #1cb698, #00d4ff);
+  border-radius: 2px;
+}
+
+.landings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 55px;
+}
+
+.landing-card {
+  background: rgba(28, 182, 152, 0.05);
+  border: 1px solid rgba(28, 182, 152, 0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  text-align: left;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  width: 100%;
+}
+
+.landing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(28, 182, 152, 0.18);
+  border-color: rgba(28, 182, 152, 0.45);
+}
+
+.landing-card.active {
+  border-color: #1cb698;
+  box-shadow: 0 0 0 2px #1cb698, 0 10px 28px rgba(28, 182, 152, 0.25);
+}
+
+.landing-card figure {
+  margin: 0;
+  height: 165px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.landing-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.landing-card:hover figure img {
+  transform: scale(1.04);
+}
+
+.landing-card .lc-body {
+  padding: 14px 16px 16px;
+}
+
+.landing-card .lc-name {
+  font-family: "Righteous", cursive;
+  color: #1cb698;
+  font-size: 1.05rem;
+  margin-bottom: 3px;
+}
+
+.landing-card .lc-type {
+  color: #cccccc;
+  font-size: 0.82rem;
+}
+
+.landing-card .lc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: #00d4ff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.landing-viewer {
+  margin-top: 32px;
+  border: 1px solid rgba(28, 182, 152, 0.35);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0a0a0a;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.landing-viewer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(28, 182, 152, 0.1);
+  border-bottom: 1px solid rgba(28, 182, 152, 0.25);
+}
+
+.landing-viewer-bar .lv-name {
+  font-family: "Righteous", cursive;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.landing-viewer-bar .lv-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.landing-viewer-bar .lv-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #1cb698;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border: 1.5px solid #1cb698;
+  border-radius: 20px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.landing-viewer-bar .lv-open:hover {
+  background: linear-gradient(135deg, #1cb698, #00d4ff);
+  color: #fff;
+}
+
+.landing-viewer-bar .lv-close {
+  background: transparent;
+  border: none;
+  color: #cccccc;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 6px 8px;
+  line-height: 1;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.landing-viewer-bar .lv-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.landing-viewer-frame {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  background: #0a0a0a;
+}
+
+.landing-viewer-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .landings h2 {
+    font-size: 2.2rem;
+  }
+  .landings-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .landing-viewer-frame {
+    height: 460px;
+  }
+  .landing-viewer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* SECCION EDUCATION */
 .education {
   background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
