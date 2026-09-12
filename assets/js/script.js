@@ -140,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "void-shop",     name: "Void.",                 type: { es: "Concepto de tienda",    en: "Store concept" },         url: "https://void-shop-concept.vercel.app" },
     { slug: "bloque",        name: "Bloque.",               type: { es: "Concepto streetwear",   en: "Streetwear concept" },    url: "https://bloque-streetwear-concept.vercel.app" },
     { slug: "marea",         name: "Marea",                 type: { es: "Concepto de boutique",  en: "Boutique concept" },      url: "https://marea-boutique-concept.vercel.app" },
+    { slug: "pulso",         name: "Pulso.",                type: { es: "Concepto ropa deportiva", en: "Activewear concept" },  url: "https://pulso-performance-concept.vercel.app" },
   ];
 
   const T = {
