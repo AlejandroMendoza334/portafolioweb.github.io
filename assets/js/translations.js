@@ -475,8 +475,8 @@ function updateContent(lang) {
   if (skillCategories[2]) skillCategories[2].textContent = t.skills.mobile;
 
   // Actualizar projects - FORZAR ACTUALIZACIÓN
-  const projectsTitle = document.querySelector(".projects-container h2");
-  const projectsSubtitle = document.querySelector(".projects-subtitle");
+  const projectsTitle = document.querySelector(".projects .projects-container h2");
+  const projectsSubtitle = document.querySelector(".projects .projects-subtitle");
 
   if (projectsTitle) {
     projectsTitle.textContent = t.projects.title;
@@ -721,8 +721,8 @@ function forceUpdateAllContent(lang) {
     if (skillCategories[2]) skillCategories[2].textContent = t.skills.mobile;
 
     // Actualizar projects
-    const projectsTitle = document.querySelector(".projects-container h2");
-    const projectsSubtitle = document.querySelector(".projects-subtitle");
+    const projectsTitle = document.querySelector(".projects .projects-container h2");
+    const projectsSubtitle = document.querySelector(".projects .projects-subtitle");
 
     if (projectsTitle) {
       projectsTitle.textContent = t.projects.title;

@@ -1030,6 +1030,18 @@ img {
   position: relative;
 }
 
+.landings h2 .landings-tag {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  -webkit-text-fill-color: #8b8f96;
+  color: #8b8f96;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  vertical-align: middle;
+}
+
 .landings h2::after {
   content: "";
   position: absolute;
