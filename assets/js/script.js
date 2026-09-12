@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "nexora",        name: "Nexora",                type: { es: "Tienda de videojuegos", en: "Video game store" },      url: "https://nexora-one-rho.vercel.app" },
     { slug: "edi-esthetic",  name: "Edi Hernández Esthetic", type: { es: "Estética facial",       en: "Facial aesthetics" },     url: "https://edi-esthetic.vercel.app" },
     { slug: "forge",         name: "Forge Athletic Co.",    type: { es: "Concepto de gimnasio",  en: "Gym concept" },           url: "https://forge-training-concept.vercel.app" },
+    { slug: "amara-spa",     name: "Amara Spa & Wellness",  type: { es: "Concepto de spa",       en: "Spa concept" },           url: "https://amara-spa-concept.vercel.app" },
   ];
 
   const T = {
