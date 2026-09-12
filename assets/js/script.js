@@ -138,6 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "forge",         name: "Forge Athletic Co.",    type: { es: "Concepto de gimnasio",  en: "Gym concept" },           url: "https://forge-training-concept.vercel.app" },
     { slug: "amara-spa",     name: "Amara Spa & Wellness",  type: { es: "Concepto de spa",       en: "Spa concept" },           url: "https://amara-spa-concept.vercel.app" },
     { slug: "void-shop",     name: "Void.",                 type: { es: "Concepto de tienda",    en: "Store concept" },         url: "https://void-shop-concept.vercel.app" },
+    { slug: "bloque",        name: "Bloque.",               type: { es: "Concepto streetwear",   en: "Streetwear concept" },    url: "https://bloque-streetwear-concept.vercel.app" },
+    { slug: "marea",         name: "Marea",                 type: { es: "Concepto de boutique",  en: "Boutique concept" },      url: "https://marea-boutique-concept.vercel.app" },
   ];
 
   const T = {
