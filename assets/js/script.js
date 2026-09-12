@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "la-nota",       name: "La Nota Fitness",       type: { es: "Gimnasio y clases",     en: "Gym & classes" },         url: "https://lanotafitness.vercel.app" },
     { slug: "nexora",        name: "Nexora",                type: { es: "Tienda de videojuegos", en: "Video game store" },      url: "https://nexora-one-rho.vercel.app" },
     { slug: "edi-esthetic",  name: "Edi Hernández Esthetic", type: { es: "Estética facial",       en: "Facial aesthetics" },     url: "https://edi-esthetic.vercel.app" },
+    { slug: "forge",         name: "Forge Athletic Co.",    type: { es: "Concepto de gimnasio",  en: "Gym concept" },           url: "https://forge-training-concept.vercel.app" },
   ];
 
   const T = {
