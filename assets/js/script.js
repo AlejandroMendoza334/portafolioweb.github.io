@@ -158,6 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "pulso",         name: "Pulso.",                type: { es: "Concepto ropa deportiva", en: "Activewear concept" },  url: "https://pulso-performance-concept.vercel.app" },
     { slug: "asia-express",  name: "Asia Express",          type: { es: "Comida china",          en: "Chinese food" },          url: "https://asia-express-valencia.vercel.app" },
     { slug: "inko",          name: "INKO.",                 type: { es: "Concepto de camisetas", en: "T-shirt brand concept" }, url: "https://inko-clothing-concept.vercel.app" },
+    { slug: "la-espiga",     name: "La Espiga",             type: { es: "Concepto de panadería", en: "Bakery concept" },        url: "https://la-espiga-concept.vercel.app" },
+    { slug: "el-budare",     name: "El Budare",             type: { es: "Concepto de cachapería", en: "Cachapa shop concept" }, url: "https://el-budare-concept.vercel.app" },
+    { slug: "la-doradita",   name: "La Doradita",           type: { es: "Concepto de empanadas",  en: "Empanada shop concept" }, url: "https://la-doradita-concept.vercel.app" },
   ];
 
   const T = {
