@@ -32,6 +32,22 @@ document.addEventListener("click", function (event) {
   }
 });
 
+// BOTON DE CV - cambia segun el idioma
+function updateCvButton() {
+  const btn = document.getElementById("cvBtn");
+  const btnText = document.getElementById("cvBtnText");
+  if (!btn || !btnText) return;
+  const lang = localStorage.getItem("portfolio-lang") || "es";
+  if (lang === "en") {
+    btn.setAttribute("href", "curriculum.pdf");
+    btnText.textContent = "View CV";
+  } else {
+    btn.setAttribute("href", "curriculum-es.pdf");
+    btnText.textContent = "Ver CV";
+  }
+}
+document.addEventListener("DOMContentLoaded", updateCvButton);
+
 // SELECTOR DE IDIOMAS - Slider
 document.addEventListener("DOMContentLoaded", function () {
   const langToggle = document.getElementById("langToggle");
@@ -62,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (typeof changeLanguage === "function") {
       changeLanguage(selectedLang);
     }
+    updateCvButton();
   });
 });
 
