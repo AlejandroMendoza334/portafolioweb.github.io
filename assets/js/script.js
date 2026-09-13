@@ -143,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "la-grillade",   name: "La Grillade",           type: { es: "Parrilla francesa",     en: "French grill" },          url: "https://la-grillade.vercel.app" },
     { slug: "la-margarita",  name: "La Margariteña",        type: { es: "Desayuno criollo",      en: "Venezuelan breakfast" },  url: "https://la-margarita.vercel.app" },
     { slug: "diletto",       name: "Diletto",               type: { es: "Pizza a la leña",       en: "Wood-fired pizza" },      url: "https://dilettopizza.vercel.app" },
-    { slug: "media-luna",    name: "Media Luna Food House", type: { es: "Empanadería",           en: "Empanada bakery" },       url: "https://medialunafoodhouse.vercel.app" },
     { slug: "chaplin",       name: "Chaplin's",             type: { es: "Smash burgers",         en: "Smash burgers" },         url: "https://chaplin-burger.vercel.app" },
     { slug: "gastro-burger", name: "Gastro Burger",         type: { es: "Hamburguesería",        en: "Burger joint" },          url: "https://gastro-burger.vercel.app" },
     { slug: "itaewon-korea", name: "Itaewon Korea",         type: { es: "Comida coreana",        en: "Korean food" },           url: "https://itaewon-korea.vercel.app" },
@@ -151,16 +150,14 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "spy-gym",       name: "Spy Gym",               type: { es: "Gimnasio",              en: "Gym" },                   url: "https://spy-gym.vercel.app" },
     { slug: "la-nota",       name: "La Nota Fitness",       type: { es: "Gimnasio y clases",     en: "Gym & classes" },         url: "https://lanotafitness.vercel.app" },
     { slug: "nexora",        name: "Nexora",                type: { es: "Tienda de videojuegos", en: "Video game store" },      url: "https://nexora-one-rho.vercel.app" },
-    { slug: "edi-esthetic",  name: "Edi Hernández Esthetic", type: { es: "Estética facial",       en: "Facial aesthetics" },     url: "https://edi-esthetic.vercel.app" },
     { slug: "forge",         name: "Forge Athletic Co.",    type: { es: "Concepto de gimnasio",  en: "Gym concept" },           url: "https://forge-training-concept.vercel.app" },
     { slug: "amara-spa",     name: "Amara Spa & Wellness",  type: { es: "Concepto de spa",       en: "Spa concept" },           url: "https://amara-spa-concept.vercel.app" },
     { slug: "void-shop",     name: "Void.",                 type: { es: "Concepto de tienda",    en: "Store concept" },         url: "https://void-shop-concept.vercel.app" },
     { slug: "bloque",        name: "Bloque.",               type: { es: "Concepto streetwear",   en: "Streetwear concept" },    url: "https://bloque-streetwear-concept.vercel.app" },
     { slug: "marea",         name: "Marea",                 type: { es: "Concepto de boutique",  en: "Boutique concept" },      url: "https://marea-boutique-concept.vercel.app" },
     { slug: "pulso",         name: "Pulso.",                type: { es: "Concepto ropa deportiva", en: "Activewear concept" },  url: "https://pulso-performance-concept.vercel.app" },
-    { slug: "luar",          name: "Luar",                  type: { es: "Vestidos de fiesta",    en: "Party dresses boutique" }, url: "https://luar-boutique.vercel.app" },
     { slug: "asia-express",  name: "Asia Express",          type: { es: "Comida china",          en: "Chinese food" },          url: "https://asia-express-valencia.vercel.app" },
-    { slug: "doom-store",    name: "Doom Store",            type: { es: "Accesorios underground",en: "Underground accessories" }, url: "https://doom-store-vzla.vercel.app" },
+    { slug: "inko",          name: "INKO.",                 type: { es: "Concepto de camisetas", en: "T-shirt brand concept" }, url: "https://inko-clothing-concept.vercel.app" },
   ];
 
   const T = {
