@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { slug: "la-espiga",     name: "La Espiga",             type: { es: "Concepto de panadería", en: "Bakery concept" },        url: "https://la-espiga-concept.vercel.app" },
     { slug: "el-budare",     name: "El Budare",             type: { es: "Concepto de cachapería", en: "Cachapa shop concept" }, url: "https://el-budare-concept.vercel.app" },
     { slug: "la-doradita",   name: "La Doradita",           type: { es: "Concepto de empanadas",  en: "Empanada shop concept" }, url: "https://la-doradita-concept.vercel.app" },
+    { slug: "la-fetta",      name: "La Fetta",              type: { es: "Concepto de pizzería",   en: "Pizzeria concept" },      url: "https://la-fetta-concept.vercel.app" },
   ];
 
   const T = {
