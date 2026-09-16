@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Mendoza — Páginas web para negocios</title>
+    <meta name="description" content="Ejemplos reales de páginas web hechas para restaurantes, gimnasios, tiendas y otros negocios locales — Valencia, San Diego y Caracas.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <link rel="icon" href="icons8-portfolio-16.png">
+    <style>
+        .sitios-hero {
+            padding: 70px 20px 20px;
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .sitios-hero .brand {
+            font-family: "Righteous", cursive;
+            font-size: 1.15rem;
+            color: #1cb698;
+            margin-bottom: 22px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .sitios-hero h1 {
+            font-family: "Righteous", cursive;
+            font-size: 2.3rem;
+            line-height: 1.25;
+            background: linear-gradient(45deg, #1cb698, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .sitios-hero p {
+            color: #cccccc;
+            font-size: 1.05rem;
+            margin-top: 14px;
+        }
+        .sitios-footer {
+            text-align: center;
+            padding: 40px 20px 60px;
+            color: #8b8f96;
+            font-size: 0.85rem;
+        }
+        .sitios-footer a {
+            color: #1cb698;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .sitios-footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .sitios-hero h1 { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sitios-hero">
+        <a href="index.html" class="brand">Alejandro Mendoza</a>
+        <h1>Páginas web reales para negocios como el tuyo</h1>
+        <p>Cada una de estas está en línea y funcionando de verdad — restaurantes, gimnasios, tiendas y más, en Valencia, San Diego (Carabobo) y Caracas.</p>
+    </div>
+
+    <section class="landings" id="landings" style="background:none; padding-top:20px;">
+        <div class="projects-container">
+            <div class="landings-grid" id="landings-grid"></div>
+        </div>
+    </section>
+
+    <div class="sitios-footer">
+        ¿Quieres saber más de mí? <a href="index.html">Ver portafolio completo</a>
+    </div>
+
+    <script>
+        var LANDINGS = [
+            { slug: "que-sancocho",  name: "Que Sancocho",          type: "Restaurante criollo",   url: "https://que-sancocho.vercel.app" },
+            { slug: "casa-vintage",  name: "Casa Vintage",          type: "Cocina de autor",       url: "https://casa-vintage.vercel.app" },
+            { slug: "la-grillade",   name: "La Grillade",           type: "Parrilla francesa",     url: "https://la-grillade.vercel.app" },
+            { slug: "la-margarita",  name: "La Margariteña",        type: "Desayuno criollo",      url: "https://la-margarita.vercel.app" },
+            { slug: "diletto",       name: "Diletto",               type: "Pizza a la leña",       url: "https://dilettopizza.vercel.app" },
+            { slug: "chaplin",       name: "Chaplin's",             type: "Smash burgers",         url: "https://chaplin-burger.vercel.app" },
+            { slug: "gastro-burger", name: "Gastro Burger",         type: "Hamburguesería",        url: "https://gastro-burger.vercel.app" },
+            { slug: "itaewon-korea", name: "Itaewon Korea",         type: "Comida coreana",        url: "https://itaewon-korea.vercel.app" },
+            { slug: "das-kaffee",    name: "DAS Kaffee",            type: "Café y restaurante",    url: "https://das-kaffee.vercel.app" },
+            { slug: "spy-gym",       name: "Spy Gym",               type: "Gimnasio",              url: "https://spy-gym.vercel.app" },
+            { slug: "la-nota",       name: "La Nota Fitness",       type: "Gimnasio y clases",     url: "https://lanotafitness.vercel.app" },
+            { slug: "nexora",        name: "Nexora",                type: "Tienda de videojuegos", url: "https://nexora-one-rho.vercel.app" },
+            { slug: "forge",         name: "Forge Athletic Co.",    type: "Concepto de gimnasio",  url: "https://forge-training-concept.vercel.app" },
+            { slug: "amara-spa",     name: "Amara Spa & Wellness",  type: "Concepto de spa",       url: "https://amara-spa-concept.vercel.app" },
+            { slug: "void-shop",     name: "Void.",                 type: "Concepto de tienda",    url: "https://void-shop-concept.vercel.app" },
+            { slug: "bloque",        name: "Bloque.",               type: "Concepto streetwear",   url: "https://bloque-streetwear-concept.vercel.app" },
+            { slug: "marea",         name: "Marea",                 type: "Concepto de boutique",  url: "https://marea-boutique-concept.vercel.app" },
+            { slug: "pulso",         name: "Pulso.",                type: "Concepto ropa deportiva", url: "https://pulso-performance-concept.vercel.app" },
+            { slug: "asia-express",  name: "Asia Express",          type: "Comida china",          url: "https://asia-express-valencia.vercel.app" },
+            { slug: "inko",          name: "INKO.",                 type: "Concepto de camisetas", url: "https://inko-clothing-concept.vercel.app" },
+            { slug: "la-espiga",     name: "La Espiga",             type: "Concepto de panadería", url: "https://la-espiga-concept.vercel.app" },
+            { slug: "el-budare",     name: "El Budare",             type: "Concepto de cachapería", url: "https://el-budare-concept.vercel.app" },
+            { slug: "la-doradita",   name: "La Doradita",           type: "Concepto de empanadas", url: "https://la-doradita-concept.vercel.app" },
+            { slug: "la-fetta",      name: "La Fetta",              type: "Concepto de pizzería",  url: "https://la-fetta-concept.vercel.app" },
+        ];
+
+        var grid = document.getElementById("landings-grid");
+        LANDINGS.forEach(function (item) {
+            var a = document.createElement("a");
+            a.className = "landing-card";
+            a.href = item.url;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.innerHTML =
+                '<figure><img src="assets/images/landings/' + item.slug + '.jpg" alt="' + item.name + '" loading="lazy"></figure>' +
+                '<div class="lc-body">' +
+                    '<div class="lc-name">' + item.name + '</div>' +
+                    '<div class="lc-type">' + item.type + '</div>' +
+                    '<span class="lc-cta"><i class="fa-solid fa-arrow-right"></i> <span>Ver sitio</span></span>' +
+                '</div>';
+            grid.appendChild(a);
+        });
+    </script>
+</body>
+</html>
