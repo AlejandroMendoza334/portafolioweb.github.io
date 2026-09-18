@@ -4,126 +4,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alejandro Mendoza — Páginas web para negocios</title>
-    <meta name="description" content="Ejemplos reales de páginas web hechas para restaurantes, gimnasios, tiendas y otros negocios locales — Valencia, San Diego y Caracas.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <title>Páginas web para restaurantes y negocios — Alejandro Mendoza</title>
+    <meta name="description" content="Ejemplos de páginas web hechas por Alejandro Mendoza para restaurantes, gimnasios y tiendas: menú, fotos y botón para pedir por WhatsApp.">
+    <meta property="og:title" content="Páginas web para restaurantes y negocios">
+    <meta property="og:description" content="Ejemplos de páginas con menú, fotos y botón de WhatsApp. Mire las que quiera.">
+    <meta property="og:image" content="https://alejandromendoza334.github.io/portafolioweb.github.io/assets/images/landings/diletto.jpg">
     <link rel="icon" href="icons8-portfolio-16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        .sitios-hero {
-            padding: 70px 20px 20px;
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto;
+        :root {
+            --paper: #f5efe4;
+            --paper-2: #ece4d3;
+            --ink: #1f1b16;
+            --ink-soft: #5c554b;
+            --line: #d9cfba;
+            --accent: #b8471f;
         }
-        .sitios-hero .brand {
-            font-family: "Righteous", cursive;
-            font-size: 1.15rem;
-            color: #1cb698;
-            margin-bottom: 22px;
-            display: inline-block;
-            text-decoration: none;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "DM Sans", system-ui, sans-serif;
+            font-size: 17px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
-        .sitios-hero h1 {
-            font-family: "Righteous", cursive;
-            font-size: 2.3rem;
-            line-height: 1.25;
-            background: linear-gradient(45deg, #1cb698, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        a { color: inherit; }
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+        header.top {
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
         }
-        .sitios-hero p {
-            color: #cccccc;
-            font-size: 1.05rem;
-            margin-top: 14px;
+        header.top .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+        .who { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+        .who small { font-family: "DM Sans", sans-serif; font-weight: 400; color: var(--ink-soft); font-size: .85rem; margin-left: 8px; }
+        header.top a.more { font-size: .9rem; color: var(--ink-soft); }
+
+        .intro { padding: 64px 0 40px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: end; }
+        .intro h1 {
+            font-family: "Fraunces", Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 4.6vw, 3.3rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
         }
-        .sitios-footer {
-            text-align: center;
-            padding: 40px 20px 60px;
-            color: #8b8f96;
-            font-size: 0.85rem;
+        .intro h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+        .intro p { color: var(--ink-soft); }
+        .intro p + p { margin-top: 10px; }
+
+        .how { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+        .how div { padding: 22px 22px 22px 0; }
+        .how div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+        .how b { font-family: "Fraunces", Georgia, serif; font-size: 1.6rem; color: var(--accent); font-weight: 500; display: block; line-height: 1; margin-bottom: 8px; }
+        .how span { font-size: .95rem; color: var(--ink-soft); }
+        .how strong { color: var(--ink); font-weight: 700; display: block; margin-bottom: 2px; }
+
+        section.group { padding: 42px 0 8px; }
+        section.group h2 {
+            font-family: "Fraunces", Georgia, serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 4px;
         }
-        .sitios-footer a {
-            color: #1cb698;
-            text-decoration: none;
-            font-weight: 600;
+        section.group .sub { color: var(--ink-soft); font-size: .95rem; margin-bottom: 22px; }
+
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 22px; }
+        a.card { display: block; text-decoration: none; }
+        a.card figure {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background: var(--paper-2);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            position: relative;
         }
-        .sitios-footer a:hover {
-            text-decoration: underline;
+        a.card figure::before {
+            content: "";
+            position: absolute; left: 0; right: 0; top: 0; height: 18px;
+            background: var(--paper-2);
+            border-bottom: 1px solid var(--line);
+            z-index: 1;
         }
-        @media (max-width: 600px) {
-            .sitios-hero h1 { font-size: 1.7rem; }
+        a.card figure::after {
+            content: "";
+            position: absolute; left: 8px; top: 6px; width: 6px; height: 6px; border-radius: 50%;
+            background: #c9bea6; box-shadow: 10px 0 0 #c9bea6, 20px 0 0 #c9bea6;
+            z-index: 2;
         }
-        a.landing-card, a.landing-card * {
-            text-decoration: none;
+        a.card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; padding-top: 18px; transition: transform .4s ease; }
+        a.card:hover img { transform: scale(1.03); }
+        a.card .meta { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding-top: 10px; }
+        a.card .name { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 1.15rem; }
+        a.card .type { color: var(--ink-soft); font-size: .88rem; }
+        a.card .go { color: var(--accent); font-size: .85rem; font-weight: 700; white-space: nowrap; opacity: 0; transform: translateX(-4px); transition: all .2s; }
+        a.card:hover .go, a.card:focus-visible .go { opacity: 1; transform: none; }
+        a.card:hover .name { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+        a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        .tag { display: inline-block; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 3px; padding: 0 6px; margin-left: 8px; vertical-align: 2px; }
+
+        .note { margin-top: 44px; padding: 20px 22px; background: var(--paper-2); border-left: 3px solid var(--accent); font-size: .95rem; color: var(--ink-soft); }
+
+        .close { padding: 56px 0 72px; text-align: left; }
+        .close h2 { font-family: "Fraunces", Georgia, serif; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.2; max-width: 620px; }
+        .close p { margin-top: 12px; color: var(--ink-soft); max-width: 560px; }
+        footer { border-top: 1px solid var(--line); padding: 22px 0 40px; font-size: .85rem; color: var(--ink-soft); }
+        footer a { color: var(--ink); }
+
+        @media (max-width: 860px) {
+            .intro { grid-template-columns: 1fr; gap: 20px; padding-top: 40px; }
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+            body { font-size: 16px; }
+            .grid { grid-template-columns: 1fr; }
+            .how { grid-template-columns: 1fr; }
+            .how div, .how div + div { padding: 16px 0; border-left: 0; }
+            .how div + div { border-top: 1px solid var(--line); }
+            a.card .go { opacity: 1; transform: none; }
+            header.top small { display: none; }
         }
     </style>
 </head>
 
 <body>
-    <div class="sitios-hero">
-        <a href="index.html" class="brand">Alejandro Mendoza</a>
-        <h1>Páginas web reales para negocios como el tuyo</h1>
-        <p>Cada una de estas está en línea y funcionando de verdad — restaurantes, gimnasios, tiendas y más, en Valencia, San Diego (Carabobo) y Caracas.</p>
-    </div>
-
-    <section class="landings" id="landings" style="background:none; padding-top:20px;">
-        <div class="projects-container">
-            <div class="landings-grid" id="landings-grid"></div>
+    <header class="top">
+        <div class="wrap">
+            <a class="who" href="index.html">Alejandro Mendoza<small>diseño de páginas web · Valencia, Venezuela</small></a>
+            <a class="more" href="index.html">Portafolio</a>
         </div>
-    </section>
+    </header>
 
-    <div class="sitios-footer">
-        ¿Quieres saber más de mí? <a href="index.html">Ver portafolio completo</a>
-    </div>
+    <main class="wrap">
+        <div class="intro">
+            <h1>Una página donde sus clientes vean el menú y <em>le pidan por WhatsApp.</em></h1>
+            <div>
+                <p>Estas son páginas que he hecho. Puede abrir la que quiera, están en línea y se ven igual en el teléfono.</p>
+                <p>Cada una se hace con el logo, las fotos y los colores del negocio.</p>
+            </div>
+        </div>
+
+        <div class="how">
+            <div><b>1</b><span><strong>Me pasa lo básico</strong>Logo, fotos, menú con precios y su WhatsApp.</span></div>
+            <div><b>2</b><span><strong>La armo en 3 días hábiles</strong>Con su dominio propio y el hosting el primer año.</span></div>
+            <div><b>3</b><span><strong>Usted la revisa</strong>Se ajusta lo que haga falta antes de publicarla.</span></div>
+        </div>
+
+        <div id="groups"></div>
+
+        <p class="note">Las marcadas como <span class="tag" style="margin-left:0">concepto</span> son diseños de muestra para ese tipo de negocio, para que vea el estilo. Con las suyas se trabaja con su marca real.</p>
+
+        <div class="close">
+            <h2>¿Vio alguna que le sirva como referencia?</h2>
+            <p>Dígamelo por el mismo chat y se la armo con el estilo de su negocio.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap">Alejandro Mendoza · <a href="index.html">Ver portafolio completo</a></div>
+    </footer>
 
     <script>
-        var LANDINGS = [
-            { slug: "que-sancocho",  name: "Que Sancocho",          type: "Restaurante criollo",   url: "https://que-sancocho.vercel.app" },
-            { slug: "casa-vintage",  name: "Casa Vintage",          type: "Cocina de autor",       url: "https://casa-vintage.vercel.app" },
-            { slug: "la-grillade",   name: "La Grillade",           type: "Parrilla francesa",     url: "https://la-grillade.vercel.app" },
-            { slug: "la-margarita",  name: "La Margariteña",        type: "Desayuno criollo",      url: "https://la-margarita.vercel.app" },
-            { slug: "diletto",       name: "Diletto",               type: "Pizza a la leña",       url: "https://dilettopizza.vercel.app" },
-            { slug: "chaplin",       name: "Chaplin's",             type: "Smash burgers",         url: "https://chaplin-burger.vercel.app" },
-            { slug: "gastro-burger", name: "Gastro Burger",         type: "Hamburguesería",        url: "https://gastro-burger.vercel.app" },
-            { slug: "itaewon-korea", name: "Itaewon Korea",         type: "Comida coreana",        url: "https://itaewon-korea.vercel.app" },
-            { slug: "das-kaffee",    name: "DAS Kaffee",            type: "Café y restaurante",    url: "https://das-kaffee.vercel.app" },
-            { slug: "spy-gym",       name: "Spy Gym",               type: "Gimnasio",              url: "https://spy-gym.vercel.app" },
-            { slug: "la-nota",       name: "La Nota Fitness",       type: "Gimnasio y clases",     url: "https://lanotafitness.vercel.app" },
-            { slug: "nexora",        name: "Nexora",                type: "Tienda de videojuegos", url: "https://nexora-one-rho.vercel.app" },
-            { slug: "forge",         name: "Forge Athletic Co.",    type: "Concepto de gimnasio",  url: "https://forge-training-concept.vercel.app" },
-            { slug: "amara-spa",     name: "Amara Spa & Wellness",  type: "Concepto de spa",       url: "https://amara-spa-concept.vercel.app" },
-            { slug: "void-shop",     name: "Void.",                 type: "Concepto de tienda",    url: "https://void-shop-concept.vercel.app" },
-            { slug: "bloque",        name: "Bloque.",               type: "Concepto streetwear",   url: "https://bloque-streetwear-concept.vercel.app" },
-            { slug: "marea",         name: "Marea",                 type: "Concepto de boutique",  url: "https://marea-boutique-concept.vercel.app" },
-            { slug: "pulso",         name: "Pulso.",                type: "Concepto ropa deportiva", url: "https://pulso-performance-concept.vercel.app" },
-            { slug: "asia-express",  name: "Asia Express",          type: "Comida china",          url: "https://asia-express-valencia.vercel.app" },
-            { slug: "inko",          name: "INKO.",                 type: "Concepto de camisetas", url: "https://inko-clothing-concept.vercel.app" },
-            { slug: "la-espiga",     name: "La Espiga",             type: "Concepto de panadería", url: "https://la-espiga-concept.vercel.app" },
-            { slug: "el-budare",     name: "El Budare",             type: "Concepto de cachapería", url: "https://el-budare-concept.vercel.app" },
-            { slug: "la-doradita",   name: "La Doradita",           type: "Concepto de empanadas", url: "https://la-doradita-concept.vercel.app" },
-            { slug: "la-fetta",      name: "La Fetta",              type: "Concepto de pizzería",  url: "https://la-fetta-concept.vercel.app" },
+        var GROUPS = [
+            { title: "Restaurantes y comida", sub: "Menú, fotos y pedido por WhatsApp.", items: [
+                { slug: "diletto",       name: "Diletto",         type: "Pizza a la leña",          url: "https://dilettopizza.vercel.app" },
+                { slug: "chaplin",       name: "Chaplin's",       type: "Smash burgers",            url: "https://chaplin-burger.vercel.app" },
+                { slug: "gastro-burger", name: "Gastro Burger",   type: "Hamburguesería",           url: "https://gastro-burger.vercel.app" },
+                { slug: "asia-express",  name: "Asia Express",    type: "Comida china",             url: "https://asia-express-valencia.vercel.app" },
+                { slug: "itaewon-korea", name: "Itaewon Korea",   type: "Comida coreana",           url: "https://itaewon-korea.vercel.app" },
+                { slug: "que-sancocho",  name: "Que Sancocho",    type: "Restaurante criollo",      url: "https://que-sancocho.vercel.app" },
+                { slug: "la-margarita",  name: "La Margariteña",  type: "Desayuno criollo",         url: "https://la-margarita.vercel.app" },
+                { slug: "la-grillade",   name: "La Grillade",     type: "Parrilla francesa",        url: "https://la-grillade.vercel.app" },
+                { slug: "casa-vintage",  name: "Casa Vintage",    type: "Cocina de autor",          url: "https://casa-vintage.vercel.app" },
+                { slug: "das-kaffee",    name: "DAS Kaffee",      type: "Café y restaurante",       url: "https://das-kaffee.vercel.app" },
+                { slug: "la-fetta",      name: "La Fetta",        type: "Pizzería",                 url: "https://la-fetta-concept.vercel.app", concept: true },
+                { slug: "la-espiga",     name: "La Espiga",       type: "Panadería",                url: "https://la-espiga-concept.vercel.app", concept: true },
+                { slug: "el-budare",     name: "El Budare",       type: "Cachapería",               url: "https://el-budare-concept.vercel.app", concept: true },
+                { slug: "la-doradita",   name: "La Doradita",     type: "Empanadas",                url: "https://la-doradita-concept.vercel.app", concept: true }
+            ]},
+            { title: "Gimnasios", sub: "Planes, horarios y contacto.", items: [
+                { slug: "spy-gym",       name: "Spy Gym",         type: "Gimnasio",                 url: "https://spy-gym.vercel.app" },
+                { slug: "la-nota",       name: "La Nota Fitness", type: "Gimnasio y clases",        url: "https://lanotafitness.vercel.app" },
+                { slug: "forge",         name: "Forge Athletic",  type: "Gimnasio",                 url: "https://forge-training-concept.vercel.app", concept: true }
+            ]},
+            { title: "Tiendas, spa y otros", sub: "Catálogo y contacto directo.", items: [
+                { slug: "nexora",        name: "Nexora",          type: "Videojuegos",              url: "https://nexora-one-rho.vercel.app" },
+                { slug: "amara-spa",     name: "Amara Spa",       type: "Spa y bienestar",          url: "https://amara-spa-concept.vercel.app", concept: true },
+                { slug: "void-shop",     name: "Void.",           type: "Tienda",                   url: "https://void-shop-concept.vercel.app", concept: true },
+                { slug: "bloque",        name: "Bloque.",         type: "Streetwear",               url: "https://bloque-streetwear-concept.vercel.app", concept: true },
+                { slug: "marea",         name: "Marea",           type: "Boutique",                 url: "https://marea-boutique-concept.vercel.app", concept: true },
+                { slug: "pulso",         name: "Pulso.",          type: "Ropa deportiva",           url: "https://pulso-performance-concept.vercel.app", concept: true },
+                { slug: "inko",          name: "INKO.",           type: "Camisetas",                url: "https://inko-clothing-concept.vercel.app", concept: true }
+            ]}
         ];
 
-        var grid = document.getElementById("landings-grid");
-        LANDINGS.forEach(function (item) {
-            var a = document.createElement("a");
-            a.className = "landing-card";
-            a.href = item.url;
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.innerHTML =
-                '<figure><img src="assets/images/landings/' + item.slug + '.jpg" alt="' + item.name + '" loading="lazy"></figure>' +
-                '<div class="lc-body">' +
-                    '<div class="lc-name">' + item.name + '</div>' +
-                    '<div class="lc-type">' + item.type + '</div>' +
-                    '<span class="lc-cta"><i class="fa-solid fa-arrow-right"></i> <span>Ver sitio</span></span>' +
-                '</div>';
-            grid.appendChild(a);
+        var root = document.getElementById("groups");
+        GROUPS.forEach(function (g) {
+            var s = document.createElement("section");
+            s.className = "group";
+            var html = '<h2>' + g.title + '</h2><p class="sub">' + g.sub + '</p><div class="grid">';
+            g.items.forEach(function (i) {
+                html += '<a class="card" href="' + i.url + '" target="_blank" rel="noopener">' +
+                    '<figure><img src="assets/images/landings/' + i.slug + '.jpg" alt="Página de ' + i.name + '" loading="lazy"></figure>' +
+                    '<div class="meta"><div><span class="name">' + i.name + '</span>' + (i.concept ? '<span class="tag">concepto</span>' : '') +
+                    '<div class="type">' + i.type + '</div></div><span class="go">Abrir →</span></div></a>';
+            });
+            html += '</div>';
+            s.innerHTML = html;
+            root.appendChild(s);
         });
     </script>
 </body>
+
 </html>
