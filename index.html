@@ -1,538 +1,505 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alejandro Mendoza - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <title>Alejandro Mendoza · Desarrollador Full Stack</title>
+    <meta name="description" content="Portafolio de Alejandro Mendoza, desarrollador Full Stack y móvil en Venezuela: web, APIs y apps con React, Node.js, Python y Flutter.">
+    <meta property="og:title" content="Alejandro Mendoza · Desarrollador Full Stack">
+    <meta property="og:description" content="Web, APIs y apps móviles con React, Node.js, Python y Flutter.">
+    <meta property="og:image" content="https://alejandromendoza334.github.io/portafolioweb.github.io/assets/images/landings/tuerca.jpg">
     <link rel="icon" href="icons8-portfolio-16.png">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="0d61eddb-f23f-4176-8b79-8ff731935142"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #12110f; --panel: #1c1a17; --panel2: #26231f; --ink: #f5f1e8; --muted: #aba499; --line: #35312b; --accent: #ff5a2b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        html, body { overflow-x: clip; }
+        section[id], header[id] { scroll-margin-top: 68px; }
+        body { background: var(--bg); color: var(--ink); font-family: Manrope, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body[data-lang="es"] .en, body[data-lang="en"] .es { display: none; }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+        .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3 { font-family: "Instrument Serif", serif; font-weight: 400; letter-spacing: -.012em; line-height: 1.03; }
+        h2 { font-size: clamp(2.5rem, 5.4vw, 4.1rem); }
+        h1 em, h2 em { color: var(--accent); }
+        .label { font-family: "JetBrains Mono", monospace; font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 14px; }
+        section { padding: 96px 0; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 14px 24px; font-weight: 700; font-size: .95rem; transition: transform .2s, background .2s, border-color .2s; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn.pri { background: var(--accent); color: #160a05; }
+        .btn.sec { border: 1px solid #55504a; }
+        .btn.sec:hover { border-color: var(--ink); }
+        nav.top { position: sticky; top: 0; z-index: 30; background: rgba(18, 17, 15, .97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+        nav.top .wrap { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+        .brand { font-family: "Instrument Serif"; font-size: 1.5rem; white-space: nowrap; }
+        .links { display: flex; gap: 26px; font-size: .9rem; font-weight: 600; color: var(--muted); }
+        .links a:hover { color: var(--ink); }
+        .lang { display: flex; border: 1px solid #55504a; border-radius: 99px; padding: 7px 11px; transition: border-color .2s, transform .2s; }
+        .lang:hover { border-color: var(--ink); transform: scale(1.06); }
+        .lang svg { display: block; width: 27px; height: 18px; border-radius: 3px; }
+        @media (max-width: 820px) { .links { display: none; } }
+        .hero { padding: 72px 0 80px; }
+        .hero .wrap { display: grid; grid-template-columns: 1.3fr .7fr; gap: 56px; align-items: end; }
+        .hero .wrap > * { min-width: 0; }
+        h1 { font-size: clamp(3.3rem, 7.6vw, 6.5rem); }
+        .intro { color: var(--muted); font-size: 1.12rem; max-width: 590px; margin: 24px 0 30px; }
+        .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+        .socials { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 28px; font-size: .9rem; font-weight: 600; color: var(--muted); }
+        .socials a { border-bottom: 1px solid #55504a; }
+        .socials a:hover { color: var(--ink); }
+        .portrait { position: relative; }
+        .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%; border-radius: 14px; filter: saturate(.92); }
+        .avail { position: absolute; left: 12px; bottom: 12px; background: rgba(18, 17, 15, .86); border-radius: 99px; padding: 7px 13px; font-size: .78rem; font-weight: 700; display: flex; gap: 8px; align-items: center; }
+        .avail i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+        @media (max-width: 820px) { .hero .wrap { grid-template-columns: 1fr; } .portrait { max-width: 340px; order: -1; } section { padding: 70px 0; } }
+        .facts { border-block: 1px solid var(--line); }
+        .facts .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .facts div { padding: 24px 20px; border-left: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
+        .facts div:first-child { border: 0; padding-left: 0; }
+        .facts b { display: block; color: var(--ink); }
+        @media (max-width: 760px) { .facts .wrap { grid-template-columns: 1fr 1fr; } .facts div { border: 0; padding: 16px 10px 16px 0; } }
+        .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 22px; flex-wrap: wrap; margin-bottom: 42px; }
+        .head p { color: var(--muted); max-width: 390px; }
+        .work { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+        .pj { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; grid-column: span 3; }
+        .pj.big { grid-column: span 6; flex-direction: row; }
+        .pj.big > * { flex: 1; min-width: 0; }
+        .pj.third { grid-column: span 2; }
+        .shot { background: var(--panel2); aspect-ratio: 16 / 10; overflow: hidden; }
+        .pj.big .shot { aspect-ratio: auto; min-height: 340px; }
+        .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .shot.contain img { object-fit: contain; padding: 20px; }
+        .shot.txt { display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; font-family: "JetBrains Mono", monospace; font-size: .82rem; color: var(--muted); gap: 5px; }
+        .shot.txt b { color: var(--accent); font-weight: 500; }
+        .body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+        .pj h3 { font-size: 1.9rem; }
+        .pj.big h3 { font-size: clamp(2.2rem, 4vw, 3.1rem); }
+        .pj p { color: var(--muted); font-size: .94rem; margin-top: 8px; flex: 1; }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px; }
+        .tags span { font-family: "JetBrains Mono", monospace; font-size: .7rem; border: 1px solid #47423b; border-radius: 5px; padding: 2px 7px; color: #d2ccc0; }
+        .plink { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px; font-size: .88rem; font-weight: 700; color: var(--accent); min-height: 1.4em; }
+        .plink a:hover { text-decoration: underline; }
+        @media (max-width: 860px) { .pj, .pj.third { grid-column: span 3; } .pj.big { grid-column: span 6; flex-direction: column; } .pj.big .shot { min-height: 0; aspect-ratio: 16 / 10; } }
+        @media (max-width: 600px) { .pj, .pj.third, .pj.big { grid-column: span 6; } }
+        .biz { background: #ffc42e; color: #15130f; }
+        .biz .label { color: #15130f; }
+        .biz h2 em { color: #15130f; }
+        .biz .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+        .biz .wrap > * { min-width: 0; }
+        .biz p { color: #3d3420; margin: 16px 0 24px; }
+        .biz .btn { background: #15130f; color: #fff; }
+        .thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .thumbs img { border-radius: 9px; aspect-ratio: 900 / 604; object-fit: cover; object-position: top; box-shadow: 0 0 0 1px rgba(0, 0, 0, .12); }
+        @media (max-width: 820px) { .biz .wrap { grid-template-columns: 1fr; } }
+        .xp { border-top: 1px solid var(--line); }
+        .xp > div { display: grid; grid-template-columns: 230px 1fr; gap: 26px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+        .xp small { font-family: "JetBrains Mono", monospace; color: var(--muted); font-size: .78rem; }
+        .xp h3 { font-size: 1.75rem; }
+        .xp p { color: var(--muted); margin-top: 7px; max-width: 760px; }
+        @media (max-width: 680px) { .xp > div { grid-template-columns: 1fr; gap: 8px; } }
+        .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .skills h3 { font-size: 1.5rem; margin-bottom: 12px; }
+        .skills li { list-style: none; padding: 7px 0; border-top: 1px solid var(--line); color: #d8d2c6; font-size: .94rem; }
+        @media (max-width: 820px) { .skills { grid-template-columns: 1fr 1fr; } }
+        .mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 26px; border-top: 1px solid var(--line); margin-top: 26px; }
+        .mini a { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-weight: 600; font-size: .94rem; }
+        .mini a:hover { color: var(--accent); }
+        .mini span { color: var(--muted); font-weight: 500; }
+        @media (max-width: 760px) { .mini { grid-template-columns: 1fr; } }
+        .contact .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 54px; }
+        .contact .wrap > * { min-width: 0; }
+        .cinfo { margin-top: 24px; display: grid; gap: 14px; color: var(--muted); font-size: .95rem; }
+        .cinfo b { display: block; color: var(--ink); }
+        form { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 15px; }
+        label { font-size: .84rem; font-weight: 700; display: grid; gap: 6px; }
+        input, textarea { width: 100%; background: var(--bg); border: 1px solid #47423b; border-radius: 9px; color: var(--ink); padding: 12px; font: inherit; font-size: .95rem; }
+        input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+        .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 820px) { .contact .wrap { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) { .two { grid-template-columns: 1fr; } }
+        footer { border-top: 1px solid var(--line); padding: 26px 0; color: var(--muted); font-size: .85rem; }
+        footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .thumbs img { box-shadow: 0 10px 24px rgba(60, 40, 0, .28); }
+        /* Animaciones */
+        .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; z-index: 40; }
+        .links a { position: relative; transition: color .25s; }
+        .links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+        .links a:hover::after, .links a.on::after { transform: scaleX(1); }
+        .links a.on { color: var(--ink); }
+        .hero { position: relative; overflow: clip; }
+        .hero .wrap { position: relative; z-index: 1; }
+        .hero::before { content: ""; position: absolute; width: 760px; height: 760px; left: var(--mx, 70%); top: var(--my, 30%); translate: -50% -50%; display: none; }
+        @keyframes drift { to { transform: translate(50px, -36px) scale(1.14); } }
+        .avail i { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 90, 43, .6); } 100% { box-shadow: 0 0 0 11px rgba(255, 90, 43, 0); } }
+        .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .07em .14em 0; margin: 0 -.07em -.14em 0; }
+        .w > span { display: inline-block; transform: translateY(115%); transition: transform .95s cubic-bezier(.2, .8, .2, 1) calc(var(--i) * 60ms); }
+        .split.in .w > span { transform: none; }
+        .reveal { opacity: 0; translate: 0 34px; transition: opacity .85s ease var(--d, 0ms), translate .85s cubic-bezier(.2, .8, .2, 1) var(--d, 0ms), clip-path 1.2s cubic-bezier(.2, .8, .2, 1) var(--d, 0ms), transform .2s ease-out, border-color .3s, scale .45s ease-out; }
+        .reveal.in { opacity: 1; translate: 0 0; }
+        .portrait.reveal { clip-path: inset(14% 0 14% 0 round 14px); }
+        .portrait.reveal.in { clip-path: inset(0 round 14px); }
+        .ticker { overflow: hidden; border-bottom: 1px solid var(--line); padding: 16px 0; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+        .ticker > div { display: flex; width: max-content; animation: slide 34s linear infinite; }
+        .ticker:hover > div { animation-play-state: paused; }
+        .ticker span { font-family: "Instrument Serif", serif; font-size: 1.7rem; color: var(--muted); padding: 0 24px; white-space: nowrap; }
+        .ticker span::after { content: "✦"; color: var(--accent); font-size: .85rem; margin-left: 48px; }
+        @keyframes slide { to { transform: translateX(-50%); } }
+        .pj { position: relative; transform-style: preserve-3d; }
+        .pj::before { content: ""; position: absolute; inset: 0; z-index: 2; background: radial-gradient(340px circle at var(--x, 50%) var(--y, 50%), rgba(255, 90, 43, .09), transparent 70%); opacity: 0; transition: opacity .3s; pointer-events: none; }
+        .pj:hover { border-color: #ff5a2b; }
+        .pj:hover::before { opacity: 1; }
+        .shot img { transition: scale .8s cubic-bezier(.2, .8, .2, 1); }
+        .pj:hover .shot img { scale: 1.05; }
+        .type > span { clip-path: inset(0 100% 0 0); transition: clip-path .9s steps(30) calc(var(--t) * 420ms + 250ms); }
+        .in .type > span { clip-path: inset(0); }
+        .thumbs img { transform: translateY(var(--p, 0px)); }
+        .thumbs img:hover { scale: 1.04; }
+        .mini a { transition: color .25s, padding-left .25s; }
+        .mini a:hover { padding-left: 7px; }
+        .xp > div { transition: opacity .85s ease var(--d, 0ms), translate .85s cubic-bezier(.2, .8, .2, 1) var(--d, 0ms), padding-left .3s; }
+        .xp > div:hover { padding-left: 12px; }
+        .skills li { transition: color .2s, padding-left .2s; }
+        .skills li:hover { color: var(--accent); padding-left: 6px; }
+        .btn { transition: transform .2s, background .2s, border-color .2s, translate .25s ease-out, opacity .85s ease var(--d, 0ms); }
+        input, textarea { transition: border-color .2s; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .hero::before, .avail i, .ticker > div { animation: none; }
+        }
+    </style>
 </head>
 
-<body class="hidden">
-    <!-- SECCION LOADER -->
-    <div class="centrado" id="onload">
-        <div class="lds-ripple" bis_skin_checked="1">
-            <div bis_skin_checked="1"></div>
-            <div bis_skin_checked="1"></div>
+<body data-lang="es">
+    <nav class="top">
+        <div class="wrap">
+            <a class="brand" href="#top">Alejandro Mendoza</a>
+            <div class="links">
+                <a href="#trabajo"><span class="es">Proyectos</span><span class="en">Work</span></a>
+                <a href="#negocios"><span class="es">Para negocios</span><span class="en">For businesses</span></a>
+                <a href="#experiencia"><span class="es">Experiencia</span><span class="en">Experience</span></a>
+                <a href="#habilidades"><span class="es">Habilidades</span><span class="en">Skills</span></a>
+                <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+            </div>
+            <button class="lang" id="lang" type="button" aria-label="Cambiar idioma / Change language">EN</button>
         </div>
-    </div>
+    </nav>
 
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a href="#">Alejandro</a>
+    <header class="hero" id="top">
+        <div class="wrap">
+            <div>
+                <div class="label"><span class="es">Desarrollador Full Stack y móvil</span><span class="en">Full Stack &amp; mobile developer</span></div>
+                <h1><span class="es">Desarrollo productos <em>web y móviles</em> de principio a fin.</span><span class="en">I build <em>web and mobile</em> products from end to end.</span></h1>
+                <p class="intro"><span class="es">Soy Alejandro Mendoza, desarrollador junior de Venezuela. Trabajo con React, Node.js, Python y Flutter, y busco oportunidades remotas para seguir creciendo con buenos equipos.</span><span class="en">I'm Alejandro Mendoza, a junior developer from Venezuela. I work with React, Node.js, Python and Flutter, and I'm looking for remote opportunities to keep growing with great teams.</span></p>
+                <div class="btns">
+                    <a class="btn pri" href="#trabajo"><span class="es">Ver proyectos</span><span class="en">See my work</span></a>
+                    <a class="btn sec" id="cv" href="curriculum-es.pdf" target="_blank" rel="noopener"><span class="es">Ver CV</span><span class="en">View résumé</span></a>
+                </div>
+                <div class="socials">
+                    <a href="https://github.com/AlejandroMendoza334" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/alejandro-mendoza-b7430b276/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://es.fiverr.com/users/alejandromen496/portfolio" target="_blank" rel="noopener">Fiverr</a>
+                    <a href="https://www.instagram.com/dewcrossward/" target="_blank" rel="noopener">Instagram</a>
+                </div>
             </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio">Home</a></li>
-                    <li><a href="#sobremi">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#landings">Landing Pages</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <!-- Selector de idiomas slider -->
-            <div class="lang-slider">
-                <label class="switch">
-                    <input type="checkbox" id="langToggle">
-                    <span class="slider">
-                        <span class="lang-text" id="currentLangText">ES</span>
-                    </span>
-                </label>
-            </div>
-            <div class="nav-responsive">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
-
-    <!-- SECCION INICIO -->
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
+            <div class="portrait">
                 <img src="img/foto cv.png" alt="Alejandro Mendoza">
-            </div>
-
-            <h1>Alejandro Mendoza</h1>
-            <h2 class="background">Full Stack Developer <i class="fa-solid fa-code"></i></h2>
-            <div class="redes">
-                <a href="https://www.instagram.com/dewcrossward/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://github.com/AlejandroMendoza334" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/alejandro-mendoza-b7430b276/" aria-label="LinkedIn"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://es.fiverr.com/users/alejandromen496/portfolio" aria-label="Fiverr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" style="display:block;margin:auto"><text x="11.5" y="20" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="24" fill="currentColor">fi</text></svg></a>
+                <div class="avail"><i></i><span class="es">Disponible para trabajo remoto</span><span class="en">Open to remote work</span></div>
             </div>
         </div>
+    </header>
 
-        <div class="animated-lights"></div>
-    </section>
-
-    <!-- SECCION SOBRE MI -->
-    <section class="sobremi" id="sobremi">
-        <div class="contenido-seccion">
-            <h2>About Me</h2>
-            <p><span>Alejandro</span> is a passionate junior developer with a strong drive for continuous learning and
-                creating innovative solutions. With a foundation in both frontend and backend technologies, I'm 
-                committed to building a solid career in the tech field. I'm currently seeking remote opportunities
-                that will allow me to grow professionally, collaborate with dynamic teams, and contribute to impactful
-                software projects. I'm proactive, self-taught, and ready to take on challenges with
-                enthusiasm and dedication.</p>
-
-            <div class="fila">
-                <!-- información personal a la derecha -->
-                <div class="col">
-                    <h3>Professional Info</h3>
-                    <ul>
-                        <li>
-                            <strong>Email</strong>
-                            alejandromendoza6575757@gmail.com
-                        </li>
-                        <li>
-                            <strong>Location</strong>
-                            San Diego, Carabobo, Venezuela
-                        </li>
-                        <li>
-                            <strong>Languages</strong>
-                            Spanish Native, English Intermediate
-                        </li>
-                        <li>
-                            <strong>Role</strong>
-                            <span>FREELANCE DEVELOPER</span>
-                        </li>
-                    </ul>
-                    <a id="cvBtn" href="curriculum-es.pdf" target="_blank" rel="noopener" class="cv-btn">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                        <span id="cvBtnText">Ver CV</span>
-                    </a>
-                </div>
-            </div>
+    <div class="facts">
+        <div class="wrap">
+            <div><b>Frontend</b>React, JavaScript, Tailwind</div>
+            <div><b>Backend</b>Node.js, FastAPI, PostgreSQL</div>
+            <div><b>Mobile</b>Flutter, Dart, Firebase</div>
+            <div><b><span class="es">Ubicación</span><span class="en">Location</span></b>San Diego, Carabobo, Venezuela</div>
         </div>
-    </section>
-    
+    </div>
 
-    <!-- SECCION SKILLS -->
-    <section class="skills" id="skills">
-        <h2>Technical Skills <i class="fa-solid fa-code"></i></h2>
+    <div class="ticker">
+        <div><span>React</span><span>Node.js</span><span>Python</span><span>FastAPI</span><span>Flutter</span><span>Dart</span><span>Firebase</span><span>PostgreSQL</span><span>MongoDB</span><span>Tailwind CSS</span><span>Docker</span><span>WebSocket</span></div>
+    </div>
 
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Frontend Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/images/tech/html5.png" alt="HTML5" height="32px">
-                        <span>HTML5</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/icons8-css-color-120.png" alt="CSS3" height="32px">
-                        <span>CSS3</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/javascript.png" alt="JavaScript" height="32px">
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/react (2).png" alt="React" height="32px">
-                        <span>React</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/boostrap.png" alt="Bootstrap" height="32px">
-                        <span>Bootstrap</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/tailwind-css.png" alt="Tailwind CSS" height="32px">
-                        <span>Tailwind CSS</span>
-                    </div>
-                </div>
+    <section id="trabajo">
+        <div class="wrap">
+            <div class="head">
+                <div><div class="label"><span class="es">Proyectos</span><span class="en">Selected work</span></div><h2><span class="es">Trabajo <em>destacado</em></span><span class="en">Featured <em>projects</em></span></h2></div>
+                <p><span class="es">Sistemas, APIs y aplicaciones que he construido.</span><span class="en">Systems, APIs and apps I've built.</span></p>
             </div>
-
-            <div class="skill-category">
-                <h3>Backend Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/images/tech/node.png" alt="Node.js" height="32px">
-                        <span>Node.js</span>
+            <div class="work">
+                <article class="pj big">
+                    <div class="shot txt"><span><b>$</b> strategy: RSI Momentum · Keltner Pullback</span><span><b>$</b> sentiment: Reddit · Twitter · news</span><span><b>$</b> stream: WebSocket · React dashboard</span><span><b>$</b> deploy: Docker · VPS</span></div>
+                    <div class="body">
+                        <h3><span class="es">Sistema de trading automatizado</span><span class="en">Automated trading system</span></h3>
+                        <p><span class="es">Plataforma personal de trading de criptomonedas con varias estrategias, análisis de sentimiento, backtesting y panel en tiempo real.</span><span class="en">Personal crypto trading platform with several strategies, sentiment analysis, backtesting and a real-time dashboard.</span></p>
+                        <div class="tags"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>React</span><span>WebSocket</span><span>Docker</span></div>
+                        <div class="plink"><span class="es">Proyecto personal</span><span class="en">Personal project</span></div>
                     </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/python.png" alt="Python" height="32px">
-                        <span>Python</span>
+                </article>
+                <article class="pj">
+                    <div class="shot contain" style="background:#1e1e1e"><img src="assets/images/projects/boviframe.jpg" alt="BOVIFrame"></div>
+                    <div class="body">
+                        <h3>BOVIFrame</h3>
+                        <p><span class="es">App móvil de evaluación ganadera con el sistema EPMURAS, reportes individuales y grupales, y datos sin conexión.</span><span class="en">Mobile cattle evaluation app using the EPMURAS system, with individual and group reports and offline data.</span></p>
+                        <div class="tags"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+                        <div class="plink"><span class="es">Próximamente</span><span class="en">Coming soon</span></div>
                     </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/express.png" alt="Express.js" height="32px">
-                        <span>Express.js</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/python.png" alt="FastAPI" height="32px">
-                        <span>FastAPI</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Mobile Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/images/tech/flutter.png" alt="Flutter" height="32px">
-                        <span>Flutter</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/dart.png" alt="Dart" height="32px">
-                        <span>Dart</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/androidstudio.png" alt="Android Studio" height="32px">
-                        <span>Android Studio</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/images/tech/firebase.png" alt="Firebase" height="32px">
-                        <span>Firebase</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION LANDING PAGES -->
-    <section class="landings" id="landings">
-        <div class="projects-container">
-            <h2>Landing Pages <span class="landings-tag">(De muestra)</span> <i class="fa-solid fa-store"></i></h2>
-            <p class="projects-subtitle" id="landings-sub">One-page websites for local businesses — Valencia &amp; San Diego, Carabobo</p>
-
-            <div class="landings-grid" id="landings-grid"></div>
-
-            <div class="landing-viewer" id="landing-viewer" hidden>
-                <div class="landing-viewer-bar">
-                    <span class="lv-name" id="lv-name"></span>
-                    <span class="lv-actions">
-                        <a class="lv-open" id="lv-open" href="#" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-external-link-alt"></i> <span id="lv-open-txt">Open in new tab</span>
-                        </a>
-                        <button type="button" class="lv-close" id="lv-close" aria-label="Close">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </span>
-                </div>
-                <div class="landing-viewer-frame">
-                    <iframe id="lv-iframe" title="Landing page preview" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION PROYECTOS  -->
-    <section class="projects" id="projects">
-        <div class="projects-container">
-            <h2>Featured Projects <i class="fa-solid fa-code"></i></h2>
-            <p class="projects-subtitle">A showcase of my recent work and technical skills</p>
-
-            <div class="projects-grid">
-                <!-- Proyecto destacado 0 -->
-                <div class="card featured">
-                    <figure class="project-placeholder" aria-label="Social Battery Tracker">
-                        <i class="fa-solid fa-battery-half" aria-hidden="true"></i>
-                        <span>Flutter App</span>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Social Battery Tracker</h3>
-                        <p>A Flutter app that tracks social energy, visualizes its current level, and offers quick reset and support actions.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Material 3</span>
-                        </div>
-                        <a href="https://github.com/AlejandroMendoza334/social_battery_tracker" class="project-link">
-                            <i class="fa-brands fa-github"></i> View Code
-                        </a>
-                        <a href="social_battery_tracker.apk" class="project-link" download>
-                            <i class="fa-solid fa-download"></i> Download APK
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Proyecto destacado 1 -->
-                <div class="card featured">
-                <figure>
-                        <img src="assets/images/projects/miniauth.png" alt="MiniAuth API">
-                </figure>
-                <div class="contenido">
+                </article>
+                <article class="pj">
+                    <div class="shot"><img loading="lazy" src="assets/images/projects/miniauth.png" alt="MiniAuth API"></div>
+                    <div class="body">
                         <h3>MiniAuth API</h3>
-                        <p>A complete authentication system with JWT tokens, user registration, and secure login functionality.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express.js</span>
-                            <span class="tech-tag">JWT</span>
-                        </div>
-                        <a href="https://github.com/AlejandroMendoza334/mini-auth-api" class="project-link">
-                            <i class="fa-brands fa-github"></i> View Code
-                        </a>
-                </div>
-            </div>
-
-                <!-- Proyecto destacado 2 -->
-                <div class="card featured">
-                <figure>
-                        <img src="assets/images/projects/e-commerce.png" alt="E-commerce App">
-                </figure>
-                <div class="contenido">
+                        <p><span class="es">Sistema de autenticación con tokens JWT, registro de usuarios e inicio de sesión seguro.</span><span class="en">Authentication system with JWT tokens, user registration and secure login.</span></p>
+                        <div class="tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
+                        <div class="plink"><a href="https://github.com/AlejandroMendoza334/mini-auth-api" target="_blank" rel="noopener">GitHub →</a></div>
+                    </div>
+                </article>
+                <article class="pj third">
+                    <div class="shot txt"><span><b>track</b> social_energy</span><span><b>actions</b> reset · support</span></div>
+                    <div class="body">
+                        <h3>Social Battery Tracker</h3>
+                        <p><span class="es">App que registra y muestra tu energía social, con acciones rápidas.</span><span class="en">App that tracks and shows your social energy, with quick actions.</span></p>
+                        <div class="tags"><span>Flutter</span><span>Material 3</span></div>
+                        <div class="plink"><a href="https://github.com/AlejandroMendoza334/social_battery_tracker" target="_blank" rel="noopener">GitHub →</a><a href="social_battery_tracker.apk" download>APK ↓</a></div>
+                    </div>
+                </article>
+                <article class="pj third">
+                    <div class="shot"><img loading="lazy" src="assets/images/projects/e-commerce.png" alt="E-commerce App"></div>
+                    <div class="body">
                         <h3>E-commerce App</h3>
-                        <p>A modern React-based e-commerce application with shopping cart functionality and responsive design.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">CSS</span>
-                        </div>
-                        <a href="https://e-commerse48239.netlify.app/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> Live Demo
-                        </a>
-                </div>
-            </div>
-
-                <!-- Proyecto destacado 3 -->
-                <div class="card featured">
-                <figure>
-                        <img src="assets/images/projects/boviframe.jpg" alt="BOVIFrame App">
-                </figure>
-                <div class="contenido">
-                        <h3>BOVIFrame Mobile App</h3>
-                        <p>A mobile application specialized in zootechnical evaluations for cattle. Developed with Flutter, it includes tools for weight analysis, body condition, vaccination records, reproductive tracking, and veterinary report generation with Firebase integration.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Firebase</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            <i class="fa-brands fa-google-play"></i> Coming Soon
-                        </a>
-                </div>
-            </div>
-
-                <!-- Otros proyectos -->
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/apithemovie.png" alt="Movie API">
-                </figure>
-                <div class="contenido">
-                        <h3>Movie API</h3>
-                        <p>Interactive movie database with search functionality and API integration.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/apimovie.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/mapa interactivo.png" alt="Interactive Map">
-                </figure>
-                <div class="contenido">
-                        <h3>Interactive Map</h3>
-                        <p>Dynamic map application with interactive features and location services.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/mapinteractive.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/walletapp.png" alt="Wallet App">
-                </figure>
-                <div class="contenido">
-                        <h3>My Wallet App</h3>
-                        <p>Personal finance management application with expense tracking and budget planning.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                        </div>
-                        <a href="https://wonderful-biscuit-92eec4.netlify.app/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-                <!-- Proyectos adicionales -->
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/galeria.png" alt="Gallery">
-                </figure>
-                <div class="contenido">
-                        <h3>Gallery</h3>
-                        <p>Interactive photo gallery with modern design and smooth animations.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/galeria12.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/tab bar.png" alt="Tab Bar">
-                </figure>
-                <div class="contenido">
-                        <h3>Tab Bar</h3>
-                        <p>Modern tab navigation component with smooth transitions and responsive design.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/tab-bar.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/scrolling menu.png" alt="Scrolling Menu">
-                </figure>
-                <div class="contenido">
-                        <h3>Scrolling Menu</h3>
-                        <p>Dynamic scrolling navigation menu with smooth animations and modern UI.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/scrolling-menu.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/portfolio design.png" alt="Portfolio Design">
-                </figure>
-                <div class="contenido">
-                        <h3>Portfolio Design</h3>
-                        <p>Creative portfolio template with modern design and responsive layout.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/portafoliosproject.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/slider.png" alt="Slider">
-                </figure>
-                <div class="contenido">
-                        <h3>Image Slider</h3>
-                        <p>Interactive image slider with smooth transitions and touch support.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/slider.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/alma.png" alt="Alma">
-                </figure>
-                <div class="contenido">
+                        <p><span class="es">Tienda en React con carrito de compras y diseño adaptable.</span><span class="en">React store with a shopping cart and responsive design.</span></p>
+                        <div class="tags"><span>React</span><span>TypeScript</span></div>
+                        <div class="plink"><a href="https://e-commerse48239.netlify.app/" target="_blank" rel="noopener">Demo →</a></div>
+                    </div>
+                </article>
+                <article class="pj third">
+                    <div class="shot contain" style="background:#17122f"><img loading="lazy" src="assets/images/projects/alma.png" alt="Alma"></div>
+                    <div class="body">
                         <h3>Alma</h3>
-                        <p>Alma es una aplicación móvil diseñada para ofrecer un espacio de acompañamiento, reflexión y herramientas de bienestar emocional.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Material 3</span>
-                            <span class="tech-tag">Dart</span>
-                        </div>
-                        <a href="https://github.com/AlejandroMendoza334/Alma/tree/main" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
+                        <p><span class="es">App móvil de acompañamiento, reflexión y bienestar emocional.</span><span class="en">Mobile app for support, reflection and emotional wellbeing.</span></p>
+                        <div class="tags"><span>Flutter</span><span>Material 3</span></div>
+                        <div class="plink"><a href="https://github.com/AlejandroMendoza334/Alma/tree/main" target="_blank" rel="noopener">GitHub →</a></div>
+                    </div>
+                </article>
             </div>
-
-            <div class="card">
-                <figure>
-                        <img src="assets/images/projects/calculadora.png" alt="Calculator">
-                </figure>
-                <div class="contenido">
-                        <h3>Calculadora</h3>
-                        <p>Modern calculator application with clean interface and full functionality.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://alejandromendoza334.github.io/calculadora.github.io/" class="project-link">
-                            <i class="fa-solid fa-external-link-alt"></i> View Demo
-                        </a>
-                </div>
-            </div>
-
+            <div class="mini">
+                <a href="https://wonderful-biscuit-92eec4.netlify.app/" target="_blank" rel="noopener">My Wallet <span>Flutter</span></a>
+                <a href="https://alejandromendoza334.github.io/apimovie.github.io/" target="_blank" rel="noopener">Movie API <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/mapinteractive.github.io/" target="_blank" rel="noopener">Interactive Map <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/galeria12.github.io/" target="_blank" rel="noopener">Gallery <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/tab-bar.github.io/" target="_blank" rel="noopener">Tab Bar <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/scrolling-menu.github.io/" target="_blank" rel="noopener">Scrolling Menu <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/portafoliosproject.io/" target="_blank" rel="noopener">Portfolio Design <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/slider.github.io/" target="_blank" rel="noopener">Image Slider <span>JavaScript</span></a>
+                <a href="https://alejandromendoza334.github.io/calculadora.github.io/" target="_blank" rel="noopener">Calculadora <span>JavaScript</span></a>
             </div>
         </div>
     </section>
 
-    <!-- SECCION CONTACTO -->
-    <section class="contact" id="contact">
-        <form action="https://formspree.io/f/meoqogbo" method="POST">
-            <h2>Contact Me</h2>
-            <div class="input">
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name" required>
-
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" name="phone" id="phone" placeholder="Phone Number">
-
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
-
-                    
-    <button type="submit" class="send-btn" id="sendBtn">
-        <i class="fas fa-paper-plane"></i>
-    <span>Send</span>
-    </button>
-                </div>
+    <section class="biz" id="negocios">
+        <div class="wrap">
+            <div>
+                <div class="label"><span class="es">Para negocios</span><span class="en">For businesses</span></div>
+                <h2><span class="es">También hago <em>páginas web</em> para negocios.</span><span class="en">I also build <em>websites</em> for businesses.</span></h2>
+                <p><span class="es">Catálogos, menús, citas y pedidos directos a WhatsApp. Mira las muestras que he diseñado.</span><span class="en">Catalogs, menus, bookings and orders straight to WhatsApp. See the sample sites I've designed.</span></p>
+                <a class="btn" href="sitios.html"><span class="es">Ver muestras</span><span class="en">See samples</span></a>
             </div>
-        </form>
+            <div class="thumbs">
+                <img loading="lazy" src="assets/images/landings/tuerca.jpg" alt="Tuerca">
+                <img loading="lazy" src="assets/images/landings/filo.jpg" alt="Filo">
+                <img loading="lazy" src="assets/images/landings/alba.jpg" alt="Alba">
+                <img loading="lazy" src="assets/images/landings/vitra.jpg" alt="Vitra Salud">
+            </div>
+        </div>
     </section>
 
+    <section id="experiencia">
+        <div class="wrap">
+            <div class="head"><div><div class="label"><span class="es">Trayectoria</span><span class="en">Background</span></div><h2><span class="es">Experiencia y <em>educación</em></span><span class="en">Experience and <em>education</em></span></h2></div></div>
+            <div class="xp">
+                <div><small><span class="es">Agosto 2025 – Presente</span><span class="en">Aug 2025 – Present</span></small><div><h3><span class="es">Desarrollador Full Stack · Sistema de trading</span><span class="en">Full Stack Developer · Trading system</span></h3><p><span class="es">Proyecto personal: estrategias automatizadas, análisis de sentimiento, backend seguro con PostgreSQL y panel en tiempo real.</span><span class="en">Personal project: automated strategies, sentiment analysis, secure PostgreSQL backend and a real-time dashboard.</span></p></div></div>
+                <div><small><span class="es">Mayo 2025 – Finalizado</span><span class="en">May 2025 – Completed</span></small><div><h3><span class="es">Desarrollador móvil · BOVIFrame</span><span class="en">Mobile Developer · BOVIFrame</span></h3><p><span class="es">App de evaluación ganadera con Flutter y Firebase: autenticación, reportes, imágenes, PDF y acceso sin conexión.</span><span class="en">Cattle evaluation app with Flutter and Firebase: authentication, reports, images, PDF and offline access.</span></p></div></div>
+                <div><small><span class="es">2023 – Presente</span><span class="en">2023 – Present</span></small><div><h3><span class="es">Desarrollador Full Stack freelance</span><span class="en">Freelance Full Stack Developer</span></h3><p><span class="es">APIs REST con Node.js, Express y MongoDB, y aplicaciones web responsivas con React.</span><span class="en">REST APIs with Node.js, Express and MongoDB, and responsive web apps with React.</span></p></div></div>
+                <div><small><span class="es">Enero 2026 – Presente</span><span class="en">Jan 2026 – Present</span></small><div><h3>IUTEPAL</h3><p><span class="es">Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo. En curso.</span><span class="en">Juan Pablo Pérez Alfonzo University Institute of Technology. In progress.</span></p></div></div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/translations.js"></script>
+    <section id="habilidades" style="padding-top:0">
+        <div class="wrap">
+            <div class="head"><div><div class="label"><span class="es">Tecnologías</span><span class="en">Technologies</span></div><h2><span class="es">Con qué <em>trabajo</em></span><span class="en">What I <em>work with</em></span></h2></div></div>
+            <div class="skills">
+                <div><h3>Frontend</h3><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li><li>Bootstrap</li><li>Tailwind CSS</li></ul></div>
+                <div><h3>Backend</h3><ul><li>Node.js</li><li>Express.js</li><li>Python</li><li>FastAPI</li></ul></div>
+                <div><h3>Mobile</h3><ul><li>Flutter</li><li>Dart</li><li>Android Studio</li><li>Firebase</li></ul></div>
+                <div><h3><span class="es">Datos</span><span class="en">Data</span></h3><ul><li>PostgreSQL</li><li>MongoDB</li><li>SQLAlchemy</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto" style="padding-top:0">
+        <div class="wrap">
+            <div>
+                <div class="label"><span class="es">Contacto</span><span class="en">Contact</span></div>
+                <h2><span class="es">Hablemos de <em>tu proyecto.</em></span><span class="en">Let's talk about <em>your project.</em></span></h2>
+                <div class="cinfo">
+                    <div><b>Email</b><a href="mailto:alejandromendoza6575757@gmail.com">alejandromendoza6575757@gmail.com</a></div>
+                    <div><b><span class="es">Idiomas</span><span class="en">Languages</span></b><span class="es">Español nativo, inglés intermedio</span><span class="en">Native Spanish, intermediate English</span></div>
+                </div>
+            </div>
+            <form action="https://formspree.io/f/meoqogbo" method="POST">
+                <div class="two">
+                    <label><span><span class="es">Nombre</span><span class="en">Name</span></span><input type="text" name="name" required></label>
+                    <label><span><span class="es">Teléfono</span><span class="en">Phone</span></span><input type="tel" name="phone"></label>
+                </div>
+                <label>Email<input type="email" name="email" required></label>
+                <label><span><span class="es">Mensaje</span><span class="en">Message</span></span><textarea name="message" rows="5" required></textarea></label>
+                <button class="btn pri" type="submit"><span class="es">Enviar mensaje</span><span class="en">Send message</span></button>
+            </form>
+        </div>
+    </section>
+
+    <div class="progress" id="progress"></div>
+
+    <footer>
+        <div class="wrap"><span>Alejandro Mendoza</span><span>San Diego, Carabobo, Venezuela</span></div>
+    </footer>
+
+    <script>
+        (function () {
+            var button = document.getElementById("lang");
+            var flags = {
+                es: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#c60b1e"/><rect y="5" width="30" height="10" fill="#ffc400"/></svg>',
+                en: '<svg viewBox="0 0 39 26" aria-hidden="true"><rect width="39" height="26" fill="#b22234"/><path d="M0 3h39M0 7h39M0 11h39M0 15h39M0 19h39M0 23h39" stroke="#fff" stroke-width="2"/><rect width="17" height="14" fill="#3c3b6e"/><path d="M3 3h.01M8.500 3h.01M14 3h.01M5.750 7h.01M11.250 7h.01M3 11h.01M8.500 11h.01M14 11h.01" stroke="#fff" stroke-width="2.200" stroke-linecap="round"/></svg>'
+            };
+            function setLang(lang) {
+                document.body.dataset.lang = lang;
+                document.documentElement.lang = lang;
+                button.innerHTML = lang === "es" ? flags.en : flags.es;
+                button.setAttribute("aria-label", lang === "es" ? "Switch to English" : "Cambiar a español");
+                document.getElementById("cv").href = lang === "es" ? "curriculum-es.pdf" : "curriculum.pdf";
+                try { localStorage.setItem("portfolio-lang", lang); } catch (e) {}
+            }
+            var saved = null;
+            try { saved = localStorage.getItem("portfolio-lang"); } catch (e) {}
+            setLang(saved === "en" ? "en" : "es");
+            button.addEventListener("click", function () {
+                setLang(document.body.dataset.lang === "es" ? "en" : "es");
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            var track = document.querySelector(".ticker > div");
+            track.innerHTML += track.innerHTML;
+            Array.prototype.slice.call(track.children, track.children.length / 2).forEach(function (el) { el.setAttribute("aria-hidden", "true"); });
+
+            var progress = document.getElementById("progress");
+            var thumbs = document.querySelectorAll(".thumbs img");
+            var thumbBox = document.querySelector(".thumbs");
+            var portrait = document.querySelector(".portrait");
+            var motion = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            var pending = false;
+            function onScroll() {
+                pending = false;
+                var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+                progress.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
+                if (!motion) return;
+                portrait.style.transform = "translateY(" + Math.min(y * .07, 50) + "px)";
+                var r = thumbBox.getBoundingClientRect();
+                var t = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+                thumbs.forEach(function (img, i) { img.style.setProperty("--p", t * (i % 2 ? -22 : 22) + "px"); });
+            }
+            window.addEventListener("scroll", function () {
+                if (!pending) { pending = true; requestAnimationFrame(onScroll); }
+            }, { passive: true });
+            onScroll();
+
+            var spy = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    var a = document.querySelector('.links a[href="#' + e.target.id + '"]');
+                    if (a) a.classList.toggle("on", e.isIntersecting);
+                });
+            }, { rootMargin: "-45% 0px -50% 0px" });
+            document.querySelectorAll("section[id]").forEach(function (s) { spy.observe(s); });
+
+            if (!motion) return;
+
+            function splitWords(root) {
+                var i = 0;
+                (function walk(node) {
+                    Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+                        if (child.nodeType !== 3) { walk(child); return; }
+                        var frag = document.createDocumentFragment();
+                        child.textContent.split(/(\s+)/).forEach(function (part) {
+                            if (!part) return;
+                            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
+                            var outer = document.createElement("span"), inner = document.createElement("span");
+                            outer.className = "w";
+                            inner.textContent = part;
+                            inner.style.setProperty("--i", i++ % 12);
+                            outer.appendChild(inner);
+                            frag.appendChild(outer);
+                        });
+                        node.replaceChild(frag, child);
+                    });
+                })(root);
+                root.classList.add("split");
+            }
+
+            var seen = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add("in"); seen.unobserve(e.target); }
+                });
+            }, { threshold: .12, rootMargin: "0px 0px -5% 0px" });
+
+            document.querySelectorAll("h1, h2").forEach(function (h) { splitWords(h); seen.observe(h); });
+            document.querySelectorAll(".shot.txt").forEach(function (s) {
+                s.classList.add("type");
+                Array.prototype.forEach.call(s.children, function (c, i) { c.style.setProperty("--t", i); });
+            });
+            document.querySelectorAll(".label, .intro, .btns, .socials, .portrait, .head p, .facts .wrap > div, .pj, .mini a, .biz p, .biz .btn, .thumbs img, .xp > div, .skills > div, .cinfo > div, form").forEach(function (el) {
+                var i = Array.prototype.indexOf.call(el.parentNode.children, el) % 6;
+                el.classList.add("reveal");
+                el.style.setProperty("--d", i * 70 + "ms");
+                seen.observe(el);
+            });
+
+            if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+            var hero = document.querySelector(".hero");
+            hero.addEventListener("mousemove", function (e) {
+                var r = hero.getBoundingClientRect();
+                hero.style.setProperty("--mx", e.clientX - r.left + "px");
+                hero.style.setProperty("--my", e.clientY - r.top + "px");
+            });
+            document.querySelectorAll(".pj").forEach(function (card) {
+                card.addEventListener("mousemove", function (e) {
+                    var r = card.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+                    card.style.setProperty("--x", x + "px");
+                    card.style.setProperty("--y", y + "px");
+                    card.style.transform = "perspective(1100px) rotateX(" + (.5 - y / r.height) * 5 + "deg) rotateY(" + (x / r.width - .5) * 5 + "deg)";
+                });
+                card.addEventListener("mouseleave", function () { card.style.transform = ""; });
+            });
+            document.querySelectorAll(".btn").forEach(function (btn) {
+                btn.addEventListener("mousemove", function (e) {
+                    var r = btn.getBoundingClientRect();
+                    btn.style.translate = (e.clientX - r.left - r.width / 2) * .18 + "px " + (e.clientY - r.top - r.height / 2) * .28 + "px";
+                });
+                btn.addEventListener("mouseleave", function () { btn.style.translate = ""; });
+            });
+        })();
+    </script>
 </body>
 
 </html>
