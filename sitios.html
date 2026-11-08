@@ -108,7 +108,13 @@
         footer { border-top: 1px solid var(--line); padding: 26px 0; color: var(--muted); font-size: .86rem; }
         footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
         footer a { color: var(--ink); font-weight: 600; }
-        .real{display:inline-block;margin-left:6px;padding:2px 9px;border-radius:99px;background:#e7f7ec;color:#1d7a45;font-size:.7rem;font-weight:700;letter-spacing:.02em;vertical-align:middle;white-space:nowrap}
+        .card figure{position:relative}
+        .live{position:absolute;left:12px;bottom:12px;z-index:2;display:flex;align-items:center;gap:8px;padding:7px 12px 7px 10px;border-radius:99px;background:rgba(14,23,18,.86);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(6px);box-shadow:0 6px 18px -6px rgba(0,0,0,.45)}
+        .live i{width:8px;height:8px;border-radius:50%;background:#34d27b;box-shadow:0 0 0 0 rgba(52,210,123,.7);animation:livep 1.8s infinite}
+        @keyframes livep{70%{box-shadow:0 0 0 8px rgba(52,210,123,0)}100%{box-shadow:0 0 0 0 rgba(52,210,123,0)}}
+        .card.client{position:relative}.card.client figure{box-shadow:0 0 0 2px #34d27b,0 18px 40px -22px rgba(29,122,69,.6)}
+        .kind{display:inline-block;margin-top:6px;font-size:.72rem;font-weight:700;color:#1d7a45;background:#e7f7ec;border-radius:99px;padding:2px 9px}
+        @media(prefers-reduced-motion:reduce){.live i{animation:none}}
 </style>
 </head>
 
@@ -266,9 +272,9 @@
         var grid = document.getElementById("grid");
 
         function card(i) {
-            return '<a class="card" data-umami-event="abrir-sitio" data-umami-event-sitio="' + i.name + '" href="' + i.url + '" target="_blank" rel="noopener">' +
-                '<figure><img src="assets/images/landings/' + i.slug + '.jpg" alt="Página de ' + i.name + '" loading="lazy"></figure>' +
-                '<div class="meta"><div><span class="name">' + i.name + (i.client ? ' <span class="real">● Cliente real · en línea</span>' : '') + '</span><div class="type">' + i.type + (i.concept ? ' · concepto' : '') + (i.client ? ' · en producción' : '') + '</div></div><span class="go">Abrir →</span></div></a>';
+            return '<a class="card'+(i.client?' client':'')+'" data-umami-event="abrir-sitio" data-umami-event-sitio="' + i.name + '" href="' + i.url + '" target="_blank" rel="noopener">' +
+                '<figure>'+(i.client?'<span class="live"><i></i>En línea · cliente real</span>':'')+'<img src="assets/images/landings/' + i.slug + '.jpg" alt="Página de ' + i.name + '" loading="lazy"></figure>' +
+                '<div class="meta"><div><span class="name">' + i.name + '' + '</span><div class="type">' + i.type + (i.concept ? ' · concepto' : '') + ''  + '</div>'+(i.client?'<span class="kind">Proyecto entregado · pizzeriamrpepe.com</span>':'')+'</div><span class="go">Abrir →</span></div></a>';
         }
         function draw() {
             var list;
