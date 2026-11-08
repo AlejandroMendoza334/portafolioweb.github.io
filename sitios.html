@@ -274,7 +274,7 @@
         function card(i) {
             return '<a class="card'+(i.client?' client':'')+'" data-umami-event="abrir-sitio" data-umami-event-sitio="' + i.name + '" href="' + i.url + '" target="_blank" rel="noopener">' +
                 '<figure>'+(i.client?'<span class="live"><i></i>En línea · cliente real</span>':'')+'<img src="assets/images/landings/' + i.slug + '.jpg" alt="Página de ' + i.name + '" loading="lazy"></figure>' +
-                '<div class="meta"><div><span class="name">' + i.name + '' + '</span><div class="type">' + i.type + (i.concept ? ' · concepto' : '') + ''  + '</div>'+(i.client?'<span class="kind">Proyecto entregado · pizzeriamrpepe.com</span>':'')+'</div><span class="go">Abrir →</span></div></a>';
+                '<div class="meta"><div><span class="name">' + i.name + '' + '</span><div class="type">' + i.type + (i.concept ? ' · concepto' : '') + ''  + '</div>'+''+'</div><span class="go">Abrir →</span></div></a>';
         }
         function draw() {
             var list;
